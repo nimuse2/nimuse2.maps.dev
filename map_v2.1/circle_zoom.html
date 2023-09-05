@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Distances and Panning</title>
+    <meta charset="utf-8" />
+
+    <script src="//d3js.org/d3.v4.js"></script>
+
+    <style type="text/css">
+      /* HTML elements */
+      /* ============= */
+
+      /* Base elements */
+
+      body {
+        font-family: Avenir, sans-serif;
+        font-size: 0.75rem;
+        margin: 0;
+      }
+
+      #headline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #555;
+      }
+
+      #pink {
+        border-bottom: 2px solid deeppink;
+        padding-bottom: 0.25rem;
+      }
+
+      /* Links */
+
+      a {
+        color: #555;
+        transition: color 200ms;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+      a:visited {
+        color: #555;
+      }
+      a:hover {
+        color: deeppink;
+      }
+      a:active {
+        color: #555;
+      }
+
+      /* SVG elements */
+      /* ============ */
+
+      svg {
+        border: 1px solid #ccc;
+      }
+
+      /* Axes */
+
+      .tick text {
+        font-family: Avenir, sans-serif;
+        fill: #555;
+        font-size: 0.75rem;
+      }
+
+      .tick line,
+      .lines {
+        stroke: #555;
+        stroke-width: 0.5;
+        shape-rendering: crispEdges;
+      }
+
+      path.domain {
+        display: none;
+      }
+
+      /* Chart */
+
+      circle {
+        fill: white;
+        /* stroke: deeppink; */
+        stroke-width: 0px;
+        opacity: 0.7;
+      }
+
+      .label {
+        fill: #777;
+      }
+      .btn {
+        height: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div height="20px">
+      <button type="button" class="btn" onclick="updateData()">CHANGE</button>
+    </div>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      //transpose onto my map
+      /*
+        https://www.freecodecamp.org/news/get-ready-to-zoom-and-pan-like-a-pro-after-reading-this-in-depth-tutorial-5d963b0a153e/
+        */
+      //screen setup
+      var margin = {
+        top: window.innerHeight * 0.05,
+        left: 50,
+        bottom: window.innerHeight * 0.05,
+        right: 50,
+      };
+
+      //data
+      var mapScale = 1 / 2; //?
+      // var maxDistX = 37510; // estimated distance X
+      // var maxDistY = 37510; // big square
+      const maxDistX = window.innerWidth * 3; //3 screens wide
+      const maxDistY = window.innerHeight * 3; //3 scrns high
+      console.log("maxDist ", maxDistX);
+      console.log("maxScale ", mapScale);
+      // The full width of all planets
+      var chartWidth = maxDistX * mapScale;
+      var chartHeight = maxDistY; //?
+
+      console.log("chartWidth ", chartWidth); // actual width of chart in pixels
+      console.log("chartHeight ", chartHeight);
+
+      // SVG width will only be as large as screen
+      var screenWidth = window.innerWidth - margin.left - margin.right;
+      // The chart *and* screen height.
+      var screenHeight = window.innerHeight - margin.top - margin.bottom;
+
+      console.log("screenWidth ", screenWidth);
+      console.log("screenHeight ", screenHeight);
+
+      var xScale = d3
+        .scaleLinear()
+        .domain([0, maxDistX]) //biggest distance
+        .range([0, chartWidth]);
+
+      var yScale = d3
+        .scaleLinear()
+        .domain([0, maxDistY]) //biggest distance
+        .range([0, chartHeight]);
+
+      //BUILD BIRD DATA ONTOP OF THIS!!!
+      function initData() {
+        console.log("initData()");
+        return (data = d3.range(40).map(function (i) {
+          return {
+            x: ((i + 1) * chartWidth) / 41,
+            // y: ((i + 1) * screenHeight) / 41,
+            y: Math.floor(Math.random() * screenHeight),
+            r: Math.floor(Math.random() * 50) + 20,
+            id: i + 1,
+          };
+        }));
+      }
+      function makeData() {
+        console.log("makeData()");
+        return (data = d3.range(40).map(function (i) {
+          return {
+            x: ((i + 1) * chartWidth) / 41,
+            y: Math.floor(Math.random() * screenHeight),
+            // y: ((i + 1) * screenHeight) / 41,
+            r: Math.floor(Math.random() * 50) + 20,
+            id: i + 1,
+          };
+        }));
+      }
+      function updateData() {
+        console.log("updateData()");
+        //NEXT - LOOK AT THIS TRANSFORM DATA OBJECT!!
+
+        // var transform = d3.event.transform;
+        // transform.x = Math.min(0, transform.x);
+        // transform.y = Math.min(0, transform.y);
+
+        // console.log("event: ", d3.event);
+        // console.log("transform.x: ", transform.x);
+        _data = makeData();
+
+        // planets = svg.selectAll(".planet");
+
+        // var xScaleNew = transform.rescaleX(xScale);
+        // var yScaleNew = transform.rescaleY(yScale);
+        //maybe just working for one event
+        //Stagger the axis-labels
+
+        // Remove
+        // planets.remove();
+        // Add
+
+        //ALMOST //
+        //NEED TO WORK ON OBJECTS/////////////
+        planets.data(_data);
+        planets
+          // .enter()
+          // .data(data)
+          // .enter()
+          // .append("circle")
+          // .attr("class", "planet")
+          // .attr("id", function (d) {
+          //   return d.id;
+          // })
+          // // .merge(planets)
+          .transition()
+          .duration(600)
+          .ease(d3.easeCubicOut)
+          .attr("cx", function (d) {
+            return xScale(d.x);
+          })
+          .attr("cy", function (d) {
+            return yScale(d.y);
+          })
+          .attr("r", function (d) {
+            return d.r;
+          })
+          .style("fill", function (d, i) {
+            return color(i);
+          });
+        /*
+        var planets = gPlanets
+        .selectAll(".planet")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("class", "planet")
+        .attr("id", function (d) {
+          return d.id;
+        })
+        .attr("cx", function (d) {
+          return xScale(d.x);
+        })
+        .attr("cy", function (d) {
+          return yScale(d.y);
+        })
+        .attr("r", function (d) {
+          return d.r;
+        })
+        .style("fill", function (d, i) {
+          return color(i);
+        })
+        */
+        /*planets
+          .data(_data)
+          .transition()
+          .duration(300)
+          .attr("cx", function (d) {
+            // console.log("xScaleNew: ", xScaleNew(d.distance));
+            // return xScaleNew(d.distance);
+            return xScaleNew(d.x);
+          })
+          .attr("cy", function (d) {
+            return yScaleNew(d.y);
+            // return d.y;//correct position
+          })
+          .attr("r", function (d) {
+            return d.r;
+          });
+          */
+      } //end update
+
+      // function make() {
+      /* Set up */
+      /* ====== */
+      var zoom = d3.zoom().on("zoom", zoomed);
+      /* Dimensions and base */
+      /* ------------------- */
+
+      var data = initData();
+      var color = d3.scaleOrdinal().range(d3.schemeCategory20);
+      /* SVG */
+      console.log("data: ", data);
+      var svg = d3
+        .select("#vis")
+        .append("svg")
+        .attr("width", screenWidth + margin.left + margin.right)
+        .attr("height", screenHeight + margin.top + margin.bottom)
+        .append("g")
+        .attr("class", "chart")
+        .attr(
+          "transform",
+          "translate(" + margin.left + ", " + margin.top + ")"
+        );
+
+      // listener rec
+      var listenerRect = svg
+        .append("rect")
+        .attr("class", "listener-rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", screenWidth)
+        .attr("height", screenHeight)
+        .style("opacity", 0)
+        .style("fill", "aliceblue") // check the area it covers!
+        .style("opacity", 0.9);
+
+      listenerRect.call(zoom);
+
+      /* Scales */
+      /* ====== */
+
+      // .range([0, screenWidth]); // try this!
+
+      //d3 scale object
+      // around middle
+      //variable radius
+
+      /* Build vis */
+      /* ========= */
+      function zoomed() {
+        var transform = d3.event.transform;
+        transform.x = Math.min(0, transform.x);
+        transform.y = Math.min(0, transform.y);
+
+        console.log("event: ", d3.event);
+        console.log("transform.x: ", transform.x);
+
+        var xScaleNew = transform.rescaleX(xScale);
+        var yScaleNew = transform.rescaleY(yScale);
+        //maybe just working for one event
+        //Stagger the axis-labels
+
+        planets
+          .attr("cx", function (d) {
+            // console.log("xScaleNew: ", xScaleNew(d.distance));
+            // return xScaleNew(d.distance);
+            return xScaleNew(d.x);
+          })
+          .attr("cy", function (d) {
+            return yScaleNew(d.y);
+            // return d.y;//correct position
+          })
+          .attr("r", function (d) {
+            return d.r;
+          });
+      } //end zoomed
+
+      /* Sun and planets */
+      /* --------------- */
+
+      var gPlanets = svg
+        .append("g", ".listener-rect")
+        .attr("class", "planet-group");
+
+      var planets = gPlanets
+        .selectAll(".planet")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("class", "planet")
+        .attr("id", function (d) {
+          return d.id;
+        })
+        .attr("cx", function (d) {
+          return xScale(d.x);
+        })
+        .attr("cy", function (d) {
+          return yScale(d.y);
+        })
+        .attr("r", function (d) {
+          return d.r;
+        })
+        .style("fill", function (d, i) {
+          return color(i);
+        })
+        .on("mouseover", function (e) {
+          console.log("circle.id: ", e.id);
+        });
+      // } // make()
+
+      // make();
+      //timer
+
+      // setInterval(updateData, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/* canvas {
+  border: 1px solid #d3d3d3;
+} */
+* {
+  box-sizing: border-box;
+}
+body,
+html,
+.container-fluid {
+  height: 100%;
+}
+.infocircle:hover {
+  stroke: white;
+  stroke-width: 1px !important;
+  opacity: 1 !important;
+}
+
+body {
+  cursor: pointer;
+  background-color: #303030;
+}
+
+.btnCol {
+  color: white;
+}

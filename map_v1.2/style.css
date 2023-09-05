@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 11px;
+}
+
+.topnav {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 24px;
+  color: rgba(231, 231, 237, 0.952);
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  padding-left: 5px;
+}
+.sidenav {
+  padding-left: 5px;
+  color: rgba(231, 231, 237, 0.952);
+  width: 150px;
+}

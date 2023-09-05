@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <!-- <script src="//d3js.org/d3.v4.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
+  <link href="css/Bootstrap.min.css" rel="stylesheet" />
+  <link href="css/base.css" rel="stylesheet" />
+  <script src="js/d3.7.8.4.js"></script>
+  <script>
+    /*
+        d3.select("body")
+          .append("span")
+          .text("Hello, world! d3.v7 seems to work here??");
+          */
+    //simple map
+    /*
+    var url =
+      "https://gist.githubusercontent.com/milafrerichs/78ef5702db2dc514fc2bed465d58406b/raw/f1366ee2a83a9afb1dd2427e9cbd4cd3db8d87ca/bundeslaender_simplify200.geojson";
+      */
+    var url = "data/map/map.geojson";
+    d3.json(url).then(function (bb) {
+      var bbox = d3.select("body").node().getBoundingClientRect();
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      var projection = d3.geoEqualEarth();
+      projection.fitExtent(
+        [
+          [20, 20],
+          [width, height],
+        ],
+        bb
+      );
+      var geoGenerator = d3.geoPath().projection(projection);
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .style("width", "100%")
+        .style("height", "100%");
+      svg
+        .append("g")
+        .selectAll("path")
+        .data(bb.features)
+        .enter()
+        .append("path")
+        .attr("d", geoGenerator)
+        .attr("fill", "#088")
+        .attr("stroke", "#000");
+    });
+    /*bird sort out
+        d3.csv("data/mardle/magpie/data.csv").then(function (data) {
+          console.log(data);
+          let count2019 = 0;
+          for (i = 0; i < data.length; i++) {
+            if (data[i]["Start date year"] === "2019") {
+              count2019++;
+            }
+          }
+          console.log(`bird count Mardle:`);
+          console.log(`2019: ${count2019}`);
+        });
+        */
+  </script>
+</body>
