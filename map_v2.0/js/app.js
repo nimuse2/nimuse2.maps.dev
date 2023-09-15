@@ -14,7 +14,7 @@ var projection = d3
   .geoMercator()
   .angle(90)
   .reflectY(true)
-  .scale(1800000) //700000-smaller - 1900000 - bigger - 3000000
+  .scale(1500000) //700000-smaller - 1900000 - bigger - 3000000 //180000
   .center([washData[0].lat, washData[0].long])
   .rotate([0, 0])
   .translate([width / 2, height / 2]);
@@ -90,6 +90,9 @@ elemEnter0
   */
 
 //ZOOM/////////////////
+
+var zoomFactor = 1.2; // distance
+var panFactor = 50; // distance
 let zoom = d3.zoom().on("zoom", handleZoom);
 
 function handleZoom(e) {
@@ -107,7 +110,7 @@ d3.select("#zoom_in").on("click", function () {
   zoom.scaleBy(svg.transition().duration(750), 1.2);
 });
 d3.select("#zoom_out").on("click", function () {
-  zoom.scaleBy(svg.transition().duration(750), 0.8);
+  zoom.scaleBy(svg.transition().duration(750), 1.2);
 });
 d3.select("#zoom_reset").on("click", function () {
   zoom.scaleTo(svg.transition().duration(750), 1);
@@ -121,16 +124,16 @@ d3.select("#zoom_center").on("click", function () {
   // zoom.translateTo(0.5 * width, 0.5 * height);
 });
 d3.select("#pan_left").on("click", function () {
-  svg.transition().duration(750).call(zoom.translateBy, -50, 0);
+  svg.transition().duration(750).call(zoom.translateBy, -200, 0);
 });
 d3.select("#pan_right").on("click", function () {
-  svg.transition().duration(750).call(zoom.translateBy, 50, 0);
+  svg.transition().duration(750).call(zoom.translateBy, 200, 0);
 });
 d3.select("#pan_up").on("click", function () {
-  svg.transition().duration(750).call(zoom.translateBy, 0, -50);
+  svg.transition().duration(750).call(zoom.translateBy, 0, -200);
 });
 d3.select("#pan_down").on("click", function () {
-  svg.transition().duration(750).call(zoom.translateBy, 0, 50);
+  svg.transition().duration(750).call(zoom.translateBy, 0, 200);
 });
 
 // CENTRAL WASH//////////////////////////////////

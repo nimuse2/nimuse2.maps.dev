@@ -88,7 +88,7 @@ function makeTooltip(_svg) {
 
   TooltipBox = _svg
     .append("rect")
-    .style("opacity", 0)
+    .style("opacity", 1)
     .attr("x", width - 210)
     .attr("y", height - 260)
     .attr("width", 190)
@@ -184,5 +184,5 @@ function hideTooltip() {
   Tooltip7.style("opacity", 0);
   TooltipLineTop.style("opacity", 0);
   TooltipLineDown.style("opacity", 0);
-  TooltipBox.style("opacity", 0);
+  TooltipBox.style("opacity", 1);
 }

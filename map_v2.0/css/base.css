@@ -7,6 +7,10 @@
   opacity: 1 !important;
 }
 
+.disabledState {
+  opacity: 0.5 !important;
+}
+
 body {
   cursor: pointer;
   background-color: #303030;
