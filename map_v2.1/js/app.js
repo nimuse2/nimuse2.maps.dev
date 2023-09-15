@@ -14,7 +14,7 @@ var projection = d3
   .geoMercator()
   .angle(90)
   .reflectY(true)
-  .scale(6000) //80000 nice
+  .scale(10000) //80000 nice
   // .scale(1800000) //700000-smaller - 1900000 - bigger - 3000000
   // .center([washData[0].lat, washData[0].long])
   .center([50.725310848323154, -3.531406273750983]) //exeter
