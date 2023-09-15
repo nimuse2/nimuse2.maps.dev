@@ -14,7 +14,7 @@ var projection = d3
   .geoMercator()
   .angle(90)
   .reflectY(true)
-  .scale(10000) //80000 nice
+  .scale(80000) //80000 nice
   // .scale(1800000) //700000-smaller - 1900000 - bigger - 3000000
   // .center([washData[0].lat, washData[0].long])
   .center([50.725310848323154, -3.531406273750983]) //exeter
@@ -47,7 +47,7 @@ for (i = 0; i < washData.length; i++) {
 //
 
 // console.log("mapWash: ", mapWash);
-var zoom = d3.zoom().on("zoom", zoomed);
+// var zoom = d3.zoom().on("zoom", zoomed);
 
 /* Dimensions and base */
 /* ------------------- */
@@ -180,6 +180,51 @@ elemEnter0
   */
 
 //ZOOM/////////////////
+var zoomFactor = 1.2; // distance
+var panFactor = 50; // distance
+let zoom = d3.zoom().on("zoom", handleZoom);
+
+function handleZoom(e) {
+  // d3.select("svg g").attr("transform", e.transform);
+  // d3.select("svg g").attr("transform", d3.event.transform);
+  d3.selectAll(".zoomCircle").attr("transform", d3.event.transform);
+  // d3.select("svg g g").attr("transform", d3.event.transform);
+}
+
+function initZoom() {
+  d3.select("svg").call(zoom);
+}
+
+d3.select("#zoom_in").on("click", function () {
+  zoom.scaleBy(svg.transition().duration(750), 1.2);
+});
+d3.select("#zoom_out").on("click", function () {
+  zoom.scaleBy(svg.transition().duration(750), 1.2);
+});
+d3.select("#zoom_reset").on("click", function () {
+  zoom.scaleTo(svg.transition().duration(750), 1);
+});
+d3.select("#zoom_center").on("click", function () {
+  svg
+    .transition()
+    .duration(750)
+    .call(zoom.translateTo, 0.5 * width, 0.5 * height);
+  // zoom.scaleTo(svg.transition().duration(750), 1);
+  // zoom.translateTo(0.5 * width, 0.5 * height);
+});
+d3.select("#pan_left").on("click", function () {
+  svg.transition().duration(750).call(zoom.translateBy, -200, 0);
+});
+d3.select("#pan_right").on("click", function () {
+  svg.transition().duration(750).call(zoom.translateBy, 200, 0);
+});
+d3.select("#pan_up").on("click", function () {
+  svg.transition().duration(750).call(zoom.translateBy, 0, -200);
+});
+d3.select("#pan_down").on("click", function () {
+  svg.transition().duration(750).call(zoom.translateBy, 0, 200);
+});
+
 /*
 let zoom = d3.zoom().on("zoom", handleZoom);
 

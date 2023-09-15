@@ -11,6 +11,7 @@
 - Timeline - live animation
 - More meaningful map
 - Picture/info/ sound on rollovers on Key
+- Width/ Height same as screen
 
 ##Bugs
 
