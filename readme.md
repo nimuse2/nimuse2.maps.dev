@@ -7,10 +7,10 @@
 
 ##Development notes:
 
+- More meaningful map - manually draw map features lake, farm, hedges, field?
 - Click and reveal different species
-- Timeline - live animation
+- Timeline - live animation triggered by time/ year?
 - update years data animation
-- More meaningful map
 - Picture/info/ sound on rollovers on Key
 - Width/ Height same as screen
 

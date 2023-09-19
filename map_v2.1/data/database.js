@@ -360,8 +360,8 @@ const actualData = [
   {
     id: "4", //use for drawing lookup!!
     location: "Mansion totnes",
-    lat: 50.430958,
-    long: -3.684067,
+    lat: 50.43052623679113,
+    long: -3.685038271164291,
     date: "2019",
     results: [
       {
@@ -373,7 +373,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0, //also photo and info... desc? soundfile?
+        count: 200, //also photo and info... desc? soundfile?
       },
       {
         name: "Starling",
@@ -384,7 +384,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 100,
       },
       {
         name: "Blue tit",
@@ -395,7 +395,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 150,
       },
       {
         name: "Wood pigeon",
@@ -406,7 +406,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 180,
       },
       {
         name: "Blackbird",
@@ -417,7 +417,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 220,
       },
       {
         name: "Goldfinch",
@@ -428,7 +428,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 190,
       },
       {
         name: "Great tit",
@@ -439,7 +439,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 301,
       },
       {
         name: "Robin",
@@ -450,7 +450,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 222,
       },
       {
         name: "Long tailed tit",
@@ -461,7 +461,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 110,
       },
       {
         name: "Magpie",
@@ -472,7 +472,7 @@ const actualData = [
         soundfile: "",
         imgfile: "",
         info: "",
-        count: 0,
+        count: 168,
       },
     ],
   },

@@ -402,7 +402,7 @@ var nodes = d3.range(numNodes).map(function (d, i) {
   if (i % nNodes == 0) {
     _key = i / nNodes;
   }
-  console.log("_key: ", _key);
+  // console.log("_key: ", _key);
   return {
     radius: actualData[_key].results[i % nNodes].count * radiusFactor,
     // (actualData[_key].results[i % 10].count / actualData[_key].days) *
@@ -415,9 +415,10 @@ var nodes = d3.range(numNodes).map(function (d, i) {
 //extent
 // var xScale = d3.scaleLinear().domain([0, maxDist]).range([0, chartWidth]);
 
+// console.log("nodes: ", nodes);
 //BUILD CIRCLES////////////////////
 
-console.log("mapCircles: ", mapCircles);
+// console.log("mapCircles: ", mapCircles);
 var simulation = d3
   .forceSimulation(nodes)
   .force("charge", d3.forceManyBody().strength(5))
