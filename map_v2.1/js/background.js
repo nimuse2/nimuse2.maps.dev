@@ -46,7 +46,7 @@ function makeBackground(_svg, _w, _h) {
     .attr("y", _h / 2)
     .attr("font-family", "Arial")
     .style("font-size", "16px")
-    .style("fill", "white")
+    .style("fill", "rgba(100, 100, 100,0.4)")
     .text("500m");
   _svg
     .append("text")
@@ -55,7 +55,7 @@ function makeBackground(_svg, _w, _h) {
     .attr("y", _h / 2)
     .attr("font-family", "Arial")
     .style("font-size", "16px")
-    .style("fill", "white")
+    .style("fill", "rgba(100, 100, 100,0.4)")
     .text("1000m");
   _svg
     .append("text")
@@ -64,6 +64,6 @@ function makeBackground(_svg, _w, _h) {
     .attr("y", _h / 2)
     .attr("font-family", "Arial")
     .style("font-size", "16px")
-    .style("fill", "white")
+    .style("fill", "rgba(100, 100, 100,0.4)")
     .text("1500m");
 }

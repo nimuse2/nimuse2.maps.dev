@@ -7,17 +7,18 @@ var testNum = 6;
 var leading = 20;
 var fontSize = "11px;";
 
-var radiusFactor = 0.1; //factor to visually increase/decrease size of circle //0.2
+var radiusFactor = 0.05; //factor to visually increase/decrease size of circle //0.2
 // d3.select("body").append("span").text("Hello, world!");
 //MODEL//////////////////////////////////////
 var projection = d3
   .geoMercator()
   .angle(90)
   .reflectY(true)
-  .scale(80000) //80000 nice
+  .scale(75000) //80000 nice
   // .scale(1800000) //700000-smaller - 1900000 - bigger - 3000000
   // .center([washData[0].lat, washData[0].long])
-  .center([50.725310848323154, -3.531406273750983]) //exeter
+  // .center([50.725310848323154, -3.531406273750983]) //exeter
+  .center([50.428987890208916, -3.6871903380855056]) //72 the carrions
   .rotate([0, 0])
   .translate([width / 2, height / 2]);
 

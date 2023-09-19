@@ -4,12 +4,13 @@ function makeLegend(_svg, _width, _height) {
   var size = d3
     .scaleSqrt()
     .domain([1, 100]) // What's in the data, let's say it is percentage
-    .range([1, 100]); // Size in pixel
+    .range([1, 50]); // Size in pixel
   // Add legend: circles
   var valuesToShow = [10, 40, 80];
   var xCircle = 100;
   var xLabel = 280;
   var yCircle = _height - 40;
+
   _svg
     .selectAll("legend")
     .data(valuesToShow)
@@ -57,7 +58,7 @@ function makeLegend(_svg, _width, _height) {
       return yCircle - size(d);
     })
     .text(function (d) {
-      return Math.floor(d * 0.7) + " bats";
+      return Math.floor(d * 0.7) + " birds";
     })
     .style("font-size", "11px")
     .style("fill", "white")
