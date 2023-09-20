@@ -1,5 +1,7 @@
-var width = 1280,
-  height = 720;
+// var width = 1280,
+//   height = 720;
+var width = 620,
+  height = 600;
 var testNum = 6;
 
 //AUDIO////////////////////////////////////
@@ -7,27 +9,26 @@ var testNum = 6;
 var leading = 20;
 var fontSize = "11px;";
 
-var radiusFactor = 0.05; //factor to visually increase/decrease size of circle //0.2
-// d3.select("body").append("span").text("Hello, world!");
+var radiusFactor = 6; //factor to visually increase/decrease size of circle
+
 //MODEL//////////////////////////////////////
 var projection = d3
   .geoMercator()
-  .angle(90)
-  .reflectY(true)
-  .scale(75000) //80000 nice
-  // .scale(1800000) //700000-smaller - 1900000 - bigger - 3000000
+  // .angle(90)
+  // .reflectY(true)
+  .scale(1500000) //700000-smaller - 1900000 - bigger - 3000000 //180000
   // .center([washData[0].lat, washData[0].long])
-  // .center([50.725310848323154, -3.531406273750983]) //exeter
-  .center([50.428987890208916, -3.6871903380855056]) //72 the carrions
-  .rotate([0, 0])
+  .center([-3.7373521109426804, 50.473602050689635]) //0,5
+  // .rotate([0, 0])
   .translate([width / 2, height / 2]);
+// .translate([200, 280]);
 
 var xCenter = [];
 var yCenter = [];
 
 var mapCircles = [];
 var mapWash = [];
-// console.log("actual data length: ", actualData.length);
+
 for (i = 0; i < actualData.length; i++) {
   var lat = actualData[i].lat;
   var long = actualData[i].long;
@@ -39,44 +40,68 @@ for (i = 0; i < actualData.length; i++) {
 
   mapCircles.push({ x: mArr[0], y: mArr[1], id: actualData[i].id });
 }
+//
+
+//END MAP
 
 polypoints = [];
 for (i = 0; i < washData.length; i++) {
   var wArr = projection([washData[i].lat, washData[i].long]);
   polypoints.push(wArr[0] - 100, wArr[1] + 10);
 }
+
 //
 
 // console.log("mapWash: ", mapWash);
-// var zoom = d3.zoom().on("zoom", zoomed);
+//VIEW//////////////////////////////////////////////
 
-/* Dimensions and base */
-/* ------------------- */
-
-var margin = {
-  top: window.innerHeight * 0.3,
-  left: 50,
-  bottom: window.innerHeight * 0.4,
-  right: 50,
-};
-
-//VIEW/////////////////////////////////////////
-
+// var svg = d3
+//   .select("#map")
+//   .append("svg")
+//   .attr("viewBox", `0 0 ${width} ${height}`)
+//   .style("background", "#303030")
+//   .append("g")
+//   .attr("class", "map");
 var svg = d3
-  .select("#map")
-  .append("svg")
-  .attr("viewBox", `0 0 ${width} ${height}`)
-  // .attr("width", screenWidth + margin.left + margin.right)
-  // // .attr('width', chartWidth) // try and make it veery wide.
-  // .attr("height", height + margin.top + margin.bottom)
-  .style("background", "#303030");
+  .select("#content g.main")
+  .attr("viewBox", `0 0 ${width} ${height}`);
+//MAP////////////////
+
+let geoGenerator = d3.geoPath().projection(projection);
+
+function update(geojson) {
+  let uu = d3.select("#content g.map").selectAll("path").data(geojson.features);
+  // let u = svg.selectAll("path").data(geojson.features);
+
+  uu.enter()
+    .append("path")
+    .attr("d", geoGenerator)
+    .attr("stroke-width", function (d) {
+      console.log(d.properties.strokewidth);
+      return d.properties.strokewidth;
+    })
+    .attr("style", function (d) {
+      console.log(d.properties.fill);
+      // return "fill:" + d.properties.fill;
+    })
+    .attr("stroke", function (d) {
+      console.log(d.properties.stroke);
+      return d.properties.stroke;
+    });
+  // .attr("stroke-width", "10px");
+  // .on("mouseover", handleMouseover);
+}
+
+// REQUEST DATA
+d3.json("wash_basic.json").then(function (json) {
+  update(json);
+});
 
 var elem = svg.selectAll("g").data(mapCircles); //for collision
 
 var elemEnter = elem.enter().append("g");
 
 var elem0 = svg.selectAll("g0").data(mapCircles);
-
 var elemEnter0 = elem0
   .enter()
   .append("g")
@@ -87,6 +112,7 @@ var elemEnter0 = elem0
 //MAIN MAP POINTS////////////////////////////////////
 
 //ZOOM/////////////////
+
 var zoomFactor = 1.2; // distance
 var panFactor = 50; // distance
 let zoom = d3.zoom().on("zoom", handleZoom);
@@ -134,7 +160,7 @@ d3.select("#pan_down").on("click", function () {
 
 // CENTRAL WASH//////////////////////////////////
 
-var center_feature = svg
+var elem2 = svg
   .selectAll("polygon")
   .data(polypoints)
   .enter()
@@ -153,13 +179,14 @@ svg
   .attr("font-family", "Arial")
   .style("font-size", "15px")
   .style("fill", "white")
-  .text("My House");
+  .text("Wash Main Site");
 
 //BACKGROUND////////////////////////////////////
 //DIRECT TO SVG
 makeBackground(svg, width, height);
 makeLegend(svg, width, height);
 makeKey(svg);
+
 makeTooltip(svg);
 
 function mouseOver(_e, _d, _i) {
@@ -176,36 +203,27 @@ function mouseOut() {
 
 //simulation - cluster code
 
-var numNodes = 70; //100 loc x species?
-//circles (nodes) per location (xCenter,yCenter) 10x10
+var numNodes = 100; //circles (nodes) per location (xCenter,yCenter) 10x10
 var _key = 0;
-var nNodes = 10;
 var nodes = d3.range(numNodes).map(function (d, i) {
   //magic numbers:
   // console.log("i: ", i); //1-100
   // console.log("i % 10:", i % 10); //0-9
   // console.log("key:", _key);
   // console.log("data: ", actualData[_key].results[i % 10].count);
-  if (i % nNodes == 0) {
-    _key = i / nNodes;
+  if (i % 10 == 0) {
+    _key = i / 10;
   }
-  // console.log("_key: ", _key);
   return {
-    radius: actualData[_key].results[i % nNodes].count * radiusFactor,
-    // (actualData[_key].results[i % 10].count / actualData[_key].days) *
-    // radiusFactor,
+    radius:
+      (actualData[_key].results[i % 10].count / actualData[_key].days) *
+      radiusFactor,
     category: _key, //grouping by _key - location
-    color: i % nNodes,
-    //i % nNodes,
+    color: i % 10,
   };
 });
-//extent
-// var xScale = d3.scaleLinear().domain([0, maxDist]).range([0, chartWidth]);
 
-// console.log("nodes: ", nodes);
 //BUILD CIRCLES////////////////////
-
-// console.log("mapCircles: ", mapCircles);
 var simulation = d3
   .forceSimulation(nodes)
   .force("charge", d3.forceManyBody().strength(5))
@@ -233,6 +251,8 @@ function ticked() {
   //blobs
   var u = d3
     .select("svg g")
+    // .select("#content g.main")
+    // .select("svg g.main")
     .selectAll("circle")
     .data(nodes)
     .join("circle")
@@ -269,9 +289,6 @@ svg.on("mousemove", function (d, i) {
 
   let tx = d3.event.x;
   let zf = d3.zoomTransform(this);
-
-  // console.log(d3.event.pageX, d3.event.pageY); // log the mouse x,y position
-  // panToMiddle(d3.event.pageX, d3.event.pageY, elem);
 
   updateToolTip(tx, coordinates[0], coordinates[1], zf.k, zf.x, zf.y);
 });

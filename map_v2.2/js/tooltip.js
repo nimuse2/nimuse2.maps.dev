@@ -1,43 +1,6 @@
 /*tooltip stuyff */
-var tooltipTxttop = 90; //1st line
-function wrap(text, width) {
-  text.each(function () {
-    var text = d3.select(this),
-      words = text.text().split(/\s+/).reverse(),
-      word,
-      line = [],
-      lineNumber = 0,
-      lineHeight = 1.1, // ems
-      x = text.attr("x"),
-      y = text.attr("y"),
-      dy = 0, //parseFloat(text.attr("dy")),
-      tspan = text
-        .text(null)
-        .append("tspan")
-        .attr("x", x)
-        .attr("y", y)
-        .attr("dy", dy + "em");
-    while ((word = words.pop())) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text
-          .append("tspan")
-          .attr("x", x)
-          .attr("y", y)
-          .attr("dy", ++lineNumber * lineHeight + dy + "em")
-          .text(word);
-      }
-    }
-  });
-}
 
 function makeTooltip(_svg) {
-  // nTooltip = _svg.append("html");
-
   Tooltip = _svg
     .append("text")
     // .attr("x", 200)
@@ -82,7 +45,7 @@ function makeTooltip(_svg) {
     .attr("font-family", "Arial")
     .style("fill", "white")
     .style("font-size", fontSize)
-    .html("Line 5");
+    .text("Line 5");
   Tooltip6 = _svg
     .append("text")
     // .attr("x", 200)
@@ -117,7 +80,7 @@ function makeTooltip(_svg) {
     .append("text")
     .style("opacity", 1)
     .attr("x", width - 200)
-    .attr("y", 90)
+    .attr("y", height - 230)
     .style("fill", "white")
     .attr("font-family", "Arial")
     .style("font-size", "15px")
@@ -127,11 +90,9 @@ function makeTooltip(_svg) {
     .append("rect")
     .style("opacity", 1)
     .attr("x", width - 210)
-    // .attr("y", height - 260)
-    .attr("y", 60)
+    .attr("y", height - 260)
     .attr("width", 190)
-    // .attr("height", 220)
-    .attr("height", height - 60)
+    .attr("height", 220)
     .attr("stroke", "white")
     .attr("fill", "none")
     .style("stroke-dasharray", "2,2");
@@ -139,7 +100,6 @@ function makeTooltip(_svg) {
 var magicX = 0; //global x for line start
 var magicY = 0;
 var magicR = 0;
-
 function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   var mouseLineX = _x;
   var mouseLineY = _y;
@@ -148,7 +108,7 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   _tx = width - 200; //overwrite
   _ty = height - 200;
 
-  keyLineX = width - 200; //190
+  keyLineX = width - 190;
 
   if (mouseLineX > keyLineX) {
     mouseOffset = magicX - magicR + _zfx;
@@ -160,14 +120,13 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
 
   TooltipLineTop.attr("x1", mouseOffset) //) //on circle
     .attr("y1", circleMiddle) //zoom : mouseLineY) //on circle
-    .attr("x2", width - 210) //on info
+    .attr("x2", width - 190) //on info
     .attr("y2", circleMiddle); //on info
-  /*
-  TooltipLineDown.attr("x1", width - 210) //on circle
+
+  TooltipLineDown.attr("x1", width - 190) //on circle
     .attr("y1", circleMiddle) //on circle
-    .attr("x2", width - 210) //on info
+    .attr("x2", width - 190) //on info
     .attr("y2", height - 260); //on info
-    */
 }
 function showTooltip(_d) {
   magicX = _d.x;
@@ -176,46 +135,38 @@ function showTooltip(_d) {
 
   var blob = actualData[_d.category];
   var xFactor = 10;
-  _tx = width - 210; //overwrite
-  _ty = tooltipTxttop + 30;
+  _tx = width - 200; //overwrite
+  _ty = height - 200;
 
   Tooltip.text("id: " + blob.id)
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
     .attr("y", _ty);
-  // Tooltip2.text("Species: " + soundProps[_d.color].name)
-  Tooltip2.text("Placeholder")
+  Tooltip2.text("Location: " + blob.location)
+    .style("opacity", 1)
+    .attr("x", _tx + xFactor)
+    .attr("y", _ty + leading);
+  Tooltip3.text("Habitat: " + blob.habitat)
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 2);
-  Tooltip3.text("Location: " + blob.location)
-    .style("opacity", 1)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 3)
-    .call(wrap, 180);
   Tooltip4.text("Date: " + blob.date)
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
+    .attr("y", _ty + leading * 3);
+  Tooltip5.text("Species: " + soundProps[_d.color].name)
+    .style("opacity", 1)
+    .attr("x", _tx + xFactor)
+    .attr("y", _ty + leading * 4); //blob.category
+  var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
+  Tooltip6.text("Count: " + Math.floor(unRadius))
+    .style("opacity", 1)
+    .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 5);
-  // Tooltip5.text("Species: " + soundProps[_d.color].name)
-  // Tooltip5.text("Location: " + blob.location)
-  var descBox = 360;
-  Tooltip5.text("Description: " + blob.results[_d.color].desc)
-    .style("opacity", 1)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 6) //blob.
-    .attr("width", 190)
-    .attr("height", descBox)
-    .call(wrap, 180); // wrap the text in <= 30 pixels
-  // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
-  Tooltip6.text("Count: " + blob.results[_d.color].count)
-    .style("opacity", 1)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 7 + descBox);
   Tooltip7.text("Click to play sound")
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 8 + descBox);
+    .attr("y", _ty + leading * 7);
 
   TooltipLineTop.style("opacity", 1);
   TooltipLineDown.style("opacity", 1);

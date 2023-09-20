@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testmap</title>
+    <meta charset="utf-8" />
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.6.1/leaflet.js"></script> -->
+    <script src="d3.v6.2.0.js"></script>
+
+    <!-- <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #content .info {
+        height: 20px;
+      }
+
+      #content .map path {
+        fill: #aaa;
+        stroke: #fff;
+      }
+
+      #content .bounding-box rect {
+        fill: none;
+        stroke: #333;
+        stroke-dasharray: 2, 1;
+      }
+
+      #content .centroid {
+        display: none;
+      }
+
+      #content .centroid circle {
+        fill: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="info">Hover over a country</div>
+      <svg width="620px" height="600px">
+        <g class="map"></g>
+        <g class="bounding-box"><rect></rect></g>
+        <g class="centroid"><circle r="4"></circle></g>
+      </svg>
+    </div>
+  </body>
+  <script src="geoApp.js"></script>
+</html>
