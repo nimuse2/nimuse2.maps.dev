@@ -77,9 +77,9 @@ const washData = [
 const actualData = [
   {
     id: "1", //use for drawing lookup!!
-    habitat: "traditional orchard",
+    desc: "Traditional orchard",
     user: "Anna",
-    location: "Caddaford orch",
+    location: "Caddaford orchard",
     lat: 50.481087079471436,
     long: -3.73428956070955,
     date: "03/08/22",
@@ -129,9 +129,9 @@ const actualData = [
   },
   {
     id: "2", //use for drawing lookup!!
-    habitat: "wooded area near stream and reservoir ",
+    desc: "Wooded area near stream and reservoir ",
     user: "Joe Atkins",
-    location: "",
+    location: "Wooded area near stream and reservoir ",
     lat: 50.47910034836887,
     long: -3.7376798726457308,
     date: "08/08/22-14/08/22",
@@ -185,7 +185,7 @@ const actualData = [
   },
   {
     id: "3", //use for drawing lookup!!
-    habitat: "open field",
+    desc: "open field",
     user: "Ben Avery ",
     location: "Torr Hill North",
     lat: 50.47593232947067,
@@ -241,7 +241,7 @@ const actualData = [
   },
   {
     id: "4", //use for drawing lookup!!
-    habitat: "garden",
+    desc: "garden",
     user: "Ben Avery ",
     location: "Garden",
     lat: 50.47254559171324,
@@ -297,7 +297,7 @@ const actualData = [
   },
   {
     id: "5", //use for drawing lookup!!
-    habitat: "orchard hedge",
+    desc: "orchard hedge",
     user: "Anna David ",
     location: "Kiln close",
     lat: 50.47227245712819,
@@ -353,9 +353,9 @@ const actualData = [
   },
   {
     id: "6", //use for drawing lookup!!
-    habitat: "newly planted hedge",
+    desc: "newly planted hedge",
     user: "Nick Walters ",
-    location: "",
+    location: "newly planted hedge",
     lat: 50.47415705364546,
     long: -3.731027994796263,
     date: "21/08/22-24/08/22",
@@ -409,9 +409,9 @@ const actualData = [
   },
   {
     id: "7", //use for drawing lookup!!
-    habitat: "fence line adjacent to wooded stream",
+    desc: "fence line adjacent to wooded stream",
     user: "Donna Vince ",
-    location: "",
+    location: "fence line adjacent to wooded stream",
     lat: 50.47803526225933,
     long: -3.7362207510529433,
     date: "25/08/22-30/08/22",
@@ -465,9 +465,9 @@ const actualData = [
   },
   {
     id: "8", //use for drawing lookup!!
-    habitat: "agroforestry near to wooded valley",
+    desc: "agroforestry near to wooded valley",
     user: "Jerome Godby",
-    location: "",
+    location: "agroforestry near to wooded valley",
     lat: 50.47907303876843,
     long: -3.7263931379721185,
     date: "31/08/22-02/09/22",
@@ -521,9 +521,9 @@ const actualData = [
   },
   {
     id: "9", //use for drawing lookup!!
-    habitat: "wooded stream",
+    desc: "wooded stream",
     user: "Jackie Slack",
-    location: "",
+    location: "wooded stream",
     lat: 50.47866339286831,
     long: -3.7539447868712013,
     date: "05/09/22-09/09/22",
@@ -577,7 +577,7 @@ const actualData = [
   },
   {
     id: "10", //use for drawing lookup!!
-    habitat: "green lane",
+    desc: "green lane",
     user: "Tressa King Jacqueline Gibbard",
     location: "",
     lat: 0, //?
