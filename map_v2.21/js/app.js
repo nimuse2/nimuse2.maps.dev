@@ -1,5 +1,5 @@
 var width = 1280,
-  height = 720;
+  height = 1020;
 var testNum = 6;
 
 //AUDIO////////////////////////////////////
@@ -44,6 +44,21 @@ let projectionGeo = d3
 
 let geoGenerator = d3.geoPath().projection(projectionGeo);
 
+//TEXT/////
+// let geoText = {
+//   type: "Feature",
+//   properties: {},
+//   geometry: {
+//     coordinates: [-3.7378617233992486, 50.47349061251626],
+//     type: "Point",
+//   },
+// };
+
+var txtWashArr = projectionGeo([-3.7378617233992486, 50.47349061251626]);
+var txtLandscoveArr = projectionGeo([-3.724649238636232, 50.48079468366879]);
+var txtFurzdonArr = projectionGeo([-3.719349734624757, 50.46898784499817]);
+var txtBaeraArr = projectionGeo([-3.7528953519168624, 50.48158513022531]);
+//screen x,y
 //VIEW//////////////////////////////////////////////
 
 var svg = d3
@@ -55,6 +70,38 @@ var svg = d3
 var elem = svg.selectAll("g").data(mapCircles).enter().append("g"); //for collision
 
 /////////////////////////////////////////////////
+svg
+  .append("text")
+  .style("opacity", 1)
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Wash Farm")
+  .attr("x", txtWashArr[0])
+  .attr("y", txtWashArr[1]);
+svg
+  .append("text")
+  .style("opacity", 1)
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Landscove")
+  .attr("x", txtLandscoveArr[0])
+  .attr("y", txtLandscoveArr[1]);
+svg
+  .append("text")
+  .style("opacity", 1)
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Furzdon")
+  .attr("x", txtFurzdonArr[0])
+  .attr("y", txtFurzdonArr[1]);
+svg
+  .append("text")
+  .style("opacity", 1)
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Higher Baera")
+  .attr("x", txtBaeraArr[0])
+  .attr("y", txtBaeraArr[1]);
 
 function update(geojson) {
   let uu = svg.selectAll("path").data(geojson.features);
@@ -75,12 +122,13 @@ function update(geojson) {
       console.log(d.properties.stroke);
       return d.properties.stroke;
     });
+  // uu.enter().append("text").text("hello");
   // .attr("stroke-width", "10px");
   // .on("mouseover", handleMouseover);
 }
 
 // REQUEST DATA
-d3.json("wash_basic.json").then(function (json) {
+d3.json("wash_extended.json").then(function (json) {
   update(json);
 });
 

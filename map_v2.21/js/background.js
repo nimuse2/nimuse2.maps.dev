@@ -1,6 +1,6 @@
 function makeBackground(_svg, _w, _h) {
   cRad = [200, 400, 600, 800];
-
+  /*
   for (i = 0; i < cRad.length; i++) {
     _svg
       .append("circle")
@@ -28,6 +28,7 @@ function makeBackground(_svg, _w, _h) {
     .attr("y1", 0)
     .attr("x2", _w / 2)
     .attr("y2", _h);
+  
   // _svg
   //   .append("text")
   //   .attr("x", 20)
@@ -66,4 +67,6 @@ function makeBackground(_svg, _w, _h) {
     .style("font-size", "16px")
     .style("fill", "white")
     .text("1500m");
+}
+  */
 }
