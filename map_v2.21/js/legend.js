@@ -9,7 +9,7 @@ function makeLegend(_svg, _width, _height) {
   var valuesToShow = [10, 40, 80];
   var xCircle = 100;
   var xLabel = 280;
-  var yCircle = _height - 40;
+  var yCircle = _height - 200;
   _svg
     .selectAll("legend")
     .data(valuesToShow)
@@ -70,7 +70,7 @@ function makeLegend(_svg, _width, _height) {
     .append("text")
     .style("fill", "white")
     .attr("x", 30)
-    .attr("y", _height - 230)
+    .attr("y", _height - 400)
     .attr("font-family", "Arial")
     .text("Legend - Circle Size ");
 }
@@ -80,7 +80,7 @@ function makeKey(_svg) {
   _svg
     .append("text")
     .attr("x", 360)
-    .attr("y", height - 230)
+    .attr("y", height - 400)
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
@@ -88,13 +88,13 @@ function makeKey(_svg) {
   //
   var startX = 360;
   var horX = 50;
-  var vertY = height - 80;
+  // var vertY = height - 200;
 
   for (i = 0; i < soundProps.length; i++) {
     _svg
       .append("circle")
       .attr("cx", startX + 20 + horX * i)
-      .attr("cy", height - 80)
+      .attr("cy", height - 200)
       .attr("r", 15)
       .style("fill", soundProps[i].col)
       .attr("stroke", "white");
@@ -111,7 +111,7 @@ function makeKey(_svg) {
       .attr("class", "keyLable")
       .attr(
         "transform",
-        "translate(" + rotateX + "," + (height - 100) + ")rotate(-45)"
+        "translate(" + rotateX + "," + (height - 220) + ")rotate(-45)"
       )
       // .attr("transform", "translate(0," + height - 400 + ")")
       // .attr("transform", "rotate(-65)")

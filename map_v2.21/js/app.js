@@ -74,7 +74,7 @@ var elem = svg.selectAll("g").data(mapCircles).enter().append("g"); //for collis
 /////////////////////////////////////////////////
 svg
   .append("text")
-  .style("opacity", 1)
+  .style("opacity", 0.6)
   .attr("font-family", "Arial")
   .style("fill", "white")
   .text("Wash Farm")
@@ -82,7 +82,7 @@ svg
   .attr("y", txtWashArr[1]);
 svg
   .append("text")
-  .style("opacity", 1)
+  .style("opacity", 0.6)
   .attr("font-family", "Arial")
   .style("fill", "white")
   .text("Landscove")
@@ -90,7 +90,7 @@ svg
   .attr("y", txtLandscoveArr[1]);
 svg
   .append("text")
-  .style("opacity", 1)
+  .style("opacity", 0.6)
   .attr("font-family", "Arial")
   .style("fill", "white")
   .text("Furzdon")
@@ -98,7 +98,7 @@ svg
   .attr("y", txtFurzdonArr[1]);
 svg
   .append("text")
-  .style("opacity", 1)
+  .style("opacity", 0.6)
   .attr("font-family", "Arial")
   .style("fill", "white")
   .text("Higher Baera")

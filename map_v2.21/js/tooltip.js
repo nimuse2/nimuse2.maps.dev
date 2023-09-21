@@ -38,7 +38,7 @@ function wrap(text, width) {
 function makeTooltip(_svg) {
   //
   //image
-  let imagePath = "img/ghb.jpg";
+  let imagePath = "img/ghb.png";
 
   BatImg = _svg
     // .append("img").attr("src", imagePath);
@@ -124,17 +124,17 @@ function makeTooltip(_svg) {
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
-  /*
+
   ToolTipTitle = _svg
     .append("text")
     .style("opacity", 1)
-    .attr("x", width - 200)
+    .attr("x", width - 250)
     .attr("y", 90)
     .style("fill", "white")
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .text("Info. (hover on circles!)");
-    */
+
   /*
   TooltipBox = _svg
     .append("rect")
