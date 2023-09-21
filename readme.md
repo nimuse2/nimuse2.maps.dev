@@ -1,18 +1,31 @@
 #Nature Survey Mapping
 
-[v2.1](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.1/)  
+##Bats
+[v2.21](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.1/)  
 [v2.0](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.0/)  
 [v1.2](https://nimuse2.github.io/nimuse2.maps.dev//map_v1.2/)  
 [v1.0](https://nimuse2.github.io/nimuse2.maps.dev//map_v1.0/)
 
+##Birds
+[v2.1](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.1/)
+
 ##Development notes:
 
-- More meaningful map - manually draw map features lake, farm, hedges, field?
+###Bugs
+
+- REFACTOR
+- Responsive tests on phones
+- tooltip working
+- pan/ zoom
+- add compass
+
+###Further Developments
+
 - Click and reveal different species
 - Timeline - live animation triggered by time/ year?
 - update years data animation
-- Picture/info/ sound on rollovers on Key
-- Width/ Height same as screen
+- Picture/info/ sound
+- Link to p5 bat frequency stuff/ more bat info pages
 
 ##Bugs
 
