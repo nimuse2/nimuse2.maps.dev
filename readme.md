@@ -13,7 +13,7 @@
 
 ###Bugs
 
-- check locations correct
+- check locations are correct
 - check data correct
 - actual sounds from actual locations - correct species?
 - perhaps trees/woodland on map
