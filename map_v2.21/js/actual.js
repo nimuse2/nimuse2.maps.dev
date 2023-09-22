@@ -353,9 +353,9 @@ const actualData = [
   },
   {
     id: "6", //use for drawing lookup!!
-    desc: "newly planted hedge",
+    desc: "Newly planted hedge",
     user: "Nick Walters ",
-    location: "newly planted hedge",
+    location: "Newly planted hedge",
     lat: 50.47415705364546,
     long: -3.731027994796263,
     date: "21/08/22-24/08/22",
@@ -465,9 +465,9 @@ const actualData = [
   },
   {
     id: "8", //use for drawing lookup!!
-    desc: "agroforestry near to wooded valley",
+    desc: "Agroforestry near to wooded valley",
     user: "Jerome Godby",
-    location: "agroforestry near to wooded valley",
+    location: "Agroforestry near to wooded valley",
     lat: 50.47907303876843,
     long: -3.7263931379721185,
     date: "31/08/22-02/09/22",
@@ -577,9 +577,9 @@ const actualData = [
   },
   {
     id: "10", //use for drawing lookup!!
-    desc: "green lane",
+    desc: "Green lane",
     user: "Tressa King Jacqueline Gibbard",
-    location: "",
+    location: "Green lane",
     lat: 0, //?
     long: 0,
     date: "12/09/22-26/09/22",

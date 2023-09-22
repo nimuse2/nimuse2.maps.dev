@@ -19,7 +19,7 @@ var projection = d3
   .center([washData[0].lat, washData[0].long])
   // .center([-3.7318, 50.4735])
   .rotate([0, 0])
-  .translate([width / 2 - 200, height / 2 + 50]);
+  .translate([width / 2 - 200, height / 2 + 100]);
 
 var mapCircles = [];
 var mapWash = [];
@@ -39,8 +39,8 @@ for (i = 0; i < actualData.length; i++) {
 //GEOMAP////////
 let projectionGeo = d3
   .geoMercator()
-  .scale(1500000) //400
-  .translate([width / 2 - 200, height / 2 + 50])
+  .scale(1400000) //400
+  .translate([width / 2 + 80, height / 2 + 150])
   .center([-3.7373521109426804, 50.473602050689635]); //0,5
 // .center([-3.7318, 50.4735]);
 
@@ -56,12 +56,40 @@ let geoGenerator = d3.geoPath().projection(projectionGeo);
 //   },
 // };
 
+//GEOLOCATIONS ARE IN REVERSE ORDER FROM geojson.io
+//GENERAL LANDMARK TEXT
 var txtWashArr = projectionGeo([-3.7378617233992486, 50.47349061251626]);
 var txtLandscoveArr = projectionGeo([-3.724649238636232, 50.48079468366879]);
 var txtFurzdonArr = projectionGeo([-3.719349734624757, 50.46898784499817]);
 var txtBaeraArr = projectionGeo([actualData[0].lat, actualData[0].long]);
+var txtDartArr = projectionGeo([-3.759630557527089, 50.47286464147538]);
 
-var location_1Arr = projectionGeo([actualData[9].long, actualData[9].lat]); //screen x,y
+//BAT LOCATIONS
+var location_1Arr = projectionGeo([-3.7340826458860477, 50.48125083257165]); //screen x,y
+var location_2Arr = projectionGeo([-3.7379118447883855, 50.478985467531714]);
+var location_3Arr = projectionGeo([-3.7338732365712417, 50.47563481262637]);
+//4?
+var location_4Arr = [100, 100];
+var location_5Arr = projectionGeo([-3.72412074561538, 50.47180792190633]);
+var location_6Arr = projectionGeo([-3.7318, 50.4735]);
+var location_7Arr = projectionGeo([-3.735728004789479, 50.47830012562318]);
+var location_8Arr = projectionGeo([-3.726334511991382, 50.47900450221542]);
+var location_9Arr = projectionGeo([-3.7546645805163053, 50.478338205228596]);
+var location_10Arr = [100, 100];
+
+var geoLocations = [
+  location_1Arr,
+  location_2Arr,
+  location_3Arr,
+  location_4Arr,
+  location_5Arr,
+  location_6Arr,
+  location_7Arr,
+  location_8Arr,
+  location_9Arr,
+  location_10Arr,
+];
+
 //VIEW//////////////////////////////////////////////
 
 var svg = d3
@@ -71,6 +99,19 @@ var svg = d3
   .style("background", "#303030");
 
 var elem = svg.selectAll("g").data(mapCircles).enter().append("g"); //for collision
+//
+svg
+  .append("text")
+  // .style("opacity", 0.6)
+  .attr("font-family", "Arial")
+  .attr("font-size", "11px")
+  .style("fill", "white")
+  .text(
+    "Introduction: This is a map showing the Bat Data collected between Aug. 2022 and Oct. 2022.  If you roll obver the circles you can find out diferent information about the Bats. If you click on the circles you will hear the Bat noises collected at the different locations. The size of the circles indicates the total number of Bats recorded during this period. The frequencies they use are interesting [LINK TO MORE SOUND INFO.]"
+  )
+  .attr("x", 30)
+  .attr("y", 230)
+  .call(wrap, 190);
 
 /////////////////////////////////////////////////
 svg
@@ -87,7 +128,7 @@ svg
   .attr("font-family", "Arial")
   .style("fill", "white")
   .text("Landscove")
-  .attr("x", txtLandscoveArr[0])
+  .attr("x", txtLandscoveArr[0] - 50)
   .attr("y", txtLandscoveArr[1]);
 svg
   .append("text")
@@ -97,29 +138,109 @@ svg
   .text("Furzdon")
   .attr("x", txtFurzdonArr[0])
   .attr("y", txtFurzdonArr[1]);
+// svg
+//   .append("text")
+//   .style("opacity", 0.6)
+//   .attr("font-family", "Arial")
+//   .attr("font-size", "9px")
+//   .style("fill", "white")
+//   .text("Higher Baera")
+//   .attr("x", txtBaeraArr[0])
+//   .attr("y", txtBaeraArr[1]);
 svg
   .append("text")
   .style("opacity", 0.6)
   .attr("font-family", "Arial")
-  .attr("font-size", "9px")
   .style("fill", "white")
-  .text("Higher Baera")
-  .attr("x", txtBaeraArr[0])
-  .attr("y", txtBaeraArr[1]);
+  .text("River Dart")
+  .attr("x", txtDartArr[0] - 60)
+  .attr("y", txtDartArr[1]);
 
 //bat locations
-console.log("----> " + txtFurzdonArr[0] + "--" + txtFurzdonArr[1]);
-console.log("----> " + txtBaeraArr[0] + "--" + txtBaeraArr[0]);
-console.log("----> " + location_1Arr[0] + "--" + location_1Arr[1]);
+
+//
 svg
   .append("text")
   .style("opacity", 0.6)
   .style("font-size", "9px")
   .attr("font-family", "Arial")
   .style("fill", "white")
-  .text("TEST")
+  .text("Caddaford orchard")
   .attr("x", location_1Arr[0])
   .attr("y", location_1Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Wooded area near stream and reservoir")
+  .attr("x", location_2Arr[0])
+  .attr("y", location_2Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Torr Hill North")
+  .attr("x", location_3Arr[0])
+  .attr("y", location_3Arr[1]);
+//4?
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Green Lane")
+  .attr("x", location_4Arr[0])
+  .attr("y", location_4Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Kiln close Orchard Hedge")
+  .attr("x", location_5Arr[0])
+  .attr("y", location_5Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("newly planted hedge")
+  .attr("x", location_6Arr[0])
+  .attr("y", location_6Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Fence line adjacent to wooded stream")
+  .attr("x", location_7Arr[0])
+  .attr("y", location_7Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Agroforestry near to wooded valley")
+  .attr("x", location_8Arr[0])
+  .attr("y", location_8Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("Wooded stream")
+  .attr("x", location_9Arr[0])
+  .attr("y", location_9Arr[1]);
 
 function update(geojson) {
   let uu = svg.selectAll("path").data(geojson.features);
@@ -197,7 +318,8 @@ var nodes = d3.range(numNodes).map(function (d, i) {
     color: i % 10,
   };
 });
-
+console.log("mapCircle: ", mapCircles);
+console.log("geoLoc:", geoLocations);
 //BUILD CIRCLES////////////////////
 var simulation = d3
   .forceSimulation(nodes)
@@ -205,13 +327,15 @@ var simulation = d3
   .force(
     "x",
     d3.forceX().x(function (d, i) {
-      return mapCircles[d.category].x;
+      // return mapCircles[d.category].x;
+      return geoLocations[d.category][0];
     })
   )
   .force(
     "y",
     d3.forceY().y(function (d, i) {
-      return mapCircles[d.category].y;
+      // return mapCircles[d.category].y;
+      return geoLocations[d.category][1];
     })
   )
   .force(

@@ -14,17 +14,20 @@
 ###Bugs
 
 - check locations correct
+- check data correct
 - actual sounds from actual locations - correct species?
 - perhaps trees/woodland on map
 - REFACTOR
 - Responsive tests on phones
-- tooltip working
-- pan/ zoom
-- add compass
+- pan/ zoom?
+- add compass?
+- layer order
 
 ###Further Developments
 
 - add this years survey data and choose between two
+- animate transitions
+- sound playing icon
 - Click and reveal different species
 - Timeline - live animation triggered by time/ year?
 - update years data animation
