@@ -5,7 +5,7 @@ var testNum = 6;
 //AUDIO////////////////////////////////////
 //text formatting
 var leading = 20;
-var fontSize = "11px;";
+var fontSize = "11px";
 
 var radiusFactor = 0.05; //factor to visually increase/decrease size of circle //0.2
 // d3.select("body").append("span").text("Hello, world!");

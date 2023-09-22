@@ -1,11 +1,11 @@
 var width = 1280,
-  height = 1020;
+  height = 720;
 var testNum = 6;
 
 //AUDIO////////////////////////////////////
 //text formatting
 var leading = 20;
-var fontSize = "11px;";
+var fontSize = "9px;";
 
 var radiusFactor = 6; //factor to visually increase/decrease size of circle
 
@@ -19,7 +19,7 @@ var projection = d3
   .center([washData[0].lat, washData[0].long])
   // .center([-3.7318, 50.4735])
   .rotate([0, 0])
-  .translate([width / 2 - 200, height / 2]);
+  .translate([width / 2 - 200, height / 2 + 50]);
 
 var mapCircles = [];
 var mapWash = [];
@@ -40,7 +40,7 @@ for (i = 0; i < actualData.length; i++) {
 let projectionGeo = d3
   .geoMercator()
   .scale(1500000) //400
-  .translate([width / 2 - 200, height / 2])
+  .translate([width / 2 - 200, height / 2 + 50])
   .center([-3.7373521109426804, 50.473602050689635]); //0,5
 // .center([-3.7318, 50.4735]);
 
@@ -59,8 +59,9 @@ let geoGenerator = d3.geoPath().projection(projectionGeo);
 var txtWashArr = projectionGeo([-3.7378617233992486, 50.47349061251626]);
 var txtLandscoveArr = projectionGeo([-3.724649238636232, 50.48079468366879]);
 var txtFurzdonArr = projectionGeo([-3.719349734624757, 50.46898784499817]);
-var txtBaeraArr = projectionGeo([-3.7528953519168624, 50.48158513022531]);
-//screen x,y
+var txtBaeraArr = projectionGeo([actualData[0].lat, actualData[0].long]);
+
+var location_1Arr = projectionGeo([actualData[9].long, actualData[9].lat]); //screen x,y
 //VIEW//////////////////////////////////////////////
 
 var svg = d3
@@ -100,10 +101,25 @@ svg
   .append("text")
   .style("opacity", 0.6)
   .attr("font-family", "Arial")
+  .attr("font-size", "9px")
   .style("fill", "white")
   .text("Higher Baera")
   .attr("x", txtBaeraArr[0])
   .attr("y", txtBaeraArr[1]);
+
+//bat locations
+console.log("----> " + txtFurzdonArr[0] + "--" + txtFurzdonArr[1]);
+console.log("----> " + txtBaeraArr[0] + "--" + txtBaeraArr[0]);
+console.log("----> " + location_1Arr[0] + "--" + location_1Arr[1]);
+svg
+  .append("text")
+  .style("opacity", 0.6)
+  .style("font-size", "9px")
+  .attr("font-family", "Arial")
+  .style("fill", "white")
+  .text("TEST")
+  .attr("x", location_1Arr[0])
+  .attr("y", location_1Arr[1]);
 
 function update(geojson) {
   let uu = svg.selectAll("path").data(geojson.features);
@@ -142,8 +158,9 @@ d3.json("wash_extended.json").then(function (json) {
 //BACKGROUND////////////////////////////////////
 //DIRECT TO SVG
 // makeBackground(svg, width, height);
-makeLegend(svg, width, height);
-makeKey(svg);
+// makeLegend(svg, width, height);
+// makeHorzKey(svg);
+makeAltKey(svg);
 
 makeTooltip(svg);
 
@@ -219,6 +236,7 @@ function ticked() {
     .style("fill", function (d) {
       return soundProps[d.color].col;
     })
+    .style("opacity", "0.4")
     .attr("cx", function (d) {
       return d.x;
     })
@@ -233,6 +251,7 @@ function ticked() {
       playSound(d, i);
     })
     .on("mouseover", function (d, i) {
+      // console.log("--> ", d);
       showTooltip(d);
     })
     .on("mouseleave", function (d, i) {
@@ -242,7 +261,7 @@ function ticked() {
 svg.on("mousemove", function (d, i) {
   var coordinates = d3.mouse(this);
   // var elem1 = document.elementFromPoint(coordinates[0], coordinates[1]);
-
+  // console.log("--> ID::", d3.event);
   let tx = d3.event.x;
   let zf = d3.zoomTransform(this);
 

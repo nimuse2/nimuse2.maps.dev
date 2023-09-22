@@ -1,39 +1,5 @@
 /*tooltip stuff */
-var tooltipTxttop = 90; //1st line
-function wrap(text, width) {
-  text.each(function () {
-    var text = d3.select(this),
-      words = text.text().split(/\s+/).reverse(),
-      word,
-      line = [],
-      lineNumber = 0,
-      lineHeight = 1.1, // ems
-      x = text.attr("x"),
-      y = text.attr("y"),
-      dy = 0, //parseFloat(text.attr("dy")),
-      tspan = text
-        .text(null)
-        .append("tspan")
-        .attr("x", x)
-        .attr("y", y)
-        .attr("dy", dy + "em");
-    while ((word = words.pop())) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text
-          .append("tspan")
-          .attr("x", x)
-          .attr("y", y)
-          .attr("dy", ++lineNumber * lineHeight + dy + "em")
-          .text(word);
-      }
-    }
-  });
-}
+var tooltipTxttop = 30; //1st line
 
 function makeTooltip(_svg) {
   //
@@ -124,16 +90,31 @@ function makeTooltip(_svg) {
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
+  TooltipLineDownNext = _svg
+    .append("line")
+    .style("opacity", 0)
+    .attr("stroke", "white")
+    .style("stroke-dasharray", "2,2");
+  TooltipLineBottomNext = _svg
+    .append("line")
+    .style("opacity", 0)
+    .attr("stroke", "white")
+    .style("stroke-dasharray", "2,2");
+  TooltipLineBottomFinal = _svg
+    .append("line")
+    .style("opacity", 0)
+    .attr("stroke", "white")
+    .style("stroke-dasharray", "2,2");
 
-  ToolTipTitle = _svg
-    .append("text")
-    .style("opacity", 1)
-    .attr("x", width - 250)
-    .attr("y", 90)
-    .style("fill", "white")
-    .attr("font-family", "Arial")
-    .style("font-size", "15px")
-    .text("Info. (hover on circles!)");
+  // ToolTipTitle = _svg
+  //   .append("text")
+  //   .style("opacity", 1)
+  //   .attr("x", width - 250)
+  //   .attr("y", 20)
+  //   .style("fill", "white")
+  //   .attr("font-family", "Arial")
+  //   .style("font-size", "15px")
+  //   .text("Info. (hover on circles!)");
 
   /*
   TooltipBox = _svg
@@ -152,11 +133,14 @@ var magicX = 0; //global x for line start
 var magicY = 0;
 var magicR = 0;
 
+var lineTop = 120;
+var lineBtm = 550;
+
 function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   var mouseLineX = _x;
-  var mouseLineY = _y;
+  // var mouseLineY = _y;
 
-  var xFactor = 10;
+  // var xFactor = 10;
   _tx = width - 200; //overwrite
   _ty = height - 200;
 
@@ -170,7 +154,8 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
 
   circleMiddle = magicY + _zfy;
 
-  var lineTop = 180;
+  // var lineTop = 100;
+  // var lineBtm = 550;
 
   TooltipLineTop.attr("x1", magicX) //) //on circle
     .attr("y1", lineTop) //zoom : mouseLineY) //on circle
@@ -182,6 +167,18 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     .attr("x2", mouseOffset - magicR) //on info
     .attr("y2", lineTop); //on info
 
+  TooltipLineDownNext.attr("x1", magicX) //on circle
+    .attr("y1", circleMiddle + magicR) //on circle
+    .attr("x2", mouseOffset - magicR) //on info
+    .attr("y2", lineBtm); //on info
+
+  // TooltipLineBottomNext.attr("x1", 60) //on circle
+  //   .attr("y1", lineBtm) //on circle
+  //   .attr("x2", magicX) //on info
+  //   .attr("y2", lineBtm); //on info
+
+  // console.log("--> ID:", _dx);
+
   // TooltipLineDown.attr("x1", width - 260) //on circle
   //   .attr("y1", circleMiddle) //on circle
   //   .attr("x2", width - 260) //on info
@@ -192,7 +189,7 @@ function showTooltip(_d) {
   magicY = _d.y;
   magicR = _d.radius;
 
-  var descBox = 400;
+  var descBox = 200;
   var imgHeight = 150;
   var doubleHeight = leading * 2;
   var blob = actualData[_d.category];
@@ -207,7 +204,24 @@ function showTooltip(_d) {
     .attr("x", _tx + xFactor)
     .attr("y", _ty);
     */
+  // console.error("--> TOOLTIP BOTTOM -->");
+  // console.log("--> d --> ", _d);
+  console.log("--> d--> ", _d.color);
+  //UPDATE LINE
+  TooltipLineBottomNext.attr("x1", keyCircleArr[_d.color]) //on circle
+    .attr("y1", lineBtm) //on circle
+    .attr("x2", magicX) //on info
+    .attr("y2", lineBtm); //on info
 
+  TooltipLineBottomFinal.attr("x1", keyCircleArr[_d.color]) //on circle
+    .attr("y1", lineBtm) //on circle
+    .attr("x2", keyCircleArr[_d.color]) //on info
+    .attr("y2", lineBtm + 40); //on info
+
+  //
+  d3.select("#keyCircle_" + _d.color).attr("opacity", "1");
+
+  var txtBoxFontSize = "11px";
   BatImg.style("opacity", 1)
     .attr("xlink:href", "img/" + soundProps[_d.color].img)
     .attr("x", _tx + xFactor)
@@ -215,21 +229,25 @@ function showTooltip(_d) {
   // Tooltip2.text("Location: " + blob.location)
   Tooltip2.text("Species: " + soundProps[_d.color].name)
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading + imgHeight);
   Tooltip3.text("Description: " + soundProps[_d.color].desc)
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 2 + imgHeight)
     .attr("height", descBox)
     .call(wrap, 200);
   Tooltip4.text("Date: " + blob.date)
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 3 + descBox + imgHeight);
   // Tooltip5.text("Species: " + soundProps[_d.color].name)
   Tooltip5.text("Location: " + blob.location)
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 4 + descBox + imgHeight) //blob.category
     .attr("width", 190)
@@ -239,15 +257,20 @@ function showTooltip(_d) {
   var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
   Tooltip6.text("Count: " + Math.floor(unRadius))
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 5 + descBox + imgHeight + doubleHeight);
+    .attr("y", _ty + leading * 5 + descBox + imgHeight + 2);
   Tooltip7.text("Click to play sound")
     .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 7 + descBox + imgHeight + doubleHeight);
 
   TooltipLineTop.style("opacity", 1);
   TooltipLineDown.style("opacity", 1);
+  TooltipLineDownNext.style("opacity", 1);
+  TooltipLineBottomNext.style("opacity", 1);
+  TooltipLineBottomFinal.style("opacity", 1);
 
   // TooltipBox.style("opacity", 1);
 }
@@ -263,5 +286,13 @@ function hideTooltip() {
   Tooltip7.style("opacity", 0);
   TooltipLineTop.style("opacity", 0);
   TooltipLineDown.style("opacity", 0);
+  TooltipLineDownNext.style("opacity", 0);
+  TooltipLineBottomNext.style("opacity", 0);
+  TooltipLineBottomFinal.style("opacity", 0);
+  //clear circle
+  for (i = 0; i < keyCircleArr.length; i++) {
+    d3.select("#keyCircle_" + i).attr("opacity", "0.4");
+  }
+
   // TooltipBox.style("opacity", 1);
 }

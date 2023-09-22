@@ -37,13 +37,14 @@ function wrap(text, width) {
 
 function makeTooltip(_svg) {
   // nTooltip = _svg.append("html");
-
+  // fontSize = "6px";
   Tooltip = _svg
     .append("text")
     // .attr("x", 200)
     // .attr("y", 200)
-    .style("opacity", 0)
+    .attr("testName", "test")
     .attr("font-family", "Arial")
+    .style("opacity", 0)
     .style("fill", "white")
     .style("font-size", fontSize)
     .text("Line 1");
@@ -181,22 +182,28 @@ function showTooltip(_d) {
 
   Tooltip.text("id: " + blob.id)
     .style("opacity", 1)
+    .style("font-size", fontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty);
   // Tooltip2.text("Species: " + soundProps[_d.color].name)
   Tooltip2.text("Placeholder")
     .style("opacity", 1)
+    .style("font-size", fontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 2);
+  // .style("font-size", fontSize);
   Tooltip3.text("Location: " + blob.location)
     .style("opacity", 1)
+    .style("font-size", fontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 3)
+    // .style("font-size", fontSize)
     .call(wrap, 180);
   Tooltip4.text("Date: " + blob.date)
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 5);
+    .attr("y", _ty + leading * 5)
+    .style("font-size", fontSize);
   // Tooltip5.text("Species: " + soundProps[_d.color].name)
   // Tooltip5.text("Location: " + blob.location)
   var descBox = 360;
@@ -206,16 +213,19 @@ function showTooltip(_d) {
     .attr("y", _ty + leading * 6) //blob.
     .attr("width", 190)
     .attr("height", descBox)
+    .style("font-size", fontSize)
     .call(wrap, 180); // wrap the text in <= 30 pixels
   // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
   Tooltip6.text("Count: " + blob.results[_d.color].count)
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 7 + descBox);
+    .attr("y", _ty + leading * 7 + descBox)
+    .style("font-size", fontSize);
   Tooltip7.text("Click to play sound")
     .style("opacity", 1)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 8 + descBox);
+    .attr("y", _ty + leading * 8 + descBox)
+    .style("font-size", fontSize);
 
   TooltipLineTop.style("opacity", 1);
   TooltipLineDown.style("opacity", 1);
