@@ -57,35 +57,35 @@
         results: [
           {
             name: "GHB",
-            count: 0, //divide by days
+            count: 10, //divide by days
           },
           {
             name: "LHB",
-            count: 0,
+            count: 10,
           },
           {
             name: "Common Pipestrelle",
-            count: 3,
+            count: 13,
           },
           {
             name: "Soprano Pipestrelle",
-            count: 5,
+            count: 15,
           },
           {
             name: "Barbastelle",
-            count: 0,
+            count: 10,
           },
           {
             name: "Myotis",
-            count: 0,
+            count: 10,
           },
           {
             name: "Leislers",
-            count: 0,
+            count: 10,
           },
           {
             name: "Noctule",
-            count: 1,
+            count: 11,
           },
           {
             name: "Noctule or Leislers",
@@ -158,7 +158,8 @@
     var buttons = d3
       .select("body")
       .selectAll("button")
-      .data(["year1", "year2", "year3"])
+      //   .data(["year1", "year2", "year3"])
+      .data(["A", "B"])
       .enter()
       .append("button")
       .text(function (d) {
@@ -170,7 +171,7 @@
       .select("body")
       .append("svg")
       .attr("width", 500)
-      .attr("height", 300);
+      .attr("height", 500);
 
     var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 30]);
 
@@ -179,7 +180,8 @@
       .domain([0, 10, 37])
       .range(["#c7e9b4", "#41b6c4", "#253494"]);
 
-    var year = "year1";
+    var year = "A";
+    console.log(aData[0]);
 
     var simulation = d3
       .forceSimulation()
@@ -187,13 +189,14 @@
         "x",
         d3
           .forceX(function (d) {
-            if (parseFloat(d[year]) >= 15) {
-              return 100;
-            } else if (parseFloat(d[year]) > 5) {
-              return 250;
-            } else {
-              return 400;
-            }
+            d.lat;
+            // if (parseFloat(d[year]) >= 15) {
+            //   return 100;
+            // } else if (parseFloat(d[year]) > 5) {
+            //   return 250;
+            // } else {
+            //   return 400;
+            // }
           })
           .strength(0.05)
       )
@@ -201,29 +204,29 @@
       .force(
         "collide",
         d3.forceCollide().radius(function (d) {
-          return radiusScale(d[year]);
+          return radiusScale(d.results[0]);
         })
       );
 
     var bubbles = svg
       .selectAll("circle")
-      .data(data)
+      .data(aData.results)
       .enter()
       .append("circle")
-      .attr("r", function (d) {
-        return radiusScale(d[year]);
+      .attr("r", function (d, i) {
+        return radiusScale(d[i]);
       })
-      .attr("fill", function (d) {
-        return colorScale(d[year]);
+      .attr("fill", function (d, i) {
+        return colorScale(d[i]);
       });
 
     var labels = svg
       .selectAll("text")
-      .data(data)
+      .data(aData.results)
       .enter()
       .append("text")
       .text(function (d) {
-        return d.label;
+        return d.name;
       })
       .style("text-anchor", "middle");
 
@@ -246,7 +249,7 @@
           return d.y + 5;
         });
     }
-
+    /*
     buttons.on("click", function (d) {
       // d is the year:
       year = d;
@@ -264,6 +267,7 @@
           return colorScale(d[year]);
         });
     });
+    */
 
     /*
         var data = [

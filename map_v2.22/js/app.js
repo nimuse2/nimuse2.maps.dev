@@ -306,16 +306,38 @@ function makeNodes(_actualData) {
   });
   return _nodes;
 }
-
+var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 30]);
+var xScale = d3.scaleSqrt().domain([0, 40]).range([5, 300]);
 function updateCircleDisplay(_newData) {
   //_newData = nodes
-  nodes = makeNodes(_newData);
+  var newNodes = makeNodes(_newData);
+  /*
+  // simulation.restart();
+  // simulation.alpha(0.5).alphaTarget(0.3).restart();
+  simulation.force("x").initialize(newNodes);
+  // simulation.force("x").data(newNodes);
+  // simulation.force("y").initialize(newNodes);
+  simulation.force("collide").initialize(newNodes);
+  // simulation.force("collide").data(newNodes);
+
+  blobs
+    .data(newNodes)
+    .transition()
+    .duration(1000)
+    .attr("x", function (d) {
+      return xScale(d.x);
+    })
+    .attr("r", function (d) {
+      return radiusScale(d.radius);
+      // return d.radius;
+    });
+*/
 
   var newCircleSelection = d3
     .select("svg g")
     .selectAll(".infocircle")
-    .data(nodes);
-  console.log(">>>newNodes: ", nodes);
+    .data(newNodes);
+  // console.log(">>>newNodes: ", nodes);
   newCircleSelection.exit().remove();
 
   var newCircleEnter = newCircleSelection
@@ -347,6 +369,7 @@ function updateCircleDisplay(_newData) {
   // });
 }
 //simulation - cluster code
+var blobs = {};
 function makeCircleDisplay(_actualData) {
   nodes = makeNodes(_actualData);
   // console.log(">>>nodes::", nodes);
@@ -371,8 +394,9 @@ function makeCircleDisplay(_actualData) {
       })
     )
     .force(
-      "collision",
+      "collide",
       d3.forceCollide().radius(function (d) {
+        // return radiusScale(d.radius);
         return d.radius;
       })
     )
@@ -381,7 +405,7 @@ function makeCircleDisplay(_actualData) {
   function ticked() {
     //blobs
     console.log(">>>finalNodes: ", nodes);
-    var u = d3
+    blobs = d3
       .select("svg g")
       .selectAll("circle")
       .data(nodes)
