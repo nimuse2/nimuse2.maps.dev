@@ -287,96 +287,150 @@ function mouseOut() {
 
 //BUBBLES/////////////////////////////////////
 //replace with array
+var simulation = {};
+//
+function makeNodes(_actualData) {
+  var numNodes = 100; //circles (nodes) per location (xCenter,yCenter) 10x10
+  var _key = 0;
+  var _nodes = d3.range(numNodes).map(function (d, i) {
+    if (i % 10 == 0) {
+      _key = i / 10;
+    }
+    return {
+      radius:
+        (_actualData[_key].results[i % 10].count / _actualData[_key].days) *
+        radiusFactor,
+      category: _key, //grouping by _key - location
+      color: i % 10,
+    };
+  });
+  return _nodes;
+}
 
-//simulation - cluster code
+function updateCircleDisplay(_newData) {
+  //_newData = nodes
+  nodes = makeNodes(_newData);
 
-var numNodes = 100; //circles (nodes) per location (xCenter,yCenter) 10x10
-var _key = 0;
-var nodes = d3.range(numNodes).map(function (d, i) {
-  //magic numbers:
-  // console.log("i: ", i); //1-100
-  // console.log("i % 10:", i % 10); //0-9
-  // console.log("key:", _key);
-  // console.log("data: ", actualData[_key].results[i % 10].count);
-  if (i % 10 == 0) {
-    _key = i / 10;
-  }
-  return {
-    radius:
-      (actualData[_key].results[i % 10].count / actualData[_key].days) *
-      radiusFactor,
-    category: _key, //grouping by _key - location
-    color: i % 10,
-  };
-});
-console.log("mapCircle: ", mapCircles);
-console.log("geoLoc:", geoLocations);
-//BUILD CIRCLES////////////////////
-var simulation = d3
-  .forceSimulation(nodes)
-  .force("charge", d3.forceManyBody().strength(5))
-  .force(
-    "x",
-    d3.forceX().x(function (d, i) {
-      // return mapCircles[d.category].x;
-      return geoLocations[d.category][0];
-    })
-  )
-  .force(
-    "y",
-    d3.forceY().y(function (d, i) {
-      // return mapCircles[d.category].y;
-      return geoLocations[d.category][1];
-    })
-  )
-  .force(
-    "collision",
-    d3.forceCollide().radius(function (d) {
-      return d.radius;
-    })
-  )
-  .on("tick", ticked);
-
-function ticked() {
-  //blobs
-  var u = d3
+  var newCircleSelection = d3
     .select("svg g")
-    .selectAll("circle")
-    .data(nodes)
-    .join("circle")
-    // .transition()
+    .selectAll(".infocircle")
+    .data(nodes);
+  console.log(">>>newNodes: ", nodes);
+  newCircleSelection.exit().remove();
+
+  var newCircleEnter = newCircleSelection
+    .enter()
+    .append("circle")
+    .attr("class", "infoCircle")
     .attr("r", function (d) {
       return d.radius;
     })
-    .style("fill", function (d) {
-      return soundProps[d.color].col;
-    })
-    .style("opacity", "0.4")
-    .attr("cx", function (d) {
-      return d.x;
-    })
-    .attr("cy", function (d) {
-      return d.y;
-    })
-    .attr("class", "infocircle zoomCircle")
-    .attr("id", function (d, i) {
-      return d.index;
-    })
-    .on("click", function (d, i) {
-      playSound(d, i);
-    })
-    .on("mouseover", function (d, i) {
-      // console.log("--> ", d);
-      showTooltip(d);
-    })
-    .on("mouseleave", function (d, i) {
-      hideTooltip();
+    .attr("cx", function (d, i) {
+      return i * 20;
     });
+  // .attr("cy", function (d) {
+  //   return d.y;
+  // });
+
+  newCircleSelection
+    .merge(newCircleEnter)
+    .transition()
+    .duration(1000)
+    .attr("r", function (d) {
+      return d.radius;
+    });
+  // .attr("cx", function (d, i) {
+  //   return i * 20;
+  // })
+  // .attr("cy", function (d) {
+  //   return d.y;
+  // });
 }
+//simulation - cluster code
+function makeCircleDisplay(_actualData) {
+  nodes = makeNodes(_actualData);
+  // console.log(">>>nodes::", nodes);
+
+  //BUILD CIRCLES////////////////////
+  console.log(">>>startNodes: ", nodes);
+  simulation = d3
+    .forceSimulation(nodes)
+    // .force("charge", d3.forceManyBody().strength(5))
+    .force(
+      "x",
+      d3.forceX().x(function (d, i) {
+        // return mapCircles[d.category].x;
+        return geoLocations[d.category][0];
+      })
+    )
+    .force(
+      "y",
+      d3.forceY().y(function (d, i) {
+        // return mapCircles[d.category].y;
+        return geoLocations[d.category][1];
+      })
+    )
+    .force(
+      "collision",
+      d3.forceCollide().radius(function (d) {
+        return d.radius;
+      })
+    )
+    .on("tick", ticked);
+
+  function ticked() {
+    //blobs
+    console.log(">>>finalNodes: ", nodes);
+    var u = d3
+      .select("svg g")
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      // .transition()
+      .attr("r", function (d) {
+        return d.radius;
+      })
+      .style("fill", function (d) {
+        return soundProps[d.color].col;
+      })
+      .style("opacity", "0.4")
+      .attr("cx", function (d) {
+        return d.x;
+      })
+      .attr("cy", function (d) {
+        return d.y;
+      })
+      .attr("class", "infocircle zoomCircle")
+      .attr("id", function (d, i) {
+        return d.index;
+      })
+      .on("click", function (d, i) {
+        playSound(d, i);
+      })
+      .on("mouseover", function (d, i) {
+        // console.log("--> ", d);
+        showTooltip(d);
+      })
+      .on("mouseleave", function (d, i) {
+        hideTooltip();
+      });
+  }
+}
+
+makeCircleDisplay(actualData);
+
+d3.select("#change2023").on("click", function () {
+  updateCircleDisplay(testData);
+  // makeCircleDisplay(testData);
+});
+d3.select("#change2022").on("click", function () {
+  updateCircleDisplay(actualData);
+});
+
 svg.on("mousemove", function (d, i) {
-  var coordinates = d3.mouse(this);
-  // var elem1 = document.elementFromPoint(coordinates[0], coordinates[1]);
-  // console.log("--> ID::", d3.event);
+  console.log(">>>>> ", d3.mouse(this));
+  var coordinates = [];
+  coordinates = d3.mouse(this);
   let tx = d3.event.x;
   let zf = d3.zoomTransform(this);
 

@@ -137,14 +137,37 @@ var lineTop = 120;
 var lineBtm = 550;
 
 function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
+  //test values
+  /*
+  console.log(
+    "_dx: ",
+    _dx,
+    "_x: ",
+    _x,
+    "_y: ",
+    _y,
+    "_zfk: ",
+    _zfk,
+    "_zfx: ",
+    _zfx,
+    "_zfy: ",
+    _zfy
+  );
+  */
+
   var mouseLineX = _x;
   // var mouseLineY = _y;
+  console.log(">-> mouseLineX: ", mouseLineX);
 
+  // console.log(">-> _zfx: ", _zfx);
   // var xFactor = 10;
   _tx = width - 200; //overwrite
   _ty = height - 200;
 
   keyLineX = width - 200;
+
+  console.log(">-> keyLineX: ", keyLineX);
+  console.log(">-> _zfx: ", _zfx);
 
   if (mouseLineX > keyLineX) {
     mouseOffset = magicX - magicR + _zfx;
@@ -152,8 +175,10 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     mouseOffset = magicX + magicR + _zfx; //x
   }
 
+  console.log(">-> _zfy: ", _zfy);
+  console.log(">-> magicY: ", magicY);
   circleMiddle = magicY + _zfy;
-
+  console.log(">-> circleMiddle: ", circleMiddle);
   // var lineTop = 100;
   // var lineBtm = 550;
 

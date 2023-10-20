@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testmap</title>
+    <meta charset="utf-8" />
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.6.1/leaflet.js"></script> -->
+    <script src="js/d3.v5.16.js"></script>
+
+    <!-- <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button onclick="buttonPress(1)">Button 1</button>
+      <button onclick="buttonPress(2)">Button 2</button>
+    </div>
+    <div>
+      <svg id="mainSvg" height="100" width="300"></svg>
+    </div>
+  </body>
+  <script>
+    //https://stackoverflow.com/questions/57277281/d3-how-to-update-force-simulation-when-data-values-change
+    //^^work through this tut next
+    // d3.select("body").append("span").text("Animation test");
+    var data = [
+      { title: "Button One", timesPressed: 1 },
+      { title: "Button Two", timesPressed: 1 },
+    ];
+
+    function buttonPress(buttonNumber) {
+      data[buttonNumber - 1].timesPressed++;
+      update();
+    }
+
+    var s = d3.select("#mainSvg");
+
+    function update() {
+      var titleCircleSelection = s.selectAll(".buttonTitles").data(data);
+
+      titleCircleSelection.exit().remove();
+
+      var titleCircleEnter = titleCircleSelection
+        .enter()
+        .append("circle")
+        .attr("class", "buttonTitles")
+        .attr("r", function (d, index) {
+          return d.timesPressed * 10;
+        })
+        .attr("cx", function (d, i) {
+          return 20 + i * 60;
+        })
+        .attr("cy", function (d, index) {
+          //   return 100 + index * 50;
+          return 50;
+        });
+
+      titleCircleSelection.merge(titleCircleEnter).attr("r", function (d) {
+        return d.timesPressed * 10;
+        // return d.title + " has been pressed " + d.timesPressed + " times";
+      });
+
+      /*
+      var titleTextSelection = s.selectAll(".buttonTitles").data(data);
+
+      titleTextSelection.exit().remove();
+
+      var titleTextEnter = titleTextSelection
+        .enter()
+        .append("text")
+        .attr("class", "buttonTitles")
+        .attr("y", function (d, index) {
+          return 20 + index * 50;
+        });
+      titleTextSelection.merge(titleTextEnter).text(function (d) {
+        return d.title + " has been pressed " + d.timesPressed + " times";
+      });
+      */
+    }
+  </script>
+</html>

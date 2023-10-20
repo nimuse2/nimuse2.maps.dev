@@ -1,6 +1,7 @@
 #Nature Survey Mapping
 
 ##Bats-Wash Farm  
+[v2.22](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.22/)  
 [v2.21](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.21/)  
 [v2.0](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.0/)  
 [v1.2](https://nimuse2.github.io/nimuse2.maps.dev//map_v1.2/)  
