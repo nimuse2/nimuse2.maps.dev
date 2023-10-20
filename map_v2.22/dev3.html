@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testmap</title>
+    <meta charset="utf-8" />
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.6.1/leaflet.js"></script> -->
+    <script src="js/d3.v5.16.js"></script>
+
+    <!-- <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>
+      <button onclick="buttonPress(1)">Button 1</button>
+      <button onclick="buttonPress(2)">Button 2</button>
+    </div>
+    <div>
+      <svg id="mainSvg" height="100" width="300"></svg>
+    </div> -->
+  </body>
+  <script>
+    //https://stackoverflow.com/questions/57277281/d3-how-to-update-force-simulation-when-data-values-change
+    //^^work through this tut next
+    // d3.select("body").append("span").text("Animation test");
+    var data = [
+      { year1: 2, year2: 1, year3: 3, label: "a" },
+      { year1: 3, year2: 4, year3: 5, label: "b" },
+      { year1: 5, year2: 9, year3: 7, label: "c" },
+      { year1: 8, year2: 16, year3: 11, label: "d" },
+      { year1: 13, year2: 25, year3: 13, label: "e" },
+      { year1: 21, year2: 36, year3: 17, label: "f" },
+      { year1: 34, year2: 1, year3: 19, label: "g" },
+      { year1: 2, year2: 4, year3: 23, label: "h" },
+      { year1: 3, year2: 9, year3: 29, label: "i" },
+      { year1: 5, year2: 16, year3: 31, label: "j" },
+      { year1: 8, year2: 25, year3: 37, label: "k" },
+      { year1: 13, year2: 36, year3: 3, label: "l" },
+      { year1: 21, year2: 1, year3: 5, label: "m" },
+    ];
+    ///USE ONE 'FLAT ARRAY' AS A MASTER OBJECT AND UPDATE INDIVIDUAL VALUES
+    // USE ANOTHER OBJECT / ARRAY FOR ASSOCIATED INfO...
+
+    var aData = [
+      {
+        lat: 100,
+        long: 100,
+        name: "GHB",
+        count: 10, //divide by days
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "LHB",
+        count: 10,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Common Pipestrelle",
+        count: 13,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Soprano Pipestrelle",
+        count: 15,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Barbastelle",
+        count: 10,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Myotis",
+        count: 10,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Leislers",
+        count: 10,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Noctule",
+        count: 11,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Noctule or Leislers",
+        count: 0,
+      },
+      {
+        lat: 100,
+        long: 100,
+        name: "Long eared",
+        count: 0,
+      },
+      {
+        lat: 100, //id?
+        long: 400,
+        name: "GHB",
+        count: 20, //divide by days
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "LHB",
+        count: 40,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Common Pipestrelle",
+        count: 73,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Soprano Pipestrelle",
+        count: 15,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Barbastelle",
+        count: 20,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Myotis",
+        count: 14,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Leislers",
+        count: 30,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Noctule",
+        count: 60,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Noctule or Leislers",
+        count: 40,
+      },
+      {
+        lat: 100,
+        long: 400,
+        name: "Long eared",
+        count: 10,
+      },
+    ];
+
+    // Create some buttons:
+    var buttons = d3
+      .select("body")
+      .selectAll("button")
+      //   .data(["year1", "year2", "year3"])
+      .data(["2022", "2023"])
+      .enter()
+      .append("button")
+      .text(function (d) {
+        return d;
+      });
+
+    // Go about setting the force layout:
+    var svg = d3
+      .select("body")
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", 500);
+
+    var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 30]);
+
+    var colorScale = d3
+      .scaleLinear()
+      .domain([0, 10, 37])
+      .range(["#c7e9b4", "#41b6c4", "#253494"]);
+
+    var simulation = d3
+      .forceSimulation()
+      .force(
+        "x",
+        d3
+          .forceX(function (d, i) {
+            return d.long;
+          })
+          .strength(0.05)
+      )
+      .force(
+        "y",
+        d3
+          .forceY(function (d, i) {
+            return d.lat;
+          })
+          .strength(0.05)
+      )
+      .force(
+        "collide",
+        d3.forceCollide().radius(function (d, i) {
+          return radiusScale(d.count);
+        })
+      );
+
+    var bubbles = svg
+      .selectAll("circle")
+      .data(aData)
+      .enter()
+      .append("circle")
+      .attr("r", function (d, i) {
+        return radiusScale(d.count);
+      })
+      .attr("fill", function (d, i) {
+        return colorScale(d.count);
+      });
+
+    var labels = svg
+      .selectAll("text")
+      .data(aData)
+      .enter()
+      .append("text")
+      .attr("font-size", "9px")
+      .text(function (d) {
+        return d.name;
+      })
+      .style("text-anchor", "middle");
+
+    simulation.nodes(aData).on("tick", ticked);
+
+    function ticked() {
+      bubbles
+        .attr("cx", function (d) {
+          return d.x;
+        })
+        .attr("cy", function (d) {
+          return d.y;
+        });
+
+      labels
+        .attr("x", function (d) {
+          return d.x;
+        })
+        .attr("y", function (d) {
+          return d.y + 5;
+        });
+    }
+
+    buttons.on("click", function (d) {
+      // d is the year
+
+      console.log("CLICK", aData);
+      //UPADATE INDIVIUAL VALUES HERE////
+      for (i = 0; i < aData.length; i++) {
+        aData[i].count = Math.floor(Math.random() * 30);
+      }
+      simulation.alpha(0.5).alphaTarget(0.3).restart();
+
+      simulation.force("x").initialize(aData);
+      simulation.force("y").initialize(aData);
+      simulation.force("collide").initialize(aData);
+
+      bubbles
+        .transition()
+        .duration(800)
+        .attr("r", function (d) {
+          return radiusScale(d.count);
+        })
+        .attr("fill", function (d) {
+          return colorScale(d.count);
+        });
+    });
+  </script>
+</html>
