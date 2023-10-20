@@ -14,12 +14,12 @@
 
 ## Development notes:
 
-- Get force() object working - use simpler version
+- Get force() object working - use simpler version to test
 - Get tooltip working
+- loading symbol timeout - doesnt work unless fully loaded?
 - check locations are correct
 - check data correct
 - actual sounds from actual locations - correct species?
-- perhaps trees/woodland on map
 
 ### Bugs
 
