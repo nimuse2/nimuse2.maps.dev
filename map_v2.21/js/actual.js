@@ -29,50 +29,6 @@
 //   lat: 50.47386344387747,
 //   long: -3.7370361424586305,
 // },
-const washData = [
-  {
-    id: "w1", //central circle
-    name: "Wash main site",
-    lat: 50.47339,
-    long: -3.74031, //
-  },
-  {
-    id: "w2", //central circle
-    name: "Wash main site",
-    lat: 50.47427,
-    long: -3.73938, //
-  },
-  {
-    id: "w3", //central circle
-    name: "Wash main site",
-    lat: 50.47381,
-    long: -3.73829, //
-  },
-  {
-    id: "w4", //central circle
-    name: "Wash main site",
-    lat: 50.47471,
-    long: -3.73747, //
-  },
-  {
-    id: "w5", //central circle
-    name: "Wash main site",
-    lat: 50.47372,
-    long: -3.73524, //50.47372, -3.73524
-  },
-  {
-    id: "w6", //central circle
-    name: "Wash main site",
-    lat: 50.47304,
-    long: -3.73646, //50.47304, -3.73646
-  },
-  {
-    id: "w7", //central circle
-    name: "Wash main site",
-    lat: 50.47342,
-    long: -3.73752, //50.47342, -3.73752
-  },
-];
 
 const actualData = [
   {

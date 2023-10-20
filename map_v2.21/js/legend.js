@@ -81,7 +81,7 @@ function makeAltKey(_svg) {
   //
   var startX = 30;
   var startY = 575;
-  var horX = 50; //unit
+  var horX = 50; //unit spacing
   // var vertY = height - 200;
 
   _svg
@@ -92,8 +92,11 @@ function makeAltKey(_svg) {
     .style("font-size", "15px")
     .style("fill", "white")
     .text("Key");
+  // .text("Totals [ needs work!! ]");
 
+  var totalsFactor = 4;
   for (i = 0; i < soundProps.length; i++) {
+    // console.log(">>>>>>>>>>>>> ", soundProps[i].totals);
     _svg
       .append("circle")
       .attr("id", "keyCircle_" + i)
@@ -105,7 +108,11 @@ function makeAltKey(_svg) {
       .attr("stroke", "white");
     // var rotateX = startX + 20 + 50 * i;
     // var rotateY = horY;
+    // console.log(">>>>> raduii >>>> ", soundProps[i].totals / totalsFactor);
+    // horX = horX + soundProps[i].totals / totalsFactor;
     keyCircleArr.push(startX + 20 + horX * i); //utils
+    // horX = horX + soundProps[i].totals / totalsFactor;
+    // keyCircleArr.push(startX + soundProps[i].totals);
     _svg
       .append("text")
       .attr("x", startX + 20 + horX * i)
@@ -116,54 +123,9 @@ function makeAltKey(_svg) {
       .style("fill", "white")
       .attr("class", "keyLable")
       .text(soundProps[i].name)
+      // .text(soundProps[i].name + " Total: " + soundProps[i].totals)
       .call(wrap, 70);
   }
 
   // _svg.selectAll(".keyLabel").attr("transform", "translate(0,0)rotate(45)");
 }
-/*
-function makeHorzKey(_svg) {
-  //title
-  _svg
-    .append("text")
-    .attr("x", 360)
-    .attr("y", height - 200)
-    .attr("font-family", "Arial")
-    .style("font-size", "15px")
-    .style("fill", "white")
-    .text("Key");
-  //
-  var startX = 360;
-  var horX = 50;
-  // var vertY = height - 200;
-
-  for (i = 0; i < soundProps.length; i++) {
-    _svg
-      .append("circle")
-      .attr("cx", startX + 20 + horX * i)
-      .attr("cy", height - 60)
-      .attr("r", 15)
-      .style("fill", soundProps[i].col)
-      .attr("stroke", "white");
-    var rotateX = startX + 20 + 50 * i;
-    // var rotateY = horY;
-    _svg
-      .append("text")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("text-anchor", "start")
-      .attr("font-family", "Arial")
-      .style("font-size", "15px")
-      .style("fill", "white")
-      .attr("class", "keyLable")
-      .attr(
-        "transform",
-        "translate(" + rotateX + "," + (height - 80) + ")rotate(-45)"
-      )
-      // .attr("transform", "translate(0," + height - 400 + ")")
-      // .attr("transform", "rotate(-65)")
-      .text(soundProps[i].name);
-  }
-  // _svg.selectAll(".keyLabel").attr("transform", "translate(0,0)rotate(45)");
-}
-*/

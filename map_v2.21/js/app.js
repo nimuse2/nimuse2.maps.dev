@@ -16,8 +16,8 @@ var projection = d3
   .angle(90)
   .reflectY(true)
   .scale(1500000) //700000-smaller - 1900000 - bigger - 3000000 //180000
-  .center([washData[0].lat, washData[0].long])
-  // .center([-3.7318, 50.4735])
+  // .center([washData[0].lat, washData[0].long])
+  .center([50.47339, -3.74031])
   .rotate([0, 0])
   .translate([width / 2 - 200, height / 2 + 100]);
 
