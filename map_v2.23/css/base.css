@@ -1,0 +1,30 @@
+/* canvas {
+  border: 1px solid #d3d3d3;
+} */
+body {
+  font-size: 0.8em;
+}
+.infocircle:hover {
+  stroke: white;
+  stroke-width: 1px !important;
+  opacity: 1 !important;
+}
+
+.disabledState {
+  opacity: 0.5 !important;
+}
+
+body {
+  cursor: pointer;
+  background-color: #303030;
+}
+
+.btnCol {
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
