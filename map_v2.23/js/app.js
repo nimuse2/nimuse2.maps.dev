@@ -14,7 +14,8 @@ var labels = {};
 
 //CREATE D3 OBJECT
 var svg = d3
-  .select("body")
+  // .select("body")
+  .select("#map")
   .append("svg")
   .attr("width", width)
   .attr("height", height);
