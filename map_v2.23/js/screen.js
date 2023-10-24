@@ -103,3 +103,31 @@ function updateCircleDisplay() {
       return colorScale(d.count);
     });
 }
+
+//make text
+function makeText() {
+  //big text
+  for (i = 0; i < locationLabelList.length; i++) {
+    svg
+      .append("text")
+      // .style("opacity", 0.8)
+      .attr("font-family", "Arial")
+      .attr("font-size", "11px")
+      .style("fill", "black")
+      .text(locationNameList[i])
+      .attr("x", locationLabelList[i][0])
+      .attr("y", locationLabelList[i][1]);
+  }
+  //small text
+  for (i = 0; i < smlLocationLabelList.length; i++) {
+    svg
+      .append("text")
+      // .style("opacity", 0.8)
+      .attr("font-family", "Arial")
+      .attr("font-size", "9px")
+      .style("fill", "black")
+      .text(smlLocationNameList[i])
+      .attr("x", smlLocationLabelList[i][0])
+      .attr("y", smlLocationLabelList[i][1]);
+  }
+}

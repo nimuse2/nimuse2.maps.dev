@@ -28,6 +28,8 @@ d3.json("wash_extended.json").then(function (json) {
 
 // //BUILD MAIN CIRCLES
 makeCircleDisplay();
+//make txt
+makeText();
 
 //UI INTERACT//////////////////////
 d3.select("#change2023").on("click", function () {
