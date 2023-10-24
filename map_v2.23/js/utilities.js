@@ -16,12 +16,17 @@ let geoGenerator = d3.geoPath().projection(projectionGeo);
 
 //SCREEN TRANSFORMS/////////////////////
 var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 30]);
+// var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 50]);
 
 var colorScale = d3
   .scaleLinear()
   .domain([0, 10, 37])
-  .range(["#c7e9b4", "#41b6c4", "#253494"]);
+  // .range(["orange", "lightyellow"]);
+  .range(["#ffffcc", "#c90a22", "#fd893c"]);
+// .range(["#c7e9b4", "#41b6c4", "#253494"]);
+/*
 
+*/
 //TEXT WRAP//////////////////////////////
 var keyCircleArr = [];
 function wrap(text, width) {

@@ -31,7 +31,7 @@ function makeCircleDisplay() {
       })
     );
 
-  bubbles = svg
+  circles = svg
     .selectAll("circle")
     .data(data)
     .enter()
@@ -41,7 +41,8 @@ function makeCircleDisplay() {
     })
     .attr("fill", function (d, i) {
       return colorScale(d.count);
-    });
+    })
+    .attr("opacity", 0.8);
 
   labels = svg
     .selectAll("text")
@@ -57,14 +58,18 @@ function makeCircleDisplay() {
   simulation.nodes(data).on("tick", ticked);
 
   function ticked() {
-    bubbles
+    //writing to screen
+    circles
       .attr("cx", function (d) {
         return d.x;
       })
       .attr("cy", function (d) {
         return d.y;
       })
-      .attr("class", "infocircle");
+      .attr("class", "infocircle")
+      .attr("id", function (d) {
+        return d.key;
+      });
     /*
     labels
       .attr("x", function (d) {
@@ -88,7 +93,7 @@ function updateCircleDisplay() {
   simulation.force("y").initialize(data);
   simulation.force("collide").initialize(data);
 
-  bubbles
+  circles
     .transition()
     .duration(800)
     .attr("r", function (d) {

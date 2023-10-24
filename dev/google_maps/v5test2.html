@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>google-d3</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style>
+  html,
+  body,
+  #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .marker {
+    fill: brown;
+    stroke: black;
+    stroke-width: 1.5px;
+    pointer-events: none;
+  }
+</style>
+<div id="map"></div>
+<script src="//maps.google.com/maps/api/js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+  var svg, rect, circles, markers, labels;
+
+  // Create the Google Map…
+  var map = new google.maps.Map(d3.select("#map").node(), {
+    zoom: 8,
+    center: new google.maps.LatLng(37.76487, -122.41948), // San Francisco
+    draggable: false, // Disable map panning
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+  });
+
+  // Drag behavior
+  var drag = d3.behavior.drag().on("drag", dragmove);
+
+  // Load the station data. When the data comes back, create an overlay.
+  d3.json("stations.json", function (error, data) {
+    if (error) throw error;
+
+    var projection;
+    var bounds = getBB(data); // returns a google.maps.LatLngBounds object
+    var overlay = new google.maps.OverlayView();
+
+    // Set the viewport to contain the bounding box for the data
+    map.fitBounds(bounds);
+
+    // Bind our overlay to the map…
+    overlay.setMap(map);
+
+    // Add the SVG container to the overlayMouseTarget pane; this pane receives mouse events
+    overlay.onAdd = function () {
+      // The panes aren't unitialized until the API calls .onAdd()
+      svg = d3
+        .select(this.getPanes().overlayMouseTarget)
+        .append("div")
+        .append("svg")
+        .style("position", "absolute");
+
+      rect = svg
+        .append("rect")
+        .style("background", "gray")
+        .style("opacity", 0.1);
+
+      g = svg.selectAll("circle").data(d3.entries(data)).enter().append("g");
+
+      circles = g
+        .append("circle")
+        .style({ fill: "black", opacity: 0.5 })
+        .attr("r", 8.5)
+        .style("cursor", "pointer")
+        .call(drag);
+
+      markers = g.append("circle").attr("class", "marker").attr("r", 4.5);
+
+      // Add a label.
+      labels = g
+        .append("text")
+        .attr("dx", "1em")
+        .attr("dy", ".31em")
+        .text(function (d) {
+          return d.key;
+        });
+    };
+
+    overlay.draw = function () {
+      // The projection isn't initialized until the API calls .draw()
+      projection = this.getProjection();
+
+      var padding = 10;
+      var border = 50;
+      var sw = projection.fromLatLngToDivPixel(bounds.getSouthWest());
+      var ne = projection.fromLatLngToDivPixel(bounds.getNorthEast());
+      var width = ne.x - sw.x + 2 * border;
+      var height = sw.y - ne.y + 2 * border;
+
+      // One SVG for all the data
+      svg
+        .style("left", sw.x - border + "px")
+        .style("top", ne.y - border + "px")
+        .style("width", width + "px")
+        .style("height", height + "px");
+
+      rect.attr("width", width + "px").attr("height", height + "px");
+
+      circles.attr("cx", x).attr("cy", y);
+
+      markers.attr("cx", x).attr("cy", y);
+
+      labels.attr("x", x).attr("y", y);
+
+      function x(d) {
+        var p = new google.maps.LatLng(d.value[1], d.value[0]);
+        p = projection.fromLatLngToDivPixel(p);
+        return p.x - sw.x + border;
+      }
+
+      function y(d) {
+        var p = new google.maps.LatLng(d.value[1], d.value[0]);
+        p = projection.fromLatLngToDivPixel(p);
+        return p.y - ne.y + border;
+      }
+    }; // end of overlay.draw
+  });
+
+  // Get bounding box for the data
+  function getBB(data) {
+    var north = d3.max(
+      d3.values(data).map(function (d) {
+        return d[1];
+      })
+    );
+    var south = d3.min(
+      d3.values(data).map(function (d) {
+        return d[1];
+      })
+    );
+    var east = d3.max(
+      d3.values(data).map(function (d) {
+        return d[0];
+      })
+    );
+    var west = d3.min(
+      d3.values(data).map(function (d) {
+        return d[0];
+      })
+    );
+
+    // return google.maps.LatLngBounds()
+    var sw = new google.maps.LatLng({ lat: south, lng: west });
+    var ne = new google.maps.LatLng({ lat: north, lng: east });
+    return new google.maps.LatLngBounds(sw, ne);
+  }
+
+  function dragmove(d) {
+    d3.select(this)
+      .attr("cx", (d.x = d3.event.x))
+      .attr("cy", (d.y = d3.event.y));
+  }
+</script>

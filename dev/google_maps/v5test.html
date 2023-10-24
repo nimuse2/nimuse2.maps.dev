@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style>
+  html,
+  body,
+  #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stations,
+  .stations svg {
+    position: absolute;
+  }
+
+  .stations svg {
+    width: 60px;
+    height: 20px;
+    padding-right: 100px;
+    font: 10px sans-serif;
+    color: white;
+  }
+
+  .stations circle {
+    fill: brown;
+    stroke: black;
+    stroke-width: 1.5px;
+  }
+</style>
+<script src="//maps.google.com/maps/api/js?sensor=true"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<div id="map"></div>
+
+<script id="initData">
+  const data = [
+    {
+      lat: 50.48125083257165,
+      lon: -3.7340826458860477,
+      size: 3598,
+      field: "Loc 1",
+      variety: "TestVariety",
+      count: 67,
+    },
+    {
+      lat: 50.478985467531714,
+      lon: -3.7379118447883855,
+      size: 4077,
+      field: "Loc 2",
+      variety: "TestVariety",
+      count: 73,
+    },
+    {
+      lat: 50.47563481262637,
+      lon: -3.7338732365712417,
+      size: 4077,
+      field: "Loc 3",
+      variety: "TestVariety",
+      count: 20,
+    },
+    {
+      lat: 50.47180792190633,
+      lon: -3.72412074561538,
+      size: 4077,
+      field: "Loc 4",
+      variety: "TestVariety",
+      count: 20,
+    },
+    {
+      lat: 50.4735,
+      lon: -3.7318,
+      size: 4077,
+      field: "Loc 5",
+      variety: "TestVariety",
+      count: 20,
+    },
+    {
+      lat: 50.47830012562318,
+      lon: -3.735728004789479,
+      size: 4077,
+      field: "Loc 7",
+      variety: "TestVariety",
+      count: 20,
+    },
+    {
+      lat: 50.47900450221542,
+      lon: -3.726334511991382,
+      size: 4077,
+      field: "Loc 8",
+      variety: "TestVariety",
+      count: 20,
+    },
+    {
+      lat: 50.478338205228596,
+      lon: -3.7546645805163053,
+      size: 4077,
+      field: "Loc 9",
+      variety: "TestVariety",
+      count: 20,
+    },
+  ];
+
+  // Create the Google Map…
+  const map = new google.maps.Map(d3.select("#map").node(), {
+    zoom: 7,
+    // center: new google.maps.LatLng(53.5, -0.466),
+    center: new google.maps.LatLng(50.473602050689635, -3.7373521109426804),
+    // mapTypeId: google.maps.MapTypeId.TERRAIN,
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
+  });
+
+  // Load the field data. When the data comes back, create an overlay.
+  //this is commented our for example purposes, and data is declared directly above
+  //d3.json("/small_example.json", function(error, data) {
+  //if (error) throw error;
+  /**/
+  var Item_1 = new google.maps.LatLng(50.48125083257165, -3.7340826458860477);
+  var Item_2 = new google.maps.LatLng(50.478985467531714, -3.7379118447883855);
+  var Item_3 = new google.maps.LatLng(50.47563481262637, -3.7338732365712417);
+  var Item_4 = new google.maps.LatLng(50.47180792190633, -3.72412074561538);
+  var Item_5 = new google.maps.LatLng(50.4735, -3.7318);
+  var Item_6 = new google.maps.LatLng(50.47830012562318, -3.735728004789479);
+  var Item_7 = new google.maps.LatLng(50.47900450221542, -3.726334511991382);
+  var Item_8 = new google.maps.LatLng(50.478338205228596, -3.7546645805163053);
+
+  var bounds = new google.maps.LatLngBounds();
+
+  bounds.extend(Item_1);
+  bounds.extend(Item_2);
+  bounds.extend(Item_3);
+  bounds.extend(Item_4);
+  bounds.extend(Item_5);
+  bounds.extend(Item_6);
+  bounds.extend(Item_7);
+  bounds.extend(Item_8);
+  map.fitBounds(bounds);
+  /**/
+
+  const overlay = new google.maps.OverlayView();
+
+  // Add the container when the overlay is added to the map.
+  overlay.onAdd = function () {
+    const layer = d3
+      .select(this.getPanes().overlayLayer)
+      .append("div")
+      .attr("class", "stations");
+
+    // Draw each marker as a separate SVG element.
+    // We could use a single SVG, but what size would it have?
+    overlay.draw = function () {
+      const projection = this.getProjection(),
+        padding = 10; //10
+
+      let markers = [];
+      const marker = layer
+        .selectAll("svg")
+        .data(data)
+        .each(transform) // update existing markers
+        .enter()
+        .append("svg")
+        .each(transform)
+        .attr("class", "marker");
+
+      // Add a circle.
+      marker
+        .append("circle")
+        .attr("r", function (d) {
+          return 5;
+          // return d.count;
+        })
+        .attr("cx", padding)
+        .attr("cy", padding);
+
+      // Add a label.
+      marker
+        .append("text")
+        .attr("x", padding + 7)
+        .attr("y", padding)
+        // .attr("dy", ".31em")
+        .text(function (d) {
+          return d.field;
+        });
+
+      function transform(d) {
+        d = new google.maps.LatLng(d.lat, d.lon);
+        d = projection.fromLatLngToDivPixel(d);
+        return d3
+          .select(this)
+          .style("left", d.x - padding + "px")
+          .style("top", d.y - padding + "px");
+      }
+    };
+  };
+
+  // Bind our overlay to the map…
+  overlay.setMap(map);
+  //this closing bracket pair is commented out, while d3.json() is not in use:
+  //});
+</script>
