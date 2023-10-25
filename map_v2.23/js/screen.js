@@ -31,7 +31,7 @@ function makeCircleDisplay() {
       })
     );
 
-  circles = svg
+  circles = foreground
     .selectAll("circle")
     .data(data)
     .enter()
@@ -40,11 +40,13 @@ function makeCircleDisplay() {
       return radiusScale(d.count);
     })
     .attr("fill", function (d, i) {
-      return colorScale(d.count);
+      // return colorScale(d.count);
+      var splitKey = d.key.split("_");
+      return rgbColor[splitKey[1]];
     })
-    .attr("opacity", 0.8);
+    .attr("opacity", 0.5);
 
-  labels = svg
+  labels = foreground
     .selectAll("text")
     .data(data)
     .enter()
@@ -69,6 +71,18 @@ function makeCircleDisplay() {
       .attr("class", "infocircle")
       .attr("id", function (d) {
         return d.key;
+      })
+      .on("mouseover", function (d) {
+        // console.log("--> ", d);
+        // console.log(">>>", d);
+        showTooltip(d);
+        // showTooltip(d);
+      })
+      .on("mouseleave", function (d, i) {
+        hideTooltip();
+      })
+      .on("click", function (d, i) {
+        playSound(d, i);
       });
     /*
     labels
@@ -80,13 +94,31 @@ function makeCircleDisplay() {
       });
       */
   }
+  //mouse move
+  svg.on("mousemove", function (d, i) {
+    var coordinates = d3.mouse(this);
+    // var elem1 = document.elementFromPoint(coordinates[0], coordinates[1]);
+    // console.log("--> ID::", d3.event);
+    let tx = d3.event.x;
+    let zf = d3.zoomTransform(this);
+
+    console.log("zf: ", zf);
+
+    updateToolTip(tx, coordinates[0], coordinates[1], zf.k, zf.x, zf.y);
+  });
 }
 
-function updateCircleDisplay() {
+function updateCircleDisplay(_updateData) {
   //UPDATE INDIVIUAL VALUES HERE////
+  updateData(_updateData);
+  /*
   for (i = 0; i < data.length; i++) {
+    //CHANGE TO NEW DATA SET/////
+    //leave data as it is
+    //update values
     data[i].count = Math.floor(Math.random() * 30);
   }
+  */
   simulation.alpha(0.5).alphaTarget(0.3).restart();
 
   simulation.force("x").initialize(data);
@@ -98,10 +130,10 @@ function updateCircleDisplay() {
     .duration(800)
     .attr("r", function (d) {
       return radiusScale(d.count);
-    })
-    .attr("fill", function (d) {
-      return colorScale(d.count);
     });
+  // .attr("fill", function (d) {
+  //   return colorScale(d.count);
+  // });
 }
 
 //make text
@@ -112,8 +144,8 @@ function makeText() {
       .append("text")
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
-      .attr("font-size", "11px")
-      .style("fill", "black")
+      .attr("font-size", "14px")
+      .style("fill", "white")
       .text(locationNameList[i])
       .attr("x", locationLabelList[i][0])
       .attr("y", locationLabelList[i][1]);
@@ -125,7 +157,7 @@ function makeText() {
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
       .attr("font-size", "9px")
-      .style("fill", "black")
+      .style("fill", "white")
       .text(smlLocationNameList[i])
       .attr("x", smlLocationLabelList[i][0])
       .attr("y", smlLocationLabelList[i][1]);

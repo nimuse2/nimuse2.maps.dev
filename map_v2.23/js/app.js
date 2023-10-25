@@ -3,8 +3,10 @@
 /*
 FINISHED DATA OBJECT TO PUT INTO DISPLAY
 */
-var data = makeData(locationList);
-console.log("DATA: ", data);
+//MAIN DATA OBJECT////
+var data = makeData(locationList, resultsList2022); //
+
+// console.log("DATA: ", data);
 //MAKE MAIN OBJECTS
 var simulation = {};
 var bubbles = {};
@@ -20,22 +22,33 @@ var svg = d3
   .attr("width", width)
   .attr("height", height);
 
+var background = svg.append("g");
+var foreground = svg.append("g");
+
 //BUILD BACKGROUND
 // REQUEST DATA
 d3.json("wash_extended.json").then(function (json) {
-  update(json);
+  update(json, "main_map");
+});
+// d3.json("farm_footprint.json").then(function (json) {
+//   update(json, "footprint");
+// });
+d3.json("hedge_control_1.json").then(function (json) {
+  update(json, "hedges");
 });
 
 // //BUILD MAIN CIRCLES
 makeCircleDisplay();
 //make txt
 makeText();
+makeAltKey(svg);
+makeTooltip(svg);
 
 //UI INTERACT//////////////////////
 d3.select("#change2023").on("click", function () {
-  updateCircleDisplay();
+  updateCircleDisplay(resultsList2023);
   // makeCircleDisplay(testData);
 });
 d3.select("#change2022").on("click", function () {
-  updateCircleDisplay();
+  updateCircleDisplay(resultsList2022);
 });

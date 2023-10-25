@@ -12,11 +12,11 @@
 
 //9 categories - last one - Leisters, Seerotine, Noctule
 
-var resultsList = [
+var resultsList2023 = [
   {
     key: "0_0",
     name: "GHB",
-    count: 0, //divide by days
+    count: 2, //divide by days
   },
   {
     key: "0_1",
@@ -26,17 +26,12 @@ var resultsList = [
   {
     key: "0_2",
     name: "Common Pipestrelle",
-    count: 3,
+    count: 9,
   },
   {
     key: "0_3",
     name: "Soprano Pipestrelle",
-    count: 5,
-  },
-  {
-    key: "0_4",
-    name: "Barbastelle",
-    count: 0,
+    count: 75,
   },
   {
     key: "0_5",
@@ -51,7 +46,7 @@ var resultsList = [
   {
     key: "0_7",
     name: "Noctule",
-    count: 1,
+    count: 2,
   },
   {
     key: "0_8",
@@ -64,7 +59,12 @@ var resultsList = [
     count: 0,
   },
   {
-    key: "1_0",
+    key: "0_4",
+    name: "Barbastelle",
+    count: 0,
+  },
+  {
+    key: "1_0", //next set
     name: "GHB",
     count: 9,
   },

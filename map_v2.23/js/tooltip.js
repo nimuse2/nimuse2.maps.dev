@@ -5,6 +5,7 @@ function makeTooltip(_svg) {
   //
   //image
   let imagePath = "img/ghb.png";
+  let fontSize = "9px";
 
   BatImg = _svg
     // .append("img").attr("src", imagePath);
@@ -82,26 +83,31 @@ function makeTooltip(_svg) {
 
   TooltipLineTop = _svg
     .append("line")
+    .attr("id", "LineTop")
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
   TooltipLineDown = _svg
     .append("line")
+    .attr("id", "LineDown")
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
   TooltipLineDownNext = _svg
     .append("line")
+    .attr("id", "LineDownNext")
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
   TooltipLineBottomNext = _svg
     .append("line")
+    .attr("id", "LineBottomNext")
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
   TooltipLineBottomFinal = _svg
     .append("line")
+    .attr("id", "LineBottomFinal")
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
@@ -187,14 +193,19 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     .attr("x2", width - 230) //on info
     .attr("y2", lineTop); //on info
 
-  TooltipLineDown.attr("x1", mouseOffset - magicR) //on circle
-    .attr("y1", circleMiddle - magicR) //on circle
-    .attr("x2", mouseOffset - magicR) //on info
-    .attr("y2", lineTop); //on info
+  // TooltipLineDown.attr("x1", magicX) //on circle
+  //   .attr("y1", circleMiddle + magicR) //on circle
+  //   .attr("x2", mouseOffset - magicR) //on info
+  //   .attr("y2", lineTop); //on info
+
+  // TooltipLineDown.attr("x1", mouseOffset - magicR) //on circle
+  //   .attr("y1", circleMiddle - magicR) //on circle
+  //   .attr("x2", mouseOffset - magicR) //on info
+  //   .attr("y2", lineTop); //on info
 
   TooltipLineDownNext.attr("x1", magicX) //on circle
-    .attr("y1", circleMiddle + magicR) //on circle
-    .attr("x2", mouseOffset - magicR) //on info
+    .attr("y1", lineTop) //on circle
+    .attr("x2", magicX) //on info
     .attr("y2", lineBtm); //on info
 
   // TooltipLineBottomNext.attr("x1", 60) //on circle
@@ -209,6 +220,10 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   //   .attr("x2", width - 260) //on info
   //   .attr("y2", height - 260); //on info
 }
+
+function testToolTip(d) {
+  console.log(">>>testToolTip::", d);
+}
 function showTooltip(_d) {
   magicX = _d.x;
   magicY = _d.y;
@@ -217,11 +232,11 @@ function showTooltip(_d) {
   var descBox = 200;
   var imgHeight = 150;
   var doubleHeight = leading * 2;
-  var blob = actualData[_d.category];
+  // var blob = actualData[_d.category]; //??
   var xFactor = 10;
   _tx = width - 260; //overwrite
   _ty = tooltipTxttop + 30;
-
+  var radiusFactor = 10;
   //image
   /*
   Tooltip.text("id: " + blob.id)
@@ -231,39 +246,43 @@ function showTooltip(_d) {
     */
   // console.error("--> TOOLTIP BOTTOM -->");
   // console.log("--> d --> ", _d);
-  console.log("--> d--> ", _d.color);
+  // console.log("--> d--> ", _d.color);
+  var keySplit = _d.key.split("_");
+  console.log(">>key>> ", keySplit[0]);
+  var keyRef = keySplit[1];
   //UPDATE LINE
-  TooltipLineBottomNext.attr("x1", keyCircleArr[_d.color]) //on circle
+  TooltipLineBottomNext.attr("x1", keyCircleArr[keyRef]) //on circle
     .attr("y1", lineBtm) //on circle
     .attr("x2", magicX) //on info
     .attr("y2", lineBtm); //on info
 
-  TooltipLineBottomFinal.attr("x1", keyCircleArr[_d.color]) //on circle
+  TooltipLineBottomFinal.attr("x1", keyCircleArr[keyRef]) //on circle
     .attr("y1", lineBtm) //on circle
-    .attr("x2", keyCircleArr[_d.color]) //on info
+    .attr("x2", keyCircleArr[keyRef]) //on info
     .attr("y2", lineBtm + 40); //on info
 
   //
-  d3.select("#keyCircle_" + _d.color).attr("opacity", "1");
+  d3.select("#keyCircle_" + keyRef).attr("opacity", "1");
 
   var txtBoxFontSize = "11px";
   BatImg.style("opacity", 1)
-    .attr("xlink:href", "img/" + soundProps[_d.color].img)
+    .attr("xlink:href", "img/" + soundProps[keyRef].img)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading - 30);
   // Tooltip2.text("Location: " + blob.location)
-  Tooltip2.text("Species: " + soundProps[_d.color].name)
+  Tooltip2.text("Species: " + soundProps[keyRef].name)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading + imgHeight);
-  Tooltip3.text("Description: " + soundProps[_d.color].desc)
+  Tooltip3.text("Description: " + soundProps[keyRef].desc)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 2 + imgHeight)
     .attr("height", descBox)
     .call(wrap, 200);
+  /*
   Tooltip4.text("Date: " + blob.date)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
@@ -278,8 +297,10 @@ function showTooltip(_d) {
     .attr("width", 190)
     .attr("height", doubleHeight)
     .call(wrap, 190);
+    */
   // wrap the text in <= 30
-  var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
+  // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
+  /*
   Tooltip6.text("Count: " + Math.floor(unRadius))
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
@@ -290,6 +311,7 @@ function showTooltip(_d) {
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading * 7 + descBox + imgHeight + doubleHeight);
+    */
 
   TooltipLineTop.style("opacity", 1);
   TooltipLineDown.style("opacity", 1);
