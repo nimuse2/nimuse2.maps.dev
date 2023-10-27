@@ -2,41 +2,44 @@
 
 ## Bats-Wash Farm
 
-[v2.23](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.23/)  
-[v2.22](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.22/)  
-[v2.21](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.21/)  
-[v2.0](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.0/)  
-[v1.2](https://nimuse2.github.io/nimuse2.maps.dev//map_v1.2/)  
-[v1.0](https://nimuse2.github.io/nimuse2.maps.dev//map_v1.0/)
+[v2.23](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.23/)  
+[v2.22](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.22/)  
+[v2.21](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.21/)  
+[v2.0](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.0/)  
+[v1.2](https://nimuse2.github.io/nimuse2.maps.dev/map_v1.2/)  
+[v1.0](https://nimuse2.github.io/nimuse2.maps.dev/map_v1.0/)
 
 ## Birds-South Hams
 
-[v2.1](https://nimuse2.github.io/nimuse2.maps.dev//map_v2.1/)
+[v2.1](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.1/)
 
 ## Development notes:
 
-- Get force() object working - use simpler version to test
-- Get tooltip working
-- loading symbol timeout - doesnt work unless fully loaded?
-- check locations are correct
-- check data correct
+- ~~Get force() object working - use simpler version to test~~
+- ~~Get tooltip working~~
+- ~~check locations are correct~~
+- ~~check data correct inc. different years~~
 - actual sounds from actual locations - correct species?
+- copy for habitat, species, intro?
 
 ### Bugs
 
 - REFACTOR
 - Responsive tests on phones
-- pan/ zoom?
+- Pan/ zoom?
 - add compass?
-- layer order
+- ~~layer order~~
 
 ### Further Developments
 
-- add this years survey data and choose between two
-- animate transitions
+- ~~add this years survey data and choose between two~~
+- ~~animate transitions~~
 - sound playing icon
-- Click and reveal different species
+- ~~Click and reveal different species~~
+- Hover over field/ hedge/ features
 - Timeline - live animation triggered by time/ year?
-- update years data animation
+- ~~update years data animation~~
 - Picture/info/ sound
-- Link to p5 bat frequency stuff/ more bat info pages
+- Link to p5 bat frequency stuff/ more bat info NBS?
+- Dynamic updates with weather / satellite API - moisture - dates
+- Dynamic updates with individual mobile app and location
