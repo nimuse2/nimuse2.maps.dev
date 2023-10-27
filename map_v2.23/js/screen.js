@@ -108,9 +108,9 @@ function makeCircleDisplay() {
   });
 }
 
-function updateCircleDisplay(_updateData) {
+function updateCircleDisplay(_updateData, _year) {
   //UPDATE INDIVIUAL VALUES HERE////
-  updateData(_updateData);
+  updateData(_updateData, _year);
   /*
   for (i = 0; i < data.length; i++) {
     //CHANGE TO NEW DATA SET/////
@@ -145,7 +145,7 @@ function makeText() {
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
       .attr("font-size", "14px")
-      .style("fill", "white")
+      .style("fill", "rgba(255,255,255,0.8)")
       .text(locationNameList[i])
       .attr("x", locationLabelList[i][0])
       .attr("y", locationLabelList[i][1]);
@@ -157,7 +157,7 @@ function makeText() {
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
       .attr("font-size", "9px")
-      .style("fill", "white")
+      .style("fill", "rgba(255,255,255,0.7)")
       .text(smlLocationNameList[i])
       .attr("x", smlLocationLabelList[i][0])
       .attr("y", smlLocationLabelList[i][1]);

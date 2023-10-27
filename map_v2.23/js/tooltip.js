@@ -163,7 +163,7 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
 
   var mouseLineX = _x;
   // var mouseLineY = _y;
-  console.log(">-> mouseLineX: ", mouseLineX);
+  // console.log(">-> mouseLineX: ", mouseLineX);
 
   // console.log(">-> _zfx: ", _zfx);
   // var xFactor = 10;
@@ -172,8 +172,8 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
 
   keyLineX = width - 200;
 
-  console.log(">-> keyLineX: ", keyLineX);
-  console.log(">-> _zfx: ", _zfx);
+  // console.log(">-> keyLineX: ", keyLineX);
+  // console.log(">-> _zfx: ", _zfx);
 
   if (mouseLineX > keyLineX) {
     mouseOffset = magicX - magicR + _zfx;
@@ -181,10 +181,10 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     mouseOffset = magicX + magicR + _zfx; //x
   }
 
-  console.log(">-> _zfy: ", _zfy);
-  console.log(">-> magicY: ", magicY);
+  // console.log(">-> _zfy: ", _zfy);
+  // console.log(">-> magicY: ", magicY);
   circleMiddle = magicY + _zfy;
-  console.log(">-> circleMiddle: ", circleMiddle);
+  // console.log(">-> circleMiddle: ", circleMiddle);
   // var lineTop = 100;
   // var lineBtm = 550;
 
@@ -193,44 +193,19 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     .attr("x2", width - 230) //on info
     .attr("y2", lineTop); //on info
 
-  // TooltipLineDown.attr("x1", magicX) //on circle
-  //   .attr("y1", circleMiddle + magicR) //on circle
-  //   .attr("x2", mouseOffset - magicR) //on info
-  //   .attr("y2", lineTop); //on info
-
-  // TooltipLineDown.attr("x1", mouseOffset - magicR) //on circle
-  //   .attr("y1", circleMiddle - magicR) //on circle
-  //   .attr("x2", mouseOffset - magicR) //on info
-  //   .attr("y2", lineTop); //on info
-
   TooltipLineDownNext.attr("x1", magicX) //on circle
     .attr("y1", lineTop) //on circle
     .attr("x2", magicX) //on info
     .attr("y2", lineBtm); //on info
-
-  // TooltipLineBottomNext.attr("x1", 60) //on circle
-  //   .attr("y1", lineBtm) //on circle
-  //   .attr("x2", magicX) //on info
-  //   .attr("y2", lineBtm); //on info
-
-  // console.log("--> ID:", _dx);
-
-  // TooltipLineDown.attr("x1", width - 260) //on circle
-  //   .attr("y1", circleMiddle) //on circle
-  //   .attr("x2", width - 260) //on info
-  //   .attr("y2", height - 260); //on info
 }
 
-function testToolTip(d) {
-  console.log(">>>testToolTip::", d);
-}
 function showTooltip(_d) {
   magicX = _d.x;
   magicY = _d.y;
   magicR = _d.radius;
 
   var descBox = 200;
-  var imgHeight = 150;
+  var imgHeight = 170;
   var doubleHeight = leading * 2;
   // var blob = actualData[_d.category]; //??
   var xFactor = 10;
@@ -248,7 +223,7 @@ function showTooltip(_d) {
   // console.log("--> d --> ", _d);
   // console.log("--> d--> ", _d.color);
   var keySplit = _d.key.split("_");
-  console.log(">>key>> ", keySplit[0]);
+  // console.log(">>key>> ", keySplit[0]);
   var keyRef = keySplit[1];
   //UPDATE LINE
   TooltipLineBottomNext.attr("x1", keyCircleArr[keyRef]) //on circle

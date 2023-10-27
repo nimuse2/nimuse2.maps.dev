@@ -29,15 +29,34 @@ function makeData(_geoData, _resultsList) {
   return _data;
 }
 
-function updateData(_nxtresultsList) {
+function updateData(_nxtresultsList, _year) {
   //update DATA object with new values
-  // console.log("updateData()");
-  // console.log(data);
+  console.log("updateData()");
+  console.log(data);
 
   for (i = 0; i < data.length; i++) {
     // _geoData[]
     // console.log("data: ", data[i].count);
     // console.log("results::", _nxtresultsList[i].count);
     data[i].count = _nxtresultsList[i].count;
+
+    if (_year == "2023") {
+      var keySplit = data[i].key.split("_");
+      console.log("keySplit", keySplit[0]);
+      data[i].lat = locationList2023[keySplit[0]][1];
+      data[i].long = locationList2023[keySplit[0]][0];
+    } else {
+      var keySplit = data[i].key.split("_");
+      console.log("keySplit", keySplit[0]);
+      data[i].lat = locationList[keySplit[0]][1];
+      data[i].long = locationList[keySplit[0]][0];
+    }
   }
+
+  // for (i = 0; i < data.length; i++) {
+  //   var keySplit = data[i].key.split("_");
+  //   console.log("keySplit", keySplit[0]);
+  //   data[i].lat = locationList2023[keySplit[0]][0];
+  //   data[i].long = locationList2023[keySplit[0]][1];
+  // }
 }
