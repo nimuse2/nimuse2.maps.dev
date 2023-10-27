@@ -5,7 +5,7 @@
       "type": "Feature",
       "properties": {
         "name": "building",
-        "fill": "rgba(127, 143, 143, 0.4)",
+        "fill": "rgba(127, 143, 143, 0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -49,7 +49,7 @@
       "type": "Feature",
       "properties": {
         "name": "building",
-        "fill": "rgba(127, 143, 143, 0.4)",
+        "fill": "rgba(127, 143, 143, 0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -68,7 +68,7 @@
       "type": "Feature",
       "properties": {
         "name": "building",
-        "fill": "rgba(127, 143, 143, 0.4)",
+        "fill": "rgba(127, 143, 143, 0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -87,7 +87,7 @@
       "type": "Feature",
       "properties": {
         "name": "building",
-        "fill": "rgba(127, 143, 143, 0.4)",
+        "fill": "rgba(127, 143, 143, 0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -178,7 +178,7 @@
       "type": "Feature",
       "properties": {
         "name": "Wash Farm",
-        "fill": "rgba(127, 143, 143, 0.4)",
+        "fill": "rgba(127, 143, 143, 0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -207,7 +207,7 @@
       "type": "Feature",
       "properties": {
         "name": "Big Lake",
-        "fill": "rgba(152, 218, 218,0.4)",
+        "fill": "rgba(152, 218, 218,0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -233,7 +233,7 @@
       "type": "Feature",
       "properties": {
         "name": "Small Lake",
-        "fill": "rgba(152, 218, 218,0.4)",
+        "fill": "rgba(152, 218, 218,0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
@@ -259,7 +259,7 @@
       "type": "Feature",
       "properties": {
         "name": "Smaller Lake",
-        "fill": "rgba(152, 218, 218,0.4)",
+        "fill": "rgba(152, 218, 218,0.6)",
         "stroke": "none",
         "strokewidth": "1px"
       },
