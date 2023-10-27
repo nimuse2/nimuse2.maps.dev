@@ -22,6 +22,7 @@ function makeData(_geoData, _resultsList) {
       long: _geoData[Number(splitKey[0])][0],
       name: _resultsList[i].name,
       count: _resultsList[i].count, //divide by days
+      radius: radiusScale(_resultsList[i].count),
     };
 
     _data.push(item);
@@ -42,15 +43,16 @@ function updateData(_nxtresultsList, _year) {
 
     if (_year == "2023") {
       var keySplit = data[i].key.split("_");
-      console.log("keySplit", keySplit[0]);
+      // console.log("keySplit", keySplit[0]);
       data[i].lat = locationList2023[keySplit[0]][1];
       data[i].long = locationList2023[keySplit[0]][0];
     } else {
       var keySplit = data[i].key.split("_");
-      console.log("keySplit", keySplit[0]);
+      // console.log("keySplit", keySplit[0]);
       data[i].lat = locationList[keySplit[0]][1];
       data[i].long = locationList[keySplit[0]][0];
     }
+    data[i].radius = radiusScale(data[i].count);
   }
 
   // for (i = 0; i < data.length; i++) {

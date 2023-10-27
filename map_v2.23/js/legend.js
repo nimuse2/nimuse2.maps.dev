@@ -3,13 +3,13 @@
 function makeLegend(_svg, _width, _height) {
   var size = d3
     .scaleSqrt()
-    .domain([1, 30]) // What's in the data, let's say it is percentage
-    .range([1, 30]); // Size in pixel
+    .domain([1, 10]) // What's in the data, let's say it is percentage
+    .range([1, 10]); // Size in pixel
   // Add legend: circles
   var valuesToShow = [10, 40, 80];
   var xCircle = _width - 180;
-  var xLabel = _width - 260;
-  var yCircle = _height - 60;
+  var xLabel = _width - 280;
+  var yCircle = _height - 50;
   _svg
     .selectAll("legend")
     .data(valuesToShow)
@@ -35,7 +35,7 @@ function makeLegend(_svg, _width, _height) {
     .attr("x1", function (d) {
       return xCircle + size(d);
     })
-    .attr("x2", xLabel)
+    .attr("x2", xLabel - 60)
     .attr("y1", function (d) {
       return yCircle - size(d);
     })
@@ -52,7 +52,7 @@ function makeLegend(_svg, _width, _height) {
     .data(valuesToShow)
     .enter()
     .append("text")
-    .attr("x", xLabel)
+    .attr("x", xLabel - 100)
     .attr("y", function (d) {
       return yCircle - size(d);
     })
@@ -70,7 +70,7 @@ function makeLegend(_svg, _width, _height) {
     .append("text")
     .style("fill", "white")
     .attr("x", xCircle - 200)
-    .attr("y", 575)
+    .attr("y", 610)
     .attr("font-family", "Arial")
     .text("Legend - Circle Size ");
 }
@@ -80,7 +80,7 @@ function makeAltKey(_svg) {
 
   //
   var startX = 30;
-  var startY = 575;
+  var startY = 600;
   var horX = 50; //unit spacing
   // var vertY = height - 200;
 
@@ -95,24 +95,24 @@ function makeAltKey(_svg) {
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
-  for (i = 0; i < soundProps.length; i++) {
-    // console.log(">>>>>>>>>>>>> ", soundProps[i].totals);
+  for (i = 0; i < media_assets.length; i++) {
+    // console.log(">>>>>>>>>>>>> ", media_assets[i].totals);
     _svg
       .append("circle")
       .attr("id", "keyCircle_" + i)
       .attr("cx", startX + 20 + horX * i)
       .attr("cy", startY + 30)
       .attr("r", 15)
-      .style("fill", soundProps[i].col)
+      .style("fill", media_assets[i].col)
       .attr("opacity", "0.7")
       .attr("stroke", "white");
     // var rotateX = startX + 20 + 50 * i;
     // var rotateY = horY;
-    // console.log(">>>>> raduii >>>> ", soundProps[i].totals / totalsFactor);
-    // horX = horX + soundProps[i].totals / totalsFactor;
+    // console.log(">>>>> raduii >>>> ", media_assets[i].totals / totalsFactor);
+    // horX = horX + media_assets[i].totals / totalsFactor;
     keyCircleArr.push(startX + 20 + horX * i); //utils
-    // horX = horX + soundProps[i].totals / totalsFactor;
-    // keyCircleArr.push(startX + soundProps[i].totals);
+    // horX = horX + media_assets[i].totals / totalsFactor;
+    // keyCircleArr.push(startX + media_assets[i].totals);
     _svg
       .append("text")
       .attr("x", startX + 20 + horX * i)
@@ -122,8 +122,8 @@ function makeAltKey(_svg) {
       .style("font-size", "9px")
       .style("fill", "white")
       .attr("class", "keyLable")
-      .text(soundProps[i].name)
-      // .text(soundProps[i].name + " Total: " + soundProps[i].totals)
+      .text(media_assets[i].name)
+      // .text(media_assets[i].name + " Total: " + media_assets[i].totals)
       .call(wrap, 70);
   }
 

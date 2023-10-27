@@ -74,8 +74,13 @@ function makeCircleDisplay() {
         return d.key;
       })
       .on("mouseover", function (d) {
+        // console.log(">>-->>", d3.select(this.childNode));
         // console.log("--> ", d);
-        // console.log(">>>", d);
+        // console.log(">>>-->>", d.key);
+        // console.log(">>>-->>", d3.select("" + d.key));
+        // var elem = d3.select("#2_4");
+        // elem.attr("fill", "black");
+        // console.log(">>>", elem);
         showTooltip(d);
         // showTooltip(d);
       })
@@ -98,12 +103,17 @@ function makeCircleDisplay() {
   //mouse move
   svg.on("mousemove", function (d, i) {
     var coordinates = d3.mouse(this);
+    // console.log(">>->>", this);
     // var elem1 = document.elementFromPoint(coordinates[0], coordinates[1]);
     // console.log("--> ID::", d3.event);
     let tx = d3.event.x;
     let zf = d3.zoomTransform(this);
-
-    console.log("zf: ", zf);
+    // var selection = d3.select(this);
+    // console.log(selection.node());
+    // later via the selection you can retrieve the element with .node()
+    // var elt = selection.node();
+    // console.log(document.elementFromPoint(coordinates[0], coordinates[1])
+    // console.log("event r:: ", d3.event.r);
 
     updateToolTip(tx, coordinates[0], coordinates[1], zf.k, zf.x, zf.y);
   });

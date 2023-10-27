@@ -37,6 +37,7 @@ var smlLocationLabelList = [
   projectionGeo([-3.733898731327885, 50.47715280811503]), //tor hill woodland
   projectionGeo([-3.730379673088195, 50.476442724143105]), //Barkingdon Pathfield
   projectionGeo([-3.7225047075676168, 50.48130726855542]), //live and let live
+  projectionGeo([-3.7231055222317067, 50.47653489908187]), //barkingdon manor
 ];
 
 var smlLocationNameList = [
@@ -66,6 +67,7 @@ var smlLocationNameList = [
   "Tor Hill Woodland",
   "Barkingdon Pathfield",
   "Live & let live Inn",
+  "Barkingdon Manor",
 ];
 
 //SMALL TEXT
