@@ -28,6 +28,7 @@
 ### Bugs
 
 - REFACTOR
+- Update to latest D3 and ECMA script
 - Responsive tests on phones
 - Pan/ zoom?
 - add compass?
