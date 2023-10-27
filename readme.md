@@ -1,11 +1,14 @@
 # Nature Survey Mapping
 
-## Bats-Wash Farm
+## Bats-Wash Farm Infographic
 
 [v2.23](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.23/)  
 [v2.22](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.22/)  
 [v2.21](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.21/)  
-[v2.0](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.0/)  
+[v2.0](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.0/)
+
+## Bats-Wash Farm Spatial audio and human interaction
+
 [v1.2](https://nimuse2.github.io/nimuse2.maps.dev/map_v1.2/)  
 [v1.0](https://nimuse2.github.io/nimuse2.maps.dev/map_v1.0/)
 
