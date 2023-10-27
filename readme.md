@@ -43,7 +43,7 @@
 - Hover over field/ hedge/ features
 - Timeline - live animation triggered by time/ year?
 - ~~update years data animation~~
-- Picture/info/ sound
+- ~~Picture/info/ sound~~
 - Link to p5 bat frequency stuff/ more bat info NBS?
 - Dynamic updates with weather / satellite API - moisture - dates
 - Dynamic updates with individual mobile app and location
