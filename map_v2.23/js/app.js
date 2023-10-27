@@ -57,6 +57,7 @@ makeCircleDisplay();
 //make txt
 makeText();
 makeAltKey(svg);
+makeLegend(svg, width, height);
 makeTooltip(interactive);
 
 //UI INTERACT//////////////////////
