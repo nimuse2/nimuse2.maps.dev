@@ -1,7 +1,7 @@
 /* screen related stuff */
 //loaded last
 //update to dynamic?
-var width = 1280,
+var width = 1380,
   height = 720;
 
 //BUILD MAIN CIRCLES
@@ -42,9 +42,10 @@ function makeCircleDisplay() {
     .attr("fill", function (d, i) {
       // return colorScale(d.count);
       var splitKey = d.key.split("_");
-      return rgbColor[splitKey[1]];
+      // return rgbColor[splitKey[1]];
+      return set3col[splitKey[1]];
     })
-    .attr("opacity", 0.5);
+    .attr("opacity", 0.7);
 
   labels = foreground
     .selectAll("text")
@@ -138,6 +139,19 @@ function updateCircleDisplay(_updateData, _year) {
 
 //make text
 function makeText() {
+  //info text
+  // svg
+  //   .append("text")
+  //   // .style("opacity", 0.6)
+  //   .attr("font-family", "Arial")
+  //   .attr("font-size", "11px")
+  //   .style("fill", "white")
+  //   .text(
+  //     "Introduction: This is a map showing the Bat Data collected between Aug. 2022 and Oct. 2022.  If you roll obver the circles you can find out diferent information about the Bats. If you click on the circles you will hear the Bat noises collected at the different locations. The size of the circles indicates the total number of Bats recorded during this period. The frequencies they use are interesting [LINK TO MORE SOUND INFO.]"
+  //   )
+  //   .attr("x", 30)
+  //   .attr("y", 200)
+  //   .call(wrap, 190);
   //big text
   for (i = 0; i < locationLabelList.length; i++) {
     svg

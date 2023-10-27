@@ -11,6 +11,25 @@
       },
       "geometry": {
         "coordinates": [
+          [-3.7316034474670516, 50.47226677381562],
+          [-3.729031305642394, 50.4722258477008],
+          [-3.72907417467286, 50.47084798116239],
+          [-3.7315391439213386, 50.47084798116239],
+          [-3.7316463164975175, 50.47223948974303]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "building",
+        "fill": "rgba(127, 143, 143, 0.4)",
+        "stroke": "none",
+        "strokewidth": "1px"
+      },
+      "geometry": {
+        "coordinates": [
           [-3.7493083497252826, 50.47964652971572],
           [-3.7489439629671324, 50.47996024643882],
           [-3.7507444622441994, 50.48073770934349],
@@ -63,7 +82,7 @@
       "properties": {
         "name": "Road 1",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -243,7 +262,7 @@
       "properties": {
         "name": "Road 1",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -273,7 +292,7 @@
       "properties": {
         "name": "Road 2",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -296,7 +315,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -325,7 +344,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -346,7 +365,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -365,7 +384,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -383,7 +402,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -419,7 +438,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -440,7 +459,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -459,7 +478,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -478,7 +497,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -498,7 +517,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -513,7 +532,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -528,7 +547,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -551,7 +570,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -574,7 +593,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -606,7 +625,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -628,7 +647,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -646,7 +665,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -672,7 +691,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -689,7 +708,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -716,7 +735,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -745,7 +764,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -760,7 +779,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -775,7 +794,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -791,7 +810,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -809,7 +828,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -829,7 +848,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -844,7 +863,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -861,7 +880,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -884,7 +903,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -906,7 +925,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -931,7 +950,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -954,7 +973,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -972,7 +991,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -988,7 +1007,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1007,7 +1026,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1022,7 +1041,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1046,7 +1065,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1062,7 +1081,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1083,7 +1102,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1098,7 +1117,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1120,7 +1139,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1151,7 +1170,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1171,7 +1190,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1197,7 +1216,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1213,7 +1232,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1235,7 +1254,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1258,7 +1277,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1276,7 +1295,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1292,7 +1311,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1315,7 +1334,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1330,7 +1349,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1357,7 +1376,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1377,7 +1396,7 @@
       "properties": {
         "name": "bigroadone",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "6px"
       },
       "geometry": {
@@ -1413,7 +1432,7 @@
       "properties": {
         "name": "bigroad",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "6px"
       },
       "geometry": {
@@ -1451,7 +1470,7 @@
       "type": "Feature",
       "properties": {
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "3px"
       },
       "geometry": {
@@ -1649,7 +1668,7 @@
       "properties": {
         "name": "Wash Road 1",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "1px"
       },
       "geometry": {
@@ -1670,7 +1689,7 @@
       "properties": {
         "name": "Wash Road 2",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "1px"
       },
       "geometry": {
@@ -1691,7 +1710,7 @@
       "properties": {
         "name": "Green Lane",
         "fill": "none",
-        "stroke": "rgba(32, 30, 29,0.4)",
+        "stroke": "rgba(237, 181, 26,0.4)",
         "strokewidth": "1px"
       },
       "geometry": {

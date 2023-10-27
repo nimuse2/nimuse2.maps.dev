@@ -16,22 +16,31 @@ let projectionGeo = d3
 let geoGenerator = d3.geoPath().projection(projectionGeo);
 
 //SCREEN TRANSFORMS/////////////////////
-var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 40]);
+var radiusScale = d3.scaleSqrt().domain([0, 40]).range([10, 30]);
+// var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 40]);
 // var radiusScale = d3.scaleSqrt().domain([0, 40]).range([5, 50]);
-var rgbColor = [
-  "rgb(43, 236, 59)",
-  "rgb(43, 155, 236)",
-  "rgb(208, 43, 236)",
-  "rgb(236, 232, 43)",
-  "rgb(43, 236, 208)",
-  "rgb(189, 235, 52)",
-  "rgb(3, 94, 252)",
-  "rgb(252, 148, 3)",
-  "rgb(194, 3, 252)",
-  "rgb(252, 3, 94)",
-];
+// var rgbColor = [
+//   "rgb(43, 236, 59)",
+//   "rgb(43, 155, 236)",
+//   "rgb(208, 43, 236)",
+//   "rgb(236, 232, 43)",
+//   "rgb(43, 236, 208)",
+//   "rgb(189, 235, 52)",
+//   "rgb(3, 94, 252)",
+//   "rgb(252, 148, 3)",
+//   "rgb(194, 3, 252)",
+//   "rgb(252, 3, 94)",
+// ];
 
-var colorScale = d3.scaleLinear().domain([0, 10, 37]).range(rgbColor);
+// var rgbColor = set3col;
+// var newCol = [];
+// for (i=0;i<set3col.length;i++){
+//   newCol.push(d3.color);
+// }
+
+// console.log("COLOR: ", d3.color("#8dd3c7"));
+
+// var colorScale = d3.scaleLinear().domain([0, 10, 37]).range(rgbColor);
 // .range(["orange", "lightyellow"]);
 // .range(["#ffffcc", "#c90a22", "#fd893c"]);
 

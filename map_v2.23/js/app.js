@@ -27,6 +27,7 @@ var background = svg.append("g");
 var midbackground = svg.append("g");
 var midground = svg.append("g");
 var foreground = svg.append("g");
+var interactive = svg.append("g");
 
 //BUILD BACKGROUND
 // REQUEST DATA
@@ -56,7 +57,7 @@ makeCircleDisplay();
 //make txt
 makeText();
 makeAltKey(svg);
-makeTooltip(svg);
+makeTooltip(interactive);
 
 //UI INTERACT//////////////////////
 d3.select("#change2023").on("click", function () {

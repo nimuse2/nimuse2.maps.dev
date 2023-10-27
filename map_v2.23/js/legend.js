@@ -104,7 +104,7 @@ function makeAltKey(_svg) {
       .attr("cy", startY + 30)
       .attr("r", 15)
       .style("fill", soundProps[i].col)
-      .attr("opacity", "0.4")
+      .attr("opacity", "0.7")
       .attr("stroke", "white");
     // var rotateX = startX + 20 + 50 * i;
     // var rotateY = horY;
