@@ -253,7 +253,7 @@ function showTooltip(_d) {
   magicY = _d.y;
   magicR = _d.radius;
 
-  var descBox = 200;
+  var descBox = 280;
   var imgHeight = 170;
   var doubleHeight = leading * 2;
   // var blob = actualData[_d.category]; //??
@@ -345,11 +345,13 @@ function showTooltip(_d) {
   // wrap the text in <= 30
   // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
 
+  /*
   Tooltip6.text("Totals: " + Math.floor(media_assets[keyRef].totals))
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + descBox + imgHeight + 2);
+    */
   /*
   Tooltip7.text("Click to play sound")
     .style("opacity", 1)

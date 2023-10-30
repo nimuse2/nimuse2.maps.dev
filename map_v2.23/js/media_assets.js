@@ -22,9 +22,9 @@ media_assets = [
     col: set3col[0],
     sPath: "sound/2022-08-19-21-09-19.mp3",
     img: "/ghb.png",
-    desc: "The greater horseshoe bat (Rhinolophus ferrumequinum) is an insectivorous bat of the genus Rhinolophus. Its distribution covers Europe, Northern Africa, Central Asia and Eastern Asia.[1] It is the largest of the horseshoe bats in Europe and is thus easily distinguished from other species. ",
+    desc: "The greater horseshoe bat (Rhinolophus ferrumequinum) is a large insectivorous bat that can live for up to 30 years. It is the largest of the horseshoe bats in Europe (wingspan up to 40cm). The species is sedentary, typically travelling up to 30 km between the winter and summer roosts, with the longest recorded movement being 180 km. It's population has declined by over 90% during the previous century, but it is locally common at Wash Farm with South Devon being one of the last strongholds of this species",
     habitat:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+      "Bushy hedges:  Tall, bushy hedges are important for bats to help them to navigate through the landscape (they need to echolocate using structures in the landscape in order to ‘see’ where they are going’). Large healthy hedges also provide a brilliant habitat for insects and provide shelter from prevailing winds. As all UK bats are insectivorous, hedges will be helping provide large networks of linked up food sources. At Wash Farm hedges are cut no more than once every 3 years and trees are being left in the centre in order to increase shelter, berries and biomass across the farm.",
     habitatimg: "img/habitat_bad.png",
     totals: 120,
   },
@@ -34,9 +34,9 @@ media_assets = [
     col: set3col[1],
     sPath: "sound/2022-08-19 23-51-04.mp3",
     img: "/lhb.png",
-    desc: "[actually none in survey]The lesser horseshoe bat is one of the world's smallest bats, weighing only 5 to 9 grams (0.18 to 0.32 oz), with a wingspan of 192-254 millimetres (7.6-10.0 in) and a body length of 35-45 millimetres (1.4-1.8 in). It has strong feet that it uses to grasp rocks and branches, and can see well in spite of its small eyes. Like most bats, lesser horseshoe bats live in colonies and hunt their prey by echolocation, emitting ultrasound from specialized round pads in their mouth.",
+    desc: "The lesser horseshoe bat is one of Britain's smallest bats, weighing only 5 to 9 grams, with a wingspan up to 25cm. It has a complex 'nose leaf' which it uses for echolocation when hunting and navigating the landscape. It is more common than the greater horseshoe and found throughout south west England and wales, in and around Wash Farm though it is less common than greater horseshoes.",
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Green lanes:  Networks of bridlepaths, old roads and footpaths often have tall hedges either side of them creating what is locally known as a ‘green lane’ these make wildlife super-highways with constant shelter for insects from wind and rain and darker corridors for bats to fly through. Green lanes used to be ore common in the south west and if hedges are cut too short, their benefits are greatly reduced for wildlife. At Wash Farm we have a number of green lanes and we are trying to manage them to provide year round habitat for our resident bats and other wildlife.   ",
     habitatimg: "img/habitat_med.png",
     totals: 100,
   },
@@ -46,10 +46,10 @@ media_assets = [
     col: set3col[2],
     sPath: "sound/2022-08-19-21-04-47.mp3",
     img: "/common_pip.png",
-    desc: "The common pipistrelle (Pipistrellus pipistrellus) is a small pipistrelle microbat whose very large range extends across most of Europe, North Africa, South Asia, and may extend into Korea. It is one of the most common bat species in the British Isles. In Europe, the northernmost confirmed records are from southern Finland near 60°N",
+    desc: "The common pipistrelle (Pipistrellus pipistrellus) is a small microbat (wingspan up to 23.5cm) whose very large range extends across most of Europe, North Africa and South Asia. Despite a decline in population over the last few decades, It is one of the most common bat species in the British Isles found throughout the country. At Wash farm this is the most commonly heard bat , indicating a healthy population in the area.",
     totals: 328,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Exposed areas:  Locations near to the tops of hills, high up on valley sides and exposed to wind and rain are unlikely to provide beneficial habitat for bats. Without hedges to fly along and trees to navigate through, there is limited opportunities for bats and their insect prey to thrive. Exposed areas across Wash farm have been surveyed before planting and creating new habitats so that we can see potential improvements in biodiversity on the farm.",
     habitatimg: "img/habitat_bad.png",
   },
   {
@@ -58,10 +58,10 @@ media_assets = [
     col: set3col[3],
     sPath: "sound/2022-08-19 23-51-04.mp3",
     img: "/sop_pip.png",
-    desc: "Until 1999, the soprano pipistrelle was considered as conspecific with the common pipistrelle. It is possible that these two species diverged from one another in the Mediterranean, resulting in the Soprano pipistrelle having the ability to thermoregulate at temperatures as high as 40 degrees Celsius. Since the two species were split, a number of other differences, in appearance, habitat and food, have also been discovered. ",
+    desc: "Soprano pipistrelle is slightly smaller than the common pipistrelle (wingspan up to 23cm) and calls at a higher frequency. The 2 species were only separated out in the 1990s as they are so similar. soprano pipistrelles are found throughout the UK and is, along with the common pipistrelle, one of the commonest bats in the UK. At Wash Farm soprano pipistrelles are found commonly. ",
     totals: 99,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Wooded stream/ reservoirs:  Waterways and ponds provide bats with the water to rehydrate - and they also attract midges and other flying insects, which congregate in their thousands and provide a ready feast for bats! Daubenton's bats are often seen skimming over the top of the water to feed on a variety of water insects and pipistrelles often feed over the water of a river or pond near their roost.",
     habitatimg: "img/habitat_med.png",
   },
   {
@@ -70,10 +70,10 @@ media_assets = [
     col: set3col[4],
     sPath: "sound/2022-08-23 21-14-24.mp3",
     img: "/barb.png",
-    desc: "The western barbastelle (Barbastella barbastellus), also known as the barbastelle or barbastelle bat, is a European bat in the genus Barbastella. This species is found from Portugal to Azerbaijan and from Sweden to Canary Islands, where a sub-species was identified. It has a short nose, small eyes and wide ears. The conservation status of B. barbastellus is assessed as near threatened, vulnerable, critically endangered or extinct in various parts of its range.",
+    desc: "The western barbastelle (Barbastella barbastellus) is a species often associated with woodland and valleys found occasionally or rarely throughout southern Britain. It has a short nose, small eyes and wide ears with a wingspan of up to 29cm. Barbastelles are considered a conservation priority in the UK and is one of the rarest bats in the country. Southern Devon is a stronghold for this species and the landscape around Wash is well suited to this species. They are found relatively often at Wash Farm.",
     totals: 27,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Agroforestry fields/ orchards:  Mature orchards and agroforestry silvopasture systems provide great opportunities for bats to hunt as they can echolocate through the fruit and nut trees which, when mature, provide great potential for insects to live in and around. Bats can also gain access to incest rich grasslands that are often found in the understory and grazed by sheep or cattle which, when managed organically and at a low intensity can help encourage a huge amount of insect diversity. At Wash Farm we have a number of orchards, some of which are mature and some are recently established. ",
     habitatimg: "img/habitat_bad.png",
   },
   {
@@ -82,10 +82,10 @@ media_assets = [
     col: set3col[5],
     sPath: "sound/2022-08-24 00-35-10.mp3",
     img: "/myotis.png",
-    desc: "Myotis septentrionalis, known as the northern long-eared bat[7] or northern myotis,[1] is a species of bat native to North America.[8] There are no recognized subspecies. The northern long-eared bat is about 3–3.7 inches in length, with a wingspan of 9–10 inches. It is distinguishable by its long ears when comparing it to other bats in its genus. This species is commonly found in the northern United States and Southern Canada east of British Columbia. The geographic range includes 37 states",
+    desc: "these two species were only separated in 1970 and are almost impossible to tell apart by sound alone. Both are small (wingspan to 24cm) with brown, shaggy fur and found throughout England, Wales and Southern Scotland. Brandt’s bats are thought to be slightly less common than Whiskered bats. These myotis species require wooded valleys, pastures and old trees in the landscape and Wash Farm provides a good supply of these habitats leading to these species being found quite regularly during surveys.",
     totals: 236,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Bushy hedges: Tall, bushy hedges are important for bats to help them to navigate through the landscape (they need to echolocate using structures in the landscape in order to 'see' where they are going). Large healthy hedges also provide a brilliant habitat for insects and provide shelter from prevailing winds. As all UK bats are insectivorous, hedges will be helping provide large networks of linked up food sources. At Wash Farm hedges are cut no more than once every 3 years and trees are being left in the centre in order to increase shelter, berries and biomass across the farm. ",
     habitatimg: "img/habitat_med.png",
   },
   {
@@ -94,10 +94,10 @@ media_assets = [
     col: set3col[6],
     sPath: "sound/2022-08-19 23-51-04.mp3",
     img: "/leis.png",
-    desc: "The lesser noctule, Leisler's bat or the Irish bat (Nyctalus leisleri), is a species of insectivorous bat belonging to the vesper bat family, Vespertilionidae. The species was named to honour the naturalist Johann Philipp Achilles Leisler.",
+    desc: "Leisler's bat (Nyctalus leisleri), used to be known as the ‘hairy armed bat’ due to its hairy appearance. It is similar to the noctule bat but smaller with a wingspan of up to 32cm. Leislers are found less commonly in Devon than many other species and it is hard to tell from our surveys if it is definitely at Wash Farm as its call is similar to that of Noctule and Serotine bats. .",
     totals: 6,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Green lanes: Networks of bridlepaths, old roads and footpaths often have tall hedges either side of them creating what is locally known as a 'green lane' these make wildlife super-highways with constant shelter for insects from wind and rain and darker corridors for bats to fly through. Green lanes used to be ore common in the south west and if hedges are cut too short, their benefits are greatly reduced for wildlife. At Wash Farm we have a number of green lanes and we are trying to manage them to provide year round habitat for our resident bats and other wildlife.  ",
     habitatimg: "img/habitat_bad.png",
   },
   {
@@ -106,10 +106,10 @@ media_assets = [
     col: set3col[7],
     sPath: "sound/2022-08-24 00-35-10.mp3",
     img: "/serotin.png",
-    desc: "The serotine bat (Eptesicus serotinus), also known as the common serotine bat, big brown bat, or silky bat, is a fairly large Eurasian bat with quite large ears. It has a wingspan of around 37 cm (15 in) and often hunts in woodland. It sometimes roosts in buildings, hanging upside down, in small groups or individually. The name serotine is derived from the Latin serotinus, which means 'evening', while the generic name derives from Greek ἔπιεν and οίκος, which means 'house flyer'.",
+    desc: "The serotine bat (Eptesicus serotinus) is one of the UK’s largest bats with a wingspan of up to 38cm. It has a similar diet to greater horseshoes feeding on dung beetles, large moths and chafers. The distribution of the species is restricted to the far south of England. Serotines are thought to be found around Wash Farm and often grouped into a category with Leislers and Noctules as their calls are very similar. ",
     totals: 1,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Exposed areas:  Locations near to the tops of hills, high up on valley sides and exposed to wind and rain are unlikely to provide beneficial habitat for bats. Without hedges to fly along and trees to navigate through, there is limited opportunities for bats and their insect prey to thrive. Exposed areas across Wash farm have been surveyed before planting and creating new habitats so that we can see potential improvements in biodiversity on the farm. ",
     habitatimg: "img/habitat_med.png",
   },
   {
@@ -121,7 +121,7 @@ media_assets = [
     desc: "The lesser noctule, Leisler's bat or the Irish bat (Nyctalus leisleri), is a species of insectivorous bat belonging to the vesper bat family, Vespertilionidae. The species was named to honour the naturalist Johann Philipp Achilles Leisler",
     totals: 18,
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Wooded stream/ reservoirs:  Waterways and ponds provide bats with the water to rehydrate - and they also attract midges and other flying insects, which congregate in their thousands and provide a ready feast for bats! Daubenton's bats are often seen skimming over the top of the water to feed on a variety of water insects and pipistrelles often feed over the water of a river or pond near their roost.",
     habitatimg: "img/habitat_bad.png",
   },
   {
@@ -130,9 +130,9 @@ media_assets = [
     col: set3col[9],
     sPath: "sound/2022-08-24 00-35-10.mp3",
     img: "/long_eared.png",
-    desc: "The brown long-eared bat or common long-eared bat (Plecotus auritus) is a small Eurasian insectivorous bat. It has distinctive ears, long and with a distinctive fold. It is extremely similar to the much rarer grey long-eared bat which was only validated as a distinct species in the 1960s. An adult brown long-eared bat has a body length of 4.5–4.8 cm, a tail of 4.1–4.6 cm, and a forearm length of 4–4.2 cm. The ears are 3.3–3.9 cm in length, and readily distinguish the long-eared bats from most other bat species. They are relatively slow flyers compared to other bat species.",
+    desc: "The brown long-eared bat (Plecotus auritus) is a small Eurasian insectivorous bat (wingspan 28.5cm). It has distinctive long ears. It is extremely similar to the much rarer grey long-eared bat which was only validated as a distinct species in the 1960s. They are relatively slow flyers compared to other bat species. Brown long eared bats are commonly found throughout the UK. They are also sometimes known as the ‘whispering bat’ as their call is so quiet. This can lead to under recording using bat detectors, and although we have detected this species on the farm it is likely to be more abundant than it appears.",
     habitat:
-      "Different Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Agroforestry fields/ orchards:  Mature orchards and agroforestry silvopasture systems provide great opportunities for bats to hunt as they can echolocate through the fruit and nut trees which, when mature, provide great potential for insects to live in and around. Bats can also gain access to incest rich grasslands that are often found in the understory and grazed by sheep or cattle which, when managed organically and at a low intensity can help encourage a huge amount of insect diversity. At Wash Farm we have a number of orchards, some of which are mature and some are recently established. ",
     habitatimg: "img/habitat_good.png",
     totals: 34,
   },
