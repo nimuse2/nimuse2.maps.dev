@@ -1,6 +1,6 @@
 let map;
 
-console.log(env.TEST);
+console.log(process.env.TEST);
 
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
