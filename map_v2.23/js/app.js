@@ -32,6 +32,7 @@ var midbackground = svg.append("g");
 var midground = svg.append("g");
 var foreground = svg.append("g");
 var interactive = svg.append("g");
+var habitat = svg.append("g");
 
 //BUILD BACKGROUND
 // REQUEST DATA
@@ -49,6 +50,9 @@ d3.json("geoJson/wash_woods.json").then(function (json) {
 d3.json("geoJson/hedge_control_3.json").then(function (json) {
   updateMid(json, "hedges");
 });
+d3.json("geoJson/habitat.json").then(function (json) {
+  updateHabitat(json, "habitat");
+});
 // d3.json("wash_extended.json").then(function (json) {
 //   update(json, "main_map");
 // });
@@ -57,15 +61,18 @@ d3.json("geoJson/hedge_control_3.json").then(function (json) {
 makeCircleDisplay();
 //make txt
 makeText();
-makeAltKey(svg);
+makeDynamicKey(svg);
+// makeKeyDynamic();
 makeLegend(svg, width, height);
 makeTooltip(interactive);
 
 //UI INTERACT//////////////////////
 d3.select("#change2023").on("click", function () {
   updateCircleDisplay(resultsList2023, "2023");
+  updateDynamic(totalCount23);
   // makeCircleDisplay(testData);
 });
 d3.select("#change2022").on("click", function () {
   updateCircleDisplay(resultsList2022, "2022");
+  updateDynamic(totalCount22);
 });

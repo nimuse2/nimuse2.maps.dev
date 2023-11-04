@@ -81,7 +81,7 @@ function makeCircleDisplay() {
         // var elem = d3.select("#2_4");
         // elem.attr("fill", "black");
         // console.log(">>>", elem);
-        showTooltip(d);
+        showBatTooltip(d);
         // showTooltip(d);
       })
       .on("mouseleave", function (d, i) {

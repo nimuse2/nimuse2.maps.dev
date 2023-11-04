@@ -2,6 +2,11 @@
 var tooltipTxttop = 30; //1st line
 var magicR = 0;
 
+var descBox = 280;
+var imgHeight = 170;
+
+var txtBoxFontSize = "11px";
+
 function makeTooltip(_svg) {
   //
   //image
@@ -28,6 +33,15 @@ function makeTooltip(_svg) {
     .style("fill", "white")
     .style("font-size", fontSize)
     .text("Habitat");
+  HabitatTip_location = _svg
+    .append("text")
+    // .attr("x", 200)
+    // .attr("y", 200 + leading * 1)
+    .style("opacity", 0)
+    .attr("font-family", "Arial")
+    .style("fill", "white")
+    .style("font-size", fontSize)
+    .text("Location");
   HabitatTip_desc = _svg
     .append("text")
     // .attr("x", 200)
@@ -111,7 +125,20 @@ function makeTooltip(_svg) {
     .style("fill", "white")
     .style("font-size", fontSize)
     .text("Line 6");
-
+  //habitat
+  HabitatLineTop = _svg
+    .append("line")
+    .attr("id", "LineTop")
+    .style("opacity", 0)
+    .attr("stroke", "white")
+    .style("stroke-dasharray", "2,2");
+  HabitatLineDown = _svg
+    .append("line")
+    .attr("id", "LineTop")
+    .style("opacity", 0)
+    .attr("stroke", "white")
+    .style("stroke-dasharray", "2,2");
+  //bat
   TooltipLineTop = _svg
     .append("line")
     .attr("id", "LineTop")
@@ -228,8 +255,8 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   // console.log(">>>circle -y : ", magicY);
   // console.log(">>>circle -r : ", magicR);
 
-  TooltipLineTop.attr("x1", 184) //) //on circle
-    // TooltipLineTop.attr("x1", magicX) //) //on circle
+  // TooltipLineTop.attr("x1", 184) //) //on circle
+  TooltipLineTop.attr("x1", magicX) //) //on circle
     .attr("y1", lineTop) //zoom : mouseLineY) //on circle
     .attr("x2", width - 200) //on info
     .attr("y2", lineTop); //on info
@@ -243,8 +270,66 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     .attr("x2", magicX) //on info
     .attr("y2", lineBtm); //on info
 }
+//seperate batTooltip
+//habitattooltip
+function showHabitatTooltip(_d, _x, _y) {
+  // console.log("Habitat select: ", _d.properties.habitat_id);
+  var habitat_loc = "";
+  var habitat_desc = "";
+  var habitat_title = "";
+  var habitat_img = "";
+  _ty = tooltipTxttop + 30;
 
-function showTooltip(_d) {
+  for (i = 0; i < habitat_assets.length; i++) {
+    if (_d.properties.habitat_id == habitat_assets[i].key) {
+      habitat_desc = habitat_assets[i].desc;
+      habitat_img = habitat_assets[i].img;
+      habitat_title = habitat_assets[i].title;
+      habitat_loc = _d.properties.location;
+    }
+  }
+
+  // var imageHabitatPath = "img/habitat_good.png";
+
+  HabitatImg.style("opacity", 1)
+    .attr("xlink:href", habitat_img)
+    .attr("x", 30)
+    .attr("y", _ty + leading - 30);
+  HabitatTip_heading.text("Habitat: " + habitat_title)
+    .style("opacity", 1)
+    .style("font-size", "13px")
+    .attr("x", 30)
+    .attr("y", _ty + leading + imgHeight);
+  HabitatTip_location.text("Location: " + habitat_loc)
+    .style("opacity", 1)
+    .style("font-size", "13px")
+    .attr("x", 30)
+    .attr("y", _ty + leading + imgHeight + 15);
+  HabitatTip_desc.text(habitat_desc)
+    .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
+    .attr("x", 30)
+    .attr("y", _ty + leading + imgHeight + 30)
+    .call(wrap, 190);
+  //habitat lines
+  // magicX = _d.x;
+  // magicY = _d.y;
+  // magicR = _d.radius;
+  // console.log("HABITAT: ", _d, _x, _y);
+
+  HabitatLineTop.style("opacity", 1)
+    .attr("x1", _x) //) //on circle
+    .attr("y1", lineTop) //zoom : mouseLineY) //on circle
+    .attr("x2", 15 + imgHeight) //on info
+    .attr("y2", lineTop); //on info
+
+  HabitatLineDown.style("opacity", 1)
+    .attr("x1", _x) //) //on circle
+    .attr("y1", lineTop) //zoom : mouseLineY) //on circle
+    .attr("x2", _x) //on info
+    .attr("y2", _y); //
+}
+function showBatTooltip(_d) {
   // console.log(">>> ", _d);
   // svg.select("#" + _d.key).style("color", "green");
   // d3.select(_d.key).attr("fill", "red");
@@ -253,8 +338,6 @@ function showTooltip(_d) {
   magicY = _d.y;
   magicR = _d.radius;
 
-  var descBox = 280;
-  var imgHeight = 170;
   var doubleHeight = leading * 2;
   // var blob = actualData[_d.category]; //??
   var xFactor = 10;
@@ -269,7 +352,7 @@ function showTooltip(_d) {
     .attr("y", _ty);
     */
   // console.error("--> TOOLTIP BOTTOM -->");
-  // console.log("--> d --> ", _d);
+  // console.log("showBat--> d --> ", _d);
   // console.log("--> d--> ", _d.color);
   var keySplit = _d.key.split("_");
   // console.log(">>key>> ", keySplit[0]);
@@ -288,37 +371,35 @@ function showTooltip(_d) {
   //
   d3.select("#keyCircle_" + keyRef).attr("opacity", "1");
 
-  var txtBoxFontSize = "11px";
+  // var imageHabitatPath = "img/habitat_good.png";
 
-  var imageHabitatPath = "img/habitat_good.png";
-
-  HabitatImg.style("opacity", 1)
-    .attr("xlink:href", media_assets[keyRef].habitatimg)
-    .attr("x", 30)
-    .attr("y", _ty + leading - 30);
-  HabitatTip_heading.text("Habitat: ")
-    .style("opacity", 1)
-    .style("font-size", "13px")
-    .attr("x", 30)
-    .attr("y", _ty + leading + imgHeight);
-  HabitatTip_desc.text("Habitat: " + media_assets[keyRef].habitat)
-    .style("opacity", 1)
-    .style("font-size", txtBoxFontSize)
-    .attr("x", 30)
-    .attr("y", _ty + leading + imgHeight + 30)
-    .call(wrap, 190);
+  // HabitatImg.style("opacity", 1)
+  //   .attr("xlink:href", species_assets[keyRef].habitatimg)
+  //   .attr("x", 30)
+  //   .attr("y", _ty + leading - 30);
+  // HabitatTip_heading.text("Habitat: ")
+  //   .style("opacity", 1)
+  //   .style("font-size", "13px")
+  //   .attr("x", 30)
+  //   .attr("y", _ty + leading + imgHeight);
+  // HabitatTip_desc.text("Habitat: " + species_assets[keyRef].habitat)
+  //   .style("opacity", 1)
+  //   .style("font-size", txtBoxFontSize)
+  //   .attr("x", 30)
+  //   .attr("y", _ty + leading + imgHeight + 30)
+  //   .call(wrap, 190);
 
   BatImg.style("opacity", 1)
-    .attr("xlink:href", "img/" + media_assets[keyRef].img)
+    .attr("xlink:href", "img/" + species_assets[keyRef].img)
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading - 30);
   // Tooltip2.text("Location: " + blob.location)
-  Tooltip2.text("Species: " + media_assets[keyRef].name)
+  Tooltip2.text("Species: " + species_assets[keyRef].name)
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)
     .attr("y", _ty + leading + imgHeight);
-  Tooltip3.text("Description: " + media_assets[keyRef].desc)
+  Tooltip3.text("Description: " + species_assets[keyRef].desc)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
@@ -326,32 +407,33 @@ function showTooltip(_d) {
     .attr("height", descBox)
     .call(wrap, 200);
   //count, habitat image, date??
-  /*
-  Tooltip4.text("Date: " + blob.date)
-    .style("opacity", 1)
-    .style("font-size", txtBoxFontSize)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 3 + descBox + imgHeight);
-  // Tooltip5.text("Species: " + media_assets[_d.color].name)
-  Tooltip5.text("Location: " + blob.location)
-    .style("opacity", 1)
-    .style("font-size", txtBoxFontSize)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 4 + descBox + imgHeight) //blob.category
-    .attr("width", 190)
-    .attr("height", doubleHeight)
-    .call(wrap, 190);
-    */
+
+  // Tooltip4.text("More info [link]")
+  //   .style("opacity", 1)
+  //   .style("font-size", txtBoxFontSize)
+  //   .attr("x", _tx + xFactor)
+  //   .attr("y", _ty + descBox + imgHeight);
+  // .append("div")
+  // .html("<a href='newPage.html'>new page</a>");
+  // Tooltip5.text("Species: " + species_assets[_d.color].name)
+  // Tooltip5.text("Location: " + blob.location)
+  //   .style("opacity", 1)
+  //   .style("font-size", txtBoxFontSize)
+  //   .attr("x", _tx + xFactor)
+  //   .attr("y", _ty + leading * 4 + descBox + imgHeight) //blob.category
+  //   .attr("width", 190)
+  //   .attr("height", doubleHeight)
+  //   .call(wrap, 190);
+
   // wrap the text in <= 30
   // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
 
-  /*
-  Tooltip6.text("Totals: " + Math.floor(media_assets[keyRef].totals))
+  Tooltip6.text("Totals: " + Math.floor(species_assets[keyRef].totals))
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + descBox + imgHeight + 2);
-    */
+    .attr("y", _ty + descBox + imgHeight + 20);
+
   /*
   Tooltip7.text("Click to play sound")
     .style("opacity", 1)
@@ -371,8 +453,11 @@ function showTooltip(_d) {
 }
 
 function hideTooltip() {
+  HabitatLineTop.style("opacity", 0);
+  HabitatLineDown.style("opacity", 0);
   HabitatImg.style("opacity", 0);
   HabitatTip_heading.style("opacity", 0);
+  HabitatTip_location.style("opacity", 0);
   HabitatTip_desc.style("opacity", 0);
   BatImg.style("opacity", 0);
   Tooltip.style("opacity", 0);

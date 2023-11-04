@@ -32,8 +32,8 @@ function makeData(_geoData, _resultsList) {
 
 function updateData(_nxtresultsList, _year) {
   //update DATA object with new values
-  console.log("updateData()");
-  console.log(data);
+  // console.log("updateData()");
+  // console.log(data);
 
   for (i = 0; i < data.length; i++) {
     // _geoData[]

@@ -74,8 +74,23 @@ function makeLegend(_svg, _width, _height) {
     .attr("font-family", "Arial")
     .text("Legend - Circle Size ");
 }
+function updateDynamic(_d) {
+  // data1 = data2;
+  // console.log("updateDynamic");
+  for (i = 0; i < species_assets.length; i++) {
+    svg
+      .select("#keyCircle_" + i)
+      // .data(data2)
+      // .exit()
+      .transition()
+      .duration(800)
+      .attr("r", radiusScale(_d[i].r / 2));
 
-function makeAltKey(_svg) {
+    svg.select("#keyLable_" + i).text("Totals: " + _d[i].r);
+  }
+}
+
+function makeDynamicKey(_svg) {
   //title
 
   //
@@ -91,39 +106,71 @@ function makeAltKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Key");
+    .text("Key - Click for more info.");
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
-  for (i = 0; i < media_assets.length; i++) {
-    // console.log(">>>>>>>>>>>>> ", media_assets[i].totals);
+
+  for (i = 0; i < species_assets.length; i++) {
+    // console.log(">>>>>>>>>>>>> ", species_assets[i].totals);
+
     _svg
+      .append("a")
+      .attr("xlink:href", "" + species_assets[i].external_link)
       .append("circle")
+      .attr("class", "kCirc")
       .attr("id", "keyCircle_" + i)
       .attr("cx", startX + 20 + horX * i)
       .attr("cy", startY + 30)
-      .attr("r", 15)
-      .style("fill", media_assets[i].col)
+      // .attr("r", function (d) {
+      //   console.log(d);
+      //   return radiusScale(d);
+      // })
+      .attr("r", radiusScale(totalCount22[i].r / 2))
+      // .attr("r", radiusScale(species_assets[i].totals / 3))
+      .style("fill", species_assets[i].col)
       .attr("opacity", "0.7")
+      .on("mouseover", function (d) {
+        d3.select(this).attr("opacity", "1");
+      })
+      .on("mouseleave", function (d, i) {
+        d3.select(this).attr("opacity", "0.7");
+      })
       .attr("stroke", "white");
+    // .attr("xlink:href", "http://example.com");
     // var rotateX = startX + 20 + 50 * i;
     // var rotateY = horY;
-    // console.log(">>>>> raduii >>>> ", media_assets[i].totals / totalsFactor);
-    // horX = horX + media_assets[i].totals / totalsFactor;
+    // console.log(">>>>> raduii >>>> ", species_assets[i].totals / totalsFactor);
+    // horX = horX + species_assets[i].totals / totalsFactor;
+
     keyCircleArr.push(startX + 20 + horX * i); //utils
-    // horX = horX + media_assets[i].totals / totalsFactor;
-    // keyCircleArr.push(startX + media_assets[i].totals);
+    // horX = horX + species_assets[i].totals / totalsFactor;
+    // keyCircleArr.push(startX + species_assets[i].totals);
     _svg
       .append("text")
       .attr("x", startX + 20 + horX * i)
-      .attr("y", startY + 30 + 30)
+      .attr("y", startY + 50 + 30)
+      .attr("text-anchor", "start")
+      .attr("font-family", "Arial")
+      .style("font-size", "11px")
+      .style("fill", "white")
+      .attr("class", "keyLable")
+      // .text(species_assets[i].name)
+      .text(species_assets[i].name)
+      .call(wrap, 70);
+    _svg
+      .append("text")
+      .attr("x", startX + 20 + horX * i)
+      .attr("y", startY + 50 + 30 + 30)
       .attr("text-anchor", "start")
       .attr("font-family", "Arial")
       .style("font-size", "9px")
       .style("fill", "white")
       .attr("class", "keyLable")
-      .text(media_assets[i].name)
-      // .text(media_assets[i].name + " Total: " + media_assets[i].totals)
+      .attr("id", "keyLable_" + i)
+      // .text(species_assets[i].name)
+      // .text("Totals: " + species_assets[i].totals)
+      .text("Totals: " + totalCount23[i].r)
       .call(wrap, 70);
   }
 
