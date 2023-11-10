@@ -86,7 +86,7 @@ function updateDynamic(_d) {
       .duration(800)
       .attr("r", radiusScale(_d[i].r / 2));
 
-    svg.select("#keyLable_" + i).text("Totals: " + _d[i].r);
+    svg.select("#keyLable_" + i).text(_d[i].r);
   }
 }
 
@@ -96,7 +96,7 @@ function makeDynamicKey(_svg) {
   //
   var startX = 30;
   var startY = 600;
-  var horX = 50; //unit spacing
+  var horX = 60; //unit spacing
   // var vertY = height - 200;
 
   _svg
@@ -106,7 +106,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Key - Click for more info.");
+    .text("Key - with totals (Click to link to BCT info.)");
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -148,7 +148,7 @@ function makeDynamicKey(_svg) {
     // keyCircleArr.push(startX + species_assets[i].totals);
     _svg
       .append("text")
-      .attr("x", startX + 20 + horX * i)
+      .attr("x", startX + horX * i)
       .attr("y", startY + 50 + 30)
       .attr("text-anchor", "start")
       .attr("font-family", "Arial")
@@ -160,17 +160,17 @@ function makeDynamicKey(_svg) {
       .call(wrap, 70);
     _svg
       .append("text")
-      .attr("x", startX + 20 + horX * i)
+      .attr("x", startX + horX * i)
       .attr("y", startY + 50 + 30 + 30)
       .attr("text-anchor", "start")
       .attr("font-family", "Arial")
-      .style("font-size", "9px")
+      .style("font-size", "13px")
       .style("fill", "white")
       .attr("class", "keyLable")
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
       // .text("Totals: " + species_assets[i].totals)
-      .text("Totals: " + totalCount23[i].r)
+      .text("" + totalCount23[i].r)
       .call(wrap, 70);
   }
 

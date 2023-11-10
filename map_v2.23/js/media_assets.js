@@ -15,59 +15,59 @@ var set3col = [
 ];
 //dummy values - need to update
 var totalCount22 = [
-  { r: 34, x: 200, y: 100 },
-  { r: 56, x: 300, y: 100 },
-  { r: 78, x: 400, y: 100 },
-  { r: 93, x: 500, y: 100 },
-  { r: 23, x: 600, y: 100 },
-  { r: 45, x: 700, y: 100 },
-  { r: 22, x: 800, y: 100 },
-  { r: 10, x: 900, y: 100 },
-  { r: 65, x: 1000, y: 100 },
-  { r: 29, x: 1100, y: 100 },
+  { r: 20, x: 200, y: 100 }, //greater horse
+  { r: 0, x: 300, y: 100 }, //lesser
+  { r: 31, x: 400, y: 100 }, //common pip
+  { r: 20, x: 500, y: 100 }, //soprano pip
+  { r: 4, x: 600, y: 100 }, //barb
+  { r: 27, x: 700, y: 100 }, //myotis
+  { r: 20, x: 800, y: 100 }, //lieslers
+  { r: 20, x: 900, y: 100 }, //serotine
+  { r: 0, x: 1000, y: 100 }, //
+  { r: 11, x: 1100, y: 100 }, //long eared
 ];
 var totalCount23 = [
-  { r: 10, x: 200, y: 100 },
-  { r: 23, x: 300, y: 100 },
-  { r: 18, x: 400, y: 100 },
-  { r: 53, x: 500, y: 100 },
-  { r: 43, x: 600, y: 100 },
-  { r: 35, x: 700, y: 100 },
-  { r: 82, x: 800, y: 100 },
-  { r: 20, x: 900, y: 100 },
-  { r: 35, x: 1000, y: 100 },
-  { r: 59, x: 1100, y: 100 },
+  { r: 50, x: 200, y: 100 }, //ghb
+  { r: 2, x: 300, y: 100 }, //lhb
+  { r: 371, x: 400, y: 100 }, //common pip
+  { r: 204, x: 500, y: 100 }, //soprano pip
+  { r: 3, x: 600, y: 100 }, //barb
+  { r: 385, x: 700, y: 100 }, //myotis
+  { r: 13, x: 800, y: 100 }, //lieslers
+  { r: 13, x: 900, y: 100 }, //serotine
+  { r: 6, x: 1000, y: 100 }, //natt
+  { r: 3, x: 1100, y: 100 }, //long eared
 ];
 
 habitat_assets = [
   {
     key: "h_1",
     title: "Bushy Hedges",
-    img: "img/habitat_good.png",
+    img: "img/habitat_bushy_hedge.png",
     desc: "Tall, bushy hedges are important for bats to help them to navigate through the landscape (they need to echolocate using structures in the landscape in order to 'see' where they are going'). Large healthy hedges also provide a brilliant habitat for insects and provide shelter from prevailing winds. As all UK bats are insectivorous, hedges will be helping provide large networks of linked up food sources. At Wash Farm hedges are cut no more than once every 3 years and trees are being left in the centre in order to increase shelter, berries and biomass across the farm.",
   },
   {
     key: "h_2",
     title: "Green Lanes",
-    img: "img/habitat_med.png",
+    img: "img/habitat_green_lane.png",
     desc: "Networks of bridlepaths, old roads and footpaths often have tall hedges either side of them creating what is locally known as a 'green lane' these make wildlife super-highways with constant shelter for insects from wind and rain and darker corridors for bats to fly through. Green lanes used to be ore common in the south west and if hedges are cut too short, their benefits are greatly reduced for wildlife. At Wash Farm we have a number of green lanes and we are trying to manage them to provide year round habitat for our resident bats and other wildlife.   ",
   },
   {
     key: "h_3",
     title: "Exposed areas",
-    img: "img/habitat_good.png",
+    img: "img/habitat_exposed.png",
     desc: "Locations near to the tops of hills, high up on valley sides and exposed to wind and rain are unlikely to provide beneficial habitat for bats. Without hedges to fly along and trees to navigate through, there is limited opportunities for bats and their insect prey to thrive. Exposed areas across Wash farm have been surveyed before planting and creating new habitats so that we can see potential improvements in biodiversity on the farm.",
   },
   {
     key: "h_4",
     title: "Wooded stream / Reservoirs",
-    img: "img/habitat_med.png",
+    img: "img/habitat_wooded_stream.png",
     desc: "Waterways and ponds provide bats with the water to rehydrate - and they also attract midges and other flying insects, which congregate in their thousands and provide a ready feast for bats! Daubenton's bats are often seen skimming over the top of the water to feed on a variety of water insects and pipistrelles often feed over the water of a river or pond near their roost.",
   },
   {
     key: "h_5",
     title: "Agroforestry / Orchards",
-    img: "img/habitat_med.png",
+    img: "img/habitat_agroforest.png",
     desc: "Mature orchards and agroforestry silvopasture systems provide great opportunities for bats to hunt as they can echolocate through the fruit and nut trees which, when mature, provide great potential for insects to live in and around. Bats can also gain access to incest rich grasslands that are often found in the understory and grazed by sheep or cattle which, when managed organically and at a low intensity can help encourage a huge amount of insect diversity. At Wash Farm we have a number of orchards, some of which are mature and some are recently established. ",
     habitatimg: "img/habitat_bad.png",
   },

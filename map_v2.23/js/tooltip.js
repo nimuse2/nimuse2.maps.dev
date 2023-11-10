@@ -330,7 +330,7 @@ function showHabitatTooltip(_d, _x, _y) {
     .attr("y2", _y); //
 }
 function showBatTooltip(_d) {
-  // console.log(">>> ", _d);
+  // console.log(">>> ", _d.count);
   // svg.select("#" + _d.key).style("color", "green");
   // d3.select(_d.key).attr("fill", "red");
 
@@ -428,9 +428,14 @@ function showBatTooltip(_d) {
   // wrap the text in <= 30
   // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
 
-  Tooltip6.text("Totals: " + Math.floor(species_assets[keyRef].totals))
+  //TOTAL FOR WHOLE MAP
+
+  //need total for species and location
+  // .count
+
+  Tooltip6.text("Total count: " + _d.count)
     .style("opacity", 1)
-    .style("font-size", txtBoxFontSize)
+    .style("font-size", "13px")
     .attr("x", _tx + xFactor)
     .attr("y", _ty + descBox + imgHeight + 20);
 
