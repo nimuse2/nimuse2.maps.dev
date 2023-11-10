@@ -102,11 +102,11 @@ function makeDynamicKey(_svg) {
   _svg
     .append("text")
     .attr("x", startX)
-    .attr("y", startY)
+    .attr("y", startY - 20)
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Key - with totals (Click to link to BCT info.)");
+    .text("Totals (Click to link to BCT info.)");
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;

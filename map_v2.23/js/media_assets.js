@@ -138,7 +138,7 @@ species_assets = [
     desc: "these two species were only separated in 1970 and are almost impossible to tell apart by sound alone. Both are small (wingspan to 24cm) with brown, shaggy fur and found throughout England, Wales and Southern Scotland. Brandt’s bats are thought to be slightly less common than Whiskered bats. These myotis species require wooded valleys, pastures and old trees in the landscape and Wash Farm provides a good supply of these habitats leading to these species being found quite regularly during surveys.",
     totals: 236,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/barbastelle_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/daubentons_11.02.13.pdf",
   },
   {
     name: "Leislers",

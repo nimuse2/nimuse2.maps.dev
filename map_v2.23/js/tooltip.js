@@ -304,12 +304,12 @@ function showHabitatTooltip(_d, _x, _y) {
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", 30)
-    .attr("y", _ty + leading + imgHeight + 15);
+    .attr("y", _ty + leading + imgHeight + 30);
   HabitatTip_desc.text(habitat_desc)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", 30)
-    .attr("y", _ty + leading + imgHeight + 30)
+    .attr("y", _ty + leading + imgHeight + 60)
     .call(wrap, 190);
   //habitat lines
   // magicX = _d.x;
