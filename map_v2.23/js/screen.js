@@ -81,6 +81,7 @@ function makeCircleDisplay() {
         // var elem = d3.select("#2_4");
         // elem.attr("fill", "black");
         // console.log(">>>", elem);
+
         showBatTooltip(d);
         // showTooltip(d);
       })
@@ -169,7 +170,7 @@ function makeText() {
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
       .attr("font-size", "14px")
-      .style("fill", "rgba(255,255,255,0.8)")
+      .style("fill", "rgba(255,255,255,0.7)")
       .text(locationNameList[i])
       .attr("x", locationLabelList[i][0])
       .attr("y", locationLabelList[i][1]);
@@ -181,7 +182,7 @@ function makeText() {
       // .style("opacity", 0.8)
       .attr("font-family", "Arial")
       .attr("font-size", "9px")
-      .style("fill", "rgba(255,255,255,0.7)")
+      .style("fill", "rgba(255,255,255,0.6)")
       .text(smlLocationNameList[i])
       .attr("x", smlLocationLabelList[i][0])
       .attr("y", smlLocationLabelList[i][1]);

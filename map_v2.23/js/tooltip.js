@@ -330,7 +330,7 @@ function showHabitatTooltip(_d, _x, _y) {
     .attr("y2", _y); //
 }
 function showBatTooltip(_d) {
-  // console.log(">>> ", _d.count);
+  // console.log(">>> ", _d.key);
   // svg.select("#" + _d.key).style("color", "green");
   // d3.select(_d.key).attr("fill", "red");
 
@@ -432,8 +432,24 @@ function showBatTooltip(_d) {
 
   //need total for species and location
   // .count
+  // console.log(">>> ", surveyLocList22[keySplit[0]]);
+  var locText = "";
+  if (year == "2022") {
+    locText = surveyLocList22[keySplit[0]];
+  } else if (year == "2023") {
+    locText = surveyLocList23[keySplit[0]];
+  }
 
-  Tooltip6.text("Total count: " + _d.count)
+  Tooltip5.text("Location: " + surveyLocList22[keySplit[0]])
+    .style("opacity", 1)
+    .style("font-size", txtBoxFontSize)
+    .attr("x", _tx + xFactor)
+    .attr("y", _ty + descBox + imgHeight) //blob.category
+    .attr("width", 190)
+    .attr("height", doubleHeight)
+    .call(wrap, 190);
+
+  Tooltip6.text("Count: " + _d.count)
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)

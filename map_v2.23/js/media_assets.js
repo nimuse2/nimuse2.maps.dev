@@ -27,14 +27,14 @@ var totalCount22 = [
   { r: 11, x: 1100, y: 100 }, //long eared
 ];
 var totalCount23 = [
-  { r: 50, x: 200, y: 100 }, //ghb
+  { r: 52, x: 200, y: 100 }, //ghb
   { r: 2, x: 300, y: 100 }, //lhb
-  { r: 371, x: 400, y: 100 }, //common pip
-  { r: 204, x: 500, y: 100 }, //soprano pip
-  { r: 3, x: 600, y: 100 }, //barb
-  { r: 385, x: 700, y: 100 }, //myotis
-  { r: 13, x: 800, y: 100 }, //lieslers
-  { r: 13, x: 900, y: 100 }, //serotine
+  { r: 446, x: 400, y: 100 }, //common pip
+  { r: 239, x: 500, y: 100 }, //soprano pip
+  { r: 180, x: 600, y: 100 }, //barb - daub
+  { r: 207, x: 700, y: 100 }, //myotis - other
+  { r: 15, x: 800, y: 100 }, //lieslers
+  { r: 15, x: 900, y: 100 }, //serotine
   { r: 6, x: 1000, y: 100 }, //natt
   { r: 3, x: 1100, y: 100 }, //long eared
 ];
@@ -119,18 +119,18 @@ species_assets = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/sopranopipistrelle_11.02.13.pdf",
   },
   {
-    name: "Barbastelle",
+    name: "Daubenton's",
     // col: "rgb(43, 236, 208)",
     col: set3col[4],
     sPath: "sound/2022-08-23 21-14-24.mp3",
     img: "/barb.png",
-    desc: "The western barbastelle (Barbastella barbastellus) is a species often associated with woodland and valleys found occasionally or rarely throughout southern Britain. It has a short nose, small eyes and wide ears with a wingspan of up to 29cm. Barbastelles are considered a conservation priority in the UK and is one of the rarest bats in the country. Southern Devon is a stronghold for this species and the landscape around Wash is well suited to this species. They are found relatively often at Wash Farm.",
+    desc: "Daunbenton's bats (myotis daubentonii) is a medium bat (wingspan up to 27.5cm) which is heavily associated with water, where it can be found hunting and picking prey directly off the surface of ponds and streams. Daubentons are found throughout the UK and are commonly found along water courses and water bodies. They are sensitive to increases in pollution of habitat change around water bodies. They are com",
     totals: 27,
     external_link:
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/barbastelle_11.02.13.pdf",
   },
   {
-    name: "Myotis",
+    name: "Myotis - other",
     // col: "rgb(189, 235, 52)",
     col: set3col[5],
     sPath: "sound/2022-08-24 00-35-10.mp3",

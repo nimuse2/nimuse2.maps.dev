@@ -106,7 +106,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Totals (Click to link to BCT info.)");
+    .text("Survey Totals (Click to link to BCT info.)");
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -157,7 +157,7 @@ function makeDynamicKey(_svg) {
       .attr("class", "keyLable")
       // .text(species_assets[i].name)
       .text(species_assets[i].name)
-      .call(wrap, 70);
+      .call(wrap, 65);
     _svg
       .append("text")
       .attr("x", startX + horX * i)

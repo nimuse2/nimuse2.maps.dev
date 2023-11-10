@@ -16,6 +16,9 @@ function makeData(_geoData, _resultsList) {
     var item = {};
     */
 
+    // console.log("MakeData(): geoData: ", _geoData[Number(splitKey[0])][1]);
+    // console.log("makeData(): results:", _resultsList);
+
     var item = {
       key: _resultsList[i].key,
       lat: _geoData[Number(splitKey[0])][1],

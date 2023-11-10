@@ -68,11 +68,13 @@ makeTooltip(interactive);
 
 //UI INTERACT//////////////////////
 d3.select("#change2023").on("click", function () {
+  year = "2023";
   updateCircleDisplay(resultsList2023, "2023");
   updateDynamic(totalCount23);
   // makeCircleDisplay(testData);
 });
 d3.select("#change2022").on("click", function () {
+  year = "2022";
   updateCircleDisplay(resultsList2022, "2022");
   updateDynamic(totalCount22);
 });

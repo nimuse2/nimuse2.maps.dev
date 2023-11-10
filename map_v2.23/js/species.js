@@ -1,6 +1,7 @@
 /* species list and details */
 /* generic */
 //WRONG ONE!!
+
 var speciesList = [
   {
     name: "Greater Horseshoe",
@@ -39,7 +40,7 @@ var speciesList = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/sopranopipistrelle_11.02.13.pdf",
   },
   {
-    name: "Barbastelle",
+    name: "Barbastelle - DAUB",
     col: "rgb(43, 236, 208)",
     sPath: "sound/2022-08-23 21-14-24.mp3",
     img: "/barb.png",

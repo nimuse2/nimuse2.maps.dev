@@ -1,5 +1,6 @@
 //variables and functions used by whole program - GLOBALS!
 var leading = 30;
+var year = "2022";
 //STRING SPLIT////////////////////////
 function keySplit(_key) {
   var locationKey = "0";
