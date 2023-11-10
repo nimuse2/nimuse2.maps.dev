@@ -170,7 +170,7 @@ function makeDynamicKey(_svg) {
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
       // .text("Totals: " + species_assets[i].totals)
-      .text("" + totalCount23[i].r)
+      .text("" + totalCount22[i].r)
       .call(wrap, 70);
   }
 

@@ -32,7 +32,7 @@ var smlLocationLabelList = [
   projectionGeo([-3.738319011788479, 50.470461208589406]), //badger
   projectionGeo([-3.728877635869762, 50.48428036804609]), //Landscove school
   projectionGeo([-3.7334695778477043, 50.48307886239407]), //Tidwell Farm
-  projectionGeo([-3.7197795827643487, 50.47321990112966]), //tuckers
+  projectionGeo([-3.718475041646257, 50.472280446720376]), //tuckers
   projectionGeo([-3.7501207319602416, 50.47319258815412]), //furzedown woodland
   projectionGeo([-3.733898731327885, 50.47715280811503]), //tor hill woodland
   projectionGeo([-3.730379673088195, 50.476442724143105]), //Barkingdon Pathfield
@@ -115,7 +115,7 @@ var surveyLocList22 = [
   "Wooded stream", //1
   "Open field", //2
   "..", //ben avery garden//3
-  "Kiln CLose", //4
+  "Kiln Close", //4
   "Newly planted hedge", //5
   "Fence line", //6
   "Agroforestry", //7
@@ -142,7 +142,7 @@ var locationList2023 = [
   projectionGeo([-3.739386633017923, 50.480928479971176]), //1
   projectionGeo([-3.741049249145417, 50.479844662729136]), //2
   projectionGeo([-3.731406892821159, 50.476763260384708]), //3
-  projectionGeo([-3.736174857449959, 50.472302304534956]), //4
+  projectionGeo([-3.736174857449959, 50.472302304534956]), //4 - dipway
   projectionGeo([-3.739150602688087, 50.474016084030531]), //5
   projectionGeo([-3.732463584432013, 50.474944529961355]), //6
   projectionGeo([-3.728290143581952, 50.4779182681145]), //7

@@ -19,11 +19,11 @@ var totalCount22 = [
   { r: 0, x: 300, y: 100 }, //lesser
   { r: 31, x: 400, y: 100 }, //common pip
   { r: 20, x: 500, y: 100 }, //soprano pip
-  { r: 4, x: 600, y: 100 }, //barb
+  { r: 0, x: 600, y: 100 }, //barb -- daub
   { r: 27, x: 700, y: 100 }, //myotis
-  { r: 20, x: 800, y: 100 }, //lieslers
-  { r: 20, x: 900, y: 100 }, //serotine
-  { r: 0, x: 1000, y: 100 }, //
+  { r: 20, x: 800, y: 100 }, //lieslers -- split in 2
+  { r: 20, x: 900, y: 100 }, //serotine -- split in 2
+  { r: 0, x: 1000, y: 100 }, //natt
   { r: 11, x: 1100, y: 100 }, //long eared
 ];
 var totalCount23 = [
