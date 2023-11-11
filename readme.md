@@ -27,7 +27,7 @@
 
 ### Bugs
 
-- REFACTOR
+- REFACTOR - make lists into objects
 - Update to latest D3 and ECMA script
 - Responsive tests on phones
 - Pan/ zoom?

@@ -72,7 +72,7 @@ function makeLegend(_svg, _width, _height) {
     .attr("x", xCircle - 200)
     .attr("y", 610)
     .attr("font-family", "Arial")
-    .text("Legend - Circle Size ");
+    .text("Legend - Main Map circles");
 }
 function updateDynamic(_d) {
   // data1 = data2;
@@ -106,7 +106,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Survey Totals (Click to link to BCT info.)");
+    .text("Survey Totals " + year + " (Click to link to BCT info.)");
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;

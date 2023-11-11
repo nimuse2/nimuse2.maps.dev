@@ -7,6 +7,29 @@
         "id": "22023",
         "name": "Bob Andrews",
         "location": "New hdge top dipway",
+        "habitat_id": "h_5",
+        "habitat": "Orchard/agroforestry",
+        "fill": "rgba(255,0,0,1)",
+        "stroke": "none",
+        "strokewidth": "1px"
+      },
+      "geometry": {
+        "coordinates": [
+          [-3.739543440712339, 50.48240671844286],
+          [-3.7396676859954425, 50.48171494578929],
+          [-3.739077520898661, 50.48173471086287],
+          [-3.739077520898661, 50.482327659223415],
+          [-3.739543440712339, 50.482525307023906]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "22023",
+        "name": "Bob Andrews",
+        "location": "New hdge top dipway",
         "habitat_id": "h_3",
         "habitat": "Exposed site",
         "fill": "rgba(255,0,0,1)",

@@ -9,7 +9,7 @@ var txtBaeraArr = projectionGeo([actualData[0].lat, actualData[0].long]);
 var txtDartArr = projectionGeo([-3.759630557527089, 50.47286464147538]);
 */
 //TEXT//
-
+//REFACTOR// MAKE ALL INTO JSON OBJECTS...
 var smlLocationLabelList = [
   projectionGeo([-3.7340826458860477, 50.48125083257165]), //caddaford
   projectionGeo([-3.7379118447883855, 50.478985467531714]), //wooded
