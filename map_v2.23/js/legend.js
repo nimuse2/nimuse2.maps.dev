@@ -88,6 +88,9 @@ function updateDynamic(_d) {
 
     svg.select("#keyLable_" + i).text(_d[i].r);
   }
+  svg
+    .select("#legendTitle")
+    .text("Survey Totals " + year + " (Click to link to BCT info.)");
 }
 
 function makeDynamicKey(_svg) {
@@ -101,6 +104,7 @@ function makeDynamicKey(_svg) {
 
   _svg
     .append("text")
+    .attr("id", "legendTitle")
     .attr("x", startX)
     .attr("y", startY - 20)
     .attr("font-family", "Arial")
