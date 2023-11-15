@@ -40,7 +40,7 @@ var speciesList = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/sopranopipistrelle_11.02.13.pdf",
   },
   {
-    name: "Barbastelle - DAUB",
+    name: "Barbastelle ",
     col: "rgb(43, 236, 208)",
     sPath: "sound/2022-08-23 21-14-24.mp3",
     img: "/barb.png",

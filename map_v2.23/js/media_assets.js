@@ -119,7 +119,7 @@ species_assets = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/sopranopipistrelle_11.02.13.pdf",
   },
   {
-    name: "Daubenton's",
+    name: "Myotis Daubenton's",
     // col: "rgb(43, 236, 208)",
     col: set3col[4],
     sPath: "sound/2022-08-23 21-14-24.mp3",
@@ -127,21 +127,21 @@ species_assets = [
     desc: "Daunbenton's bats (myotis daubentonii) is a medium bat (wingspan up to 27.5cm) which is heavily associated with water, where it can be found hunting and picking prey directly off the surface of ponds and streams. Daubentons are found throughout the UK and are commonly found along water courses and water bodies. They are sensitive to increases in pollution of habitat change around water bodies. They are com",
     totals: 27,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/barbastelle_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/daubentons_11.02.13.pdf",
   },
   {
-    name: "Myotis - other",
+    name: "Myotis",
     // col: "rgb(189, 235, 52)",
     col: set3col[5],
     sPath: "sound/2022-08-24 00-35-10.mp3",
     img: "/myotis.png",
-    desc: "these two species were only separated in 1970 and are almost impossible to tell apart by sound alone. Both are small (wingspan to 24cm) with brown, shaggy fur and found throughout England, Wales and Southern Scotland. Brandt’s bats are thought to be slightly less common than Whiskered bats. These myotis species require wooded valleys, pastures and old trees in the landscape and Wash Farm provides a good supply of these habitats leading to these species being found quite regularly during surveys.",
+    desc: "These two species were only separated in 1970 and are almost impossible to tell apart by sound alone. Both are small (wingspan to 24cm) with brown, shaggy fur and found throughout England, Wales and Southern Scotland. Brandt's bats are thought to be slightly less common than Whiskered bats. These myotis species require wooded valleys, pastures and old trees in the landscape and Wash Farm provides a good supply of these habitats leading to these species being found quite regularly during surveys.",
     totals: 236,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/daubentons_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/brandts_11.02.13.pdf",
   },
   {
-    name: "Leislers",
+    name: "Nyctalus Species",
     // col: "rgb(3, 94, 252)",
     col: set3col[6],
     sPath: "sound/2022-08-19 23-51-04.mp3",
@@ -149,40 +149,40 @@ species_assets = [
     desc: "Leisler's bat (Nyctalus leisleri), used to be known as the ‘hairy armed bat’ due to its hairy appearance. It is similar to the noctule bat but smaller with a wingspan of up to 32cm. Leislers are found less commonly in Devon than many other species and it is hard to tell from our surveys if it is definitely at Wash Farm as its call is similar to that of Noctule and Serotine bats. .",
     totals: 6,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/leislers_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/noctule_11.02.13.pdf",
   },
   {
-    name: "Serotine",
+    name: "Long-eared",
     // col: "rgb(252, 148, 3)",
     col: set3col[7],
     sPath: "sound/2022-08-24 00-35-10.mp3",
     img: "/serotin.png",
-    desc: "The serotine bat (Eptesicus serotinus) is one of the UK’s largest bats with a wingspan of up to 38cm. It has a similar diet to greater horseshoes feeding on dung beetles, large moths and chafers. The distribution of the species is restricted to the far south of England. Serotines are thought to be found around Wash Farm and often grouped into a category with Leislers and Noctules as their calls are very similar. ",
+    desc: "The brown long-eared bat (Plecotus auritus) is a small Eurasian insectivorous bat (wingspan 28.5cm). It has distinctive long ears. It is extremely similar to the much rarer grey long-eared bat which was only validated as a distinct species in the 1960s. They are relatively slow flyers compared to other bat species. Brown long eared bats are commonly found throughout the UK. They are also sometimes known as the ‘whispering bat’ as their call is so quiet. This can lead to under recording using bat detectors, and although we have detected this species on the farm it is likely to be more abundant than it appears.",
     totals: 1,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/serotine_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/brownlongeared_11.02.13.pdf",
   },
   {
-    name: "Noctule or Leislers",
+    name: "Bechstein's",
     // col: "rgb(194, 3, 252)",
     col: set3col[8],
     sPath: "sound/2022-08-19 23-51-04.mp3",
-    img: "/leis.png",
-    desc: "The lesser noctule, Leisler's bat or the Irish bat (Nyctalus leisleri), is a species of insectivorous bat belonging to the vesper bat family, Vespertilionidae. The species was named to honour the naturalist Johann Philipp Achilles Leisler",
+    img: "/beicht.png",
+    desc: "Until recently very little was known about the Bechstein's bat in the UK- in 2005 there were just six breeding populations of Bechstein's bat. It is largely known as a woodland bat that, like the long-eared bats, captures much of its prey by passive listening for insect noise. Being one of the rarest mammals, much remains to be learned about Bechstein's bat. The information contained in this factsheet may change as further roosts are discovered and research is undertaken.",
     totals: 18,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/noctule_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/bechsteins_11.02.13.pdf",
   },
   {
-    name: "Long eared",
+    name: "Barbastelle",
     // col: "rgb(252, 3, 94)",
     col: set3col[9],
     sPath: "sound/2022-08-24 00-35-10.mp3",
-    img: "/long_eared.png",
-    desc: "The brown long-eared bat (Plecotus auritus) is a small Eurasian insectivorous bat (wingspan 28.5cm). It has distinctive long ears. It is extremely similar to the much rarer grey long-eared bat which was only validated as a distinct species in the 1960s. They are relatively slow flyers compared to other bat species. Brown long eared bats are commonly found throughout the UK. They are also sometimes known as the ‘whispering bat’ as their call is so quiet. This can lead to under recording using bat detectors, and although we have detected this species on the farm it is likely to be more abundant than it appears.",
+    img: "/barb.png",
+    desc: "The western barbastelle (Barbastella barbastellus) is a species often associated with woodland and valleys found occasionally or rarely throughout southern Britain. It has a short nose, small eyes and wide ears with a wingspan of up to 29cm. Barbastelles are considered a conservation priority in the UK and is one of the rarest bats in the country. Southern Devon is a stronghold for this species and the landscape around Wash is well suited to this species. They are found relatively often at Wash Farm",
     totals: 34,
     external_link:
-      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/brownlongeared_11.02.13.pdf",
+      "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/barbastelle_11.02.13.pdf",
   },
 ];
 

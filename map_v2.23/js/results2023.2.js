@@ -1,6 +1,6 @@
 var resultsList2023 = [
   {
-    key: "0_0",
+    key: "0_0", //elderflower
     anabat: "Rfer",
     name: "Greater Horseshoe",
     count: 2, //divide by days
@@ -15,42 +15,42 @@ var resultsList2023 = [
     key: "0_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 9,
+    count: 75,
   },
   {
     key: "0_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 75,
+    count: 35,
   },
   {
     key: "0_4",
     anabat: "Mdau",
     name: "Myotis Daubentons",
-    count: 0,
+    count: 2,
   },
   {
     key: "0_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "0_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
+    anabat: "NSL",
+    name: "Nyctalus",
+    count: 2,
   },
   {
     key: "0_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    anabat: "Plaur",
+    name: "Long-eared",
     count: 2,
   },
   {
     key: "0_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechsteins",
     count: 0,
   },
   {
@@ -60,7 +60,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "1_0", //next
+    key: "1_0", //watersports
     anabat: "Rfer",
     name: "GHB",
     count: 1,
@@ -92,25 +92,25 @@ var resultsList2023 = [
   {
     key: "1_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 8,
   },
   {
     key: "1_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "1_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 1,
   },
   {
-    key: "1_8",
+    key: "1_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
+    count: 0,
+  },
+  {
+    key: "1_8",
+    anabat: " ",
+    name: "Bechsteins",
     count: 0,
   },
   {
@@ -120,7 +120,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "2_0", //next
+    key: "2_0", //nBarkington pathfield
     anabat: "Rfer",
     name: "GHB",
     count: 1,
@@ -141,7 +141,7 @@ var resultsList2023 = [
     key: "2_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 15,
+    count: 11,
   },
   {
     key: "2_4",
@@ -152,25 +152,25 @@ var resultsList2023 = [
   {
     key: "2_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 2,
   },
   {
     key: "2_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    anabat: "NSL",
+    name: "Nyctalus",
     count: 1,
   },
   {
     key: "2_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    anabat: "Plaur",
+    name: "Long eared",
     count: 1,
   },
   {
     key: "2_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechsteins",
     count: 0,
   },
   {
@@ -180,7 +180,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "3_0", //next
+    key: "3_0", //tuckers bottom
     anabat: "Rfer",
     name: "GHB",
     count: 28,
@@ -212,25 +212,25 @@ var resultsList2023 = [
   {
     key: "3_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 85,
   },
   {
     key: "3_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    anabat: "NSL",
+    name: "Nyctalus",
     count: 0,
   },
   {
     key: "3_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    anabat: "Plaur",
+    name: "Long - eared",
     count: 0,
   },
   {
     key: "3_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechstein's",
     count: 1,
   },
   {
@@ -240,7 +240,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "4_0", //next
+    key: "4_0", //new hedge dipway
     anabat: "Rfer",
     name: "GHB",
     count: 9,
@@ -272,25 +272,25 @@ var resultsList2023 = [
   {
     key: "4_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "4_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "4_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "4_8",
+    key: "4_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long-eared",
+    count: 0,
+  },
+  {
+    key: "4_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -300,7 +300,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "5_0", //next
+    key: "5_0", //yarbury reservoir
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -332,26 +332,26 @@ var resultsList2023 = [
   {
     key: "5_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 6,
   },
   {
     key: "5_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 1,
-  },
-  {
-    key: "5_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "5_8",
+    key: "5_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
     count: 1,
+  },
+  {
+    key: "5_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "5_9",
@@ -360,7 +360,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "6_0", //next
+    key: "6_0", //glorias ford
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -392,25 +392,25 @@ var resultsList2023 = [
   {
     key: "6_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 32,
   },
   {
     key: "6_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 1,
-  },
-  {
-    key: "6_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "6_8",
+    key: "6_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
+    count: 0,
+  },
+  {
+    key: "6_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -420,7 +420,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "7_0", //next
+    key: "7_0", //greeen lane
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -452,25 +452,25 @@ var resultsList2023 = [
   {
     key: "7_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 64,
   },
   {
     key: "7_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "7_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "7_8",
+    key: "7_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
+    count: 0,
+  },
+  {
+    key: "7_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -480,7 +480,7 @@ var resultsList2023 = [
     count: 0,
   },
   {
-    key: "8_0", //next
+    key: "8_0", //broad stannings
     anabat: "Rfer",
     name: "GHB",
     count: 0,
@@ -512,25 +512,25 @@ var resultsList2023 = [
   {
     key: "8_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
-  },
-  {
-    key: "8_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    name: "Myotis Other",
     count: 1,
   },
   {
-    key: "8_7",
+    key: "8_6",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
+    count: 0,
+  },
+  {
+    key: "8_7",
+    anabat: "Plaur",
+    name: "Long - eared",
     count: 0,
   },
   {
     key: "8_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -540,7 +540,7 @@ var resultsList2023 = [
     count: 1,
   },
   {
-    key: "9_0", //next
+    key: "9_0", //top hedge - big field
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -572,35 +572,35 @@ var resultsList2023 = [
   {
     key: "9_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "9_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "9_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 1,
   },
   {
-    key: "9_8",
+    key: "9_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
+    count: 0,
+  },
+  {
+    key: "9_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
     key: "9_9",
     anabat: "Bbarb",
     name: "bBarb",
-    count: 0,
+    count: 2,
   },
   {
-    key: "10_0", //next
+    key: "10_0", //short hedges Bakers park
     anabat: "Rfer",
     name: "GHB",
     count: 3,
@@ -633,30 +633,30 @@ var resultsList2023 = [
     key: "10_5",
     anabat: "MbraMmys",
     name: "Myotis Brandt's / Whiskered",
-    count: 4,
+    count: 6, //4+2
   },
   {
     key: "10_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    anabat: "NSL",
+    name: "Nyctalus",
     count: 2,
   },
   {
     key: "10_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
-    count: 2,
+    anabat: "Plaur",
+    name: "Long - eared",
+    count: 1,
   },
   {
     key: "10_8",
-    anabat: "Plaur",
-    name: "Long eared",
-    count: 1,
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "10_9",
     anabat: "Bbarb",
-    name: "Long eared",
+    name: "Barbastelle",
     count: 0,
   },
 ];

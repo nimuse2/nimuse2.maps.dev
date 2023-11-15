@@ -1,9 +1,9 @@
 var resultsList2022 = [
   {
-    key: "0_0",
+    key: "0_0", //traditional orchard
     anabat: "Rfer",
     name: "GHB",
-    count: 0, //divide by days
+    count: 0,
   },
   {
     key: "0_1",
@@ -32,35 +32,35 @@ var resultsList2022 = [
   {
     key: "0_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "0_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "0_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 5,
   },
   {
-    key: "0_8",
+    key: "0_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
+    count: 0,
+  },
+  {
+    key: "0_8",
+    anabat: " ",
+    name: "Bechsteain's",
     count: 0,
   },
   {
     key: "0_9",
     anabat: "Bbarb",
-    name: "Long eared",
+    name: "Barbastelle",
     count: 0,
   },
   {
-    key: "1_0", //next
+    key: "1_0", //wooded stream
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -75,7 +75,7 @@ var resultsList2022 = [
     key: "1_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 3,
+    count: 2,
   },
   {
     key: "1_3",
@@ -86,32 +86,32 @@ var resultsList2022 = [
   {
     key: "1_4",
     anabat: "Mdau",
-    name: "Myotis SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "1_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 2,
   },
   {
     key: "1_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "1_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 4,
   },
   {
-    key: "1_8",
+    key: "1_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long-eared",
     count: 2,
+  },
+  {
+    key: "1_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "1_9",
@@ -120,7 +120,7 @@ var resultsList2022 = [
     count: 1,
   },
   {
-    key: "2_0", //next
+    key: "2_0", //open field
     anabat: "Rfer",
     name: "GHB",
     count: 0,
@@ -146,32 +146,32 @@ var resultsList2022 = [
   {
     key: "2_4",
     anabat: "Mdau",
-    name: "Myotis: SPECIES Daubentons",
+    name: "Myotis: Daubentons",
     count: 0,
   },
   {
     key: "2_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 1,
   },
   {
     key: "2_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "2_7",
     anabat: "NSL",
-    name: "Nyctalus: SPECIES Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "2_8",
+    key: "2_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
     count: 4,
+  },
+  {
+    key: "2_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "2_9",
@@ -180,7 +180,7 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "3_0", //next
+    key: "3_0", //ben avery - dud!!
     anabat: "Rfer",
     name: "GHB",
     count: 0,
@@ -206,32 +206,32 @@ var resultsList2022 = [
   {
     key: "3_4",
     anabat: "Mdau",
-    name: "Myotis: SPECIES Daubentons",
+    name: "Myotis: Daubentons",
     count: 0,
   },
   {
     key: "3_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 1,
   },
   {
     key: "3_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "3_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 7,
   },
   {
-    key: "3_8",
+    key: "3_7",
     anabat: "Plaur",
-    name: "Long eared",
+    name: "Long - eared",
     count: 1,
+  },
+  {
+    key: "3_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "3_9",
@@ -240,7 +240,7 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "4_0", //next
+    key: "4_0", //Kiln close
     anabat: "Rfer",
     name: "GHB",
     count: 8,
@@ -272,25 +272,25 @@ var resultsList2022 = [
   {
     key: "4_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "4_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "4_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 9,
   },
   {
-    key: "4_8",
+    key: "4_7",
     anabat: "Plaur",
     name: "Long eared",
+    count: 0,
+  },
+  {
+    key: "4_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -300,7 +300,7 @@ var resultsList2022 = [
     count: 1,
   },
   {
-    key: "5_0", //next
+    key: "5_0", //newly planted hedge
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -332,25 +332,25 @@ var resultsList2022 = [
   {
     key: "5_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 1,
   },
   {
     key: "5_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "5_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 3,
   },
   {
-    key: "5_8",
+    key: "5_7",
     anabat: "Plaur",
     name: "Long eared",
+    count: 2,
+  },
+  {
+    key: "5_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 2,
   },
   {
@@ -360,7 +360,7 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "6_0", //next
+    key: "6_0", //fence line
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -386,31 +386,31 @@ var resultsList2022 = [
   {
     key: "6_4",
     anabat: "Mdau",
-    name: "Myotis; SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "6_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 1,
   },
   {
     key: "6_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
+    anabat: "NSL",
+    name: "Nyctalus",
+    count: 2,
   },
   {
     key: "6_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    anabat: "Plaur",
+    name: "Long eared",
     count: 2,
   },
   {
     key: "6_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechstein's",
     count: 2,
   },
   {
@@ -420,7 +420,7 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "7_0", //next
+    key: "7_0", //agroforestry
     anabat: "Rfer",
     name: "GHB",
     count: 5,
@@ -441,37 +441,37 @@ var resultsList2022 = [
     key: "7_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 2,
+    count: 0,
   },
   {
     key: "7_4",
     anabat: "Mdau",
-    name: "Myotis SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "7_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 1,
   },
   {
     key: "7_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "7_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 6,
   },
   {
-    key: "7_8",
+    key: "7_7",
     anabat: "Plaur",
     name: "Long eared",
     count: 1,
+  },
+  {
+    key: "7_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
   },
   {
     key: "7_9",
@@ -480,7 +480,7 @@ var resultsList2022 = [
     count: 2,
   },
   {
-    key: "8_0", //next
+    key: "8_0", //wooded stream
     anabat: "Rfer",
     name: "GHB",
     count: 2,
@@ -506,31 +506,31 @@ var resultsList2022 = [
   {
     key: "8_4",
     anabat: "Mdau",
-    name: "Myotis: SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "8_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 0,
   },
   {
     key: "8_6",
-    anabat: "Mnat",
-    name: "Natterers",
-    count: 0,
-  },
-  {
-    key: "8_7",
     anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    name: "Nyctalus",
     count: 2,
   },
   {
-    key: "8_8",
+    key: "8_7",
     anabat: "Plaur",
     name: "Long eared",
+    count: 0,
+  },
+  {
+    key: "8_8",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -540,7 +540,7 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "9_0", //next
+    key: "9_0", //green lane
     anabat: "Rfer",
     name: "GHB",
     count: 0,
@@ -566,31 +566,31 @@ var resultsList2022 = [
   {
     key: "9_4",
     anabat: "Mdau",
-    name: "Myotis SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "9_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
-    count: 0,
+    name: "Myotis Other",
+    count: 21,
   },
   {
     key: "9_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    anabat: "NSL",
+    name: "Nycltalus",
     count: 0,
   },
   {
     key: "9_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
+    anabat: "Plaur",
+    name: "Long eared",
     count: 0,
   },
   {
     key: "9_8",
-    anabat: "Plaur",
-    name: "Long eared",
+    anabat: " ",
+    name: "Bechstein's",
     count: 0,
   },
   {
@@ -612,10 +612,10 @@ var resultsList2022 = [
     count: 0,
   },
   {
-    key: "10_2",
+    key: "10_2", // dud??
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 1,
+    count: 0,
   },
   {
     key: "10_3",
@@ -626,37 +626,37 @@ var resultsList2022 = [
   {
     key: "10_4",
     anabat: "Mdau",
-    name: "Myotis SPECIES Daubentons",
+    name: "Myotis Daubentons",
     count: 0,
   },
   {
     key: "10_5",
     anabat: "MbraMmys",
-    name: "Myotis Brandt's / Whiskered",
+    name: "Myotis Other",
     count: 3,
   },
   {
     key: "10_6",
-    anabat: "Mnat",
-    name: "Natterers",
+    anabat: "NSL",
+    name: "Nyctalus",
     count: 0,
   },
   {
     key: "10_7",
-    anabat: "NSL",
-    name: "Nyctalus: Leislers, Noctule",
-    count: 0,
-  },
-  {
-    key: "10_8",
     anabat: "Plaur",
     name: "Long eared",
     count: 0,
   },
   {
+    key: "10_8",
+    anabat: " ",
+    name: "Bechstein's",
+    count: 0,
+  },
+  {
     key: "10_9",
     anabat: "Bbarb",
-    name: "Long eared",
+    name: "Barbastelle",
     count: 0,
   },
 ];

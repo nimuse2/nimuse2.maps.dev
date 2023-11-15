@@ -97,6 +97,23 @@ var locationNameList = [
 //BAT RESULT LOCATIONS
 //2022
 var locationList = [
+  projectionGeo([-3.7540518619059386, 50.47864407155754]), //0 - caddaford orchard
+  projectionGeo([-3.7338732365712417, 50.47563481262637]), //1 - wooded stream?
+  projectionGeo([-3.7379118447883855, 50.478985467531714]), //2 - open field
+  [500, -100], //ben avery garden??//3
+  projectionGeo([-3.72412074561538, 50.47180792190633]), //4 Kiln close ??
+  projectionGeo([-3.723812384194569, 50.47150609296651]), //5 - newly planted hedge
+  projectionGeo([-3.7318, 50.4735]), //6 - fence line wooded sytrem
+  projectionGeo([-3.735711909351843, 50.47860048106709]), //7 -- agro
+  projectionGeo([-3.7263714649880755, 50.47899909835456]), //8 -- wooded stream
+  projectionGeo([-3.7340826458860477, 50.48125083257165]), //9 --green lane
+  [500, -100], //10
+];
+//top of hill 50.47807056109846,-3.735769925336931
+//top of hill - 50.47860048106709, -3.735711909351843
+//big field nxt to wash - -3.7318, 50.4735
+/*
+var locationList = [
   projectionGeo([-3.7340826458860477, 50.48125083257165]), //0
   projectionGeo([-3.7379118447883855, 50.478985467531714]), //1
   projectionGeo([-3.7338732365712417, 50.47563481262637]), //2
@@ -109,6 +126,7 @@ var locationList = [
   projectionGeo([-3.7540518619059386, 50.47864407155754]), //9 --
   [500, -100], //10
 ];
+*/
 
 var surveyLocList22 = [
   "Traditional Orchard", //0
@@ -123,20 +141,22 @@ var surveyLocList22 = [
   "Green Lane", //9
   "..", //10
 ];
-var surveyLocList23 = [
-  "Elderflower", //0
-  "Watersports", //1
-  "Barkington", //2
-  "Tuckers bottom stream", //ben avery garden//3
-  "New hedge dipway", //4
-  "Yarbury reservoir", //5
-  "Glorias ford", //6
-  "Green lane", //7
-  "Top hedge Big field", //8
-  "Short hedges", //9
-  "..", //10
-];
+
 //2023
+var locationList2023 = [
+  projectionGeo([-3.732378, 50.474813]), //0
+  projectionGeo([-3.728305, 50.477902]), //1
+  projectionGeo([-3.731607, 50.47724]), //2-barkington
+  projectionGeo([-3.724971, 50.472444]), //3 - tuckers bottom
+  projectionGeo([-3.739406, 50.480884]), //4 - dipway
+  projectionGeo([-3.740093, 50.474408]), //5 - yarbury reservoir
+  projectionGeo([-3.741058, 50.479825]), //6 - glorias ford
+  projectionGeo([-3.734062, 50.481188]), //7 - green lane
+  projectionGeo([-3.737562, 50.483451]), //8 - broad Stannings footpath
+  projectionGeo([-3.735895, 50.473338]), //9 - top hedge big field
+  projectionGeo([-3.715851, 50.471544]), //10 - short hedges
+];
+/*
 var locationList2023 = [
   projectionGeo([-3.742057733891818, 50.4827018353337]), //0
   projectionGeo([-3.739386633017923, 50.480928479971176]), //1
@@ -149,4 +169,18 @@ var locationList2023 = [
   projectionGeo([-3.725005174347004, 50.472524394482726]), //8
   projectionGeo([-3.715951254642453, 50.471571962925353]), //9
   projectionGeo([-3.73411102241386, 50.48121244923594]), //10
+];
+*/
+var surveyLocList23 = [
+  "Elderflower", //0
+  "Watersports", //1
+  "Barkington", //2
+  "Tuckers bottom stream", //ben avery garden//3
+  "New hedge dipway", //4
+  "Yarbury reservoir", //5
+  "Glorias ford", //6
+  "Green lane", //7
+  "Stannings footpath", //8
+  "Top hedge Big field", //9
+  "Short hedges", //10
 ];

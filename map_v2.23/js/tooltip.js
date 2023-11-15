@@ -439,8 +439,10 @@ function showBatTooltip(_d) {
   } else if (year == "2023") {
     locText = surveyLocList23[keySplit[0]];
   }
-  /*
-  Tooltip5.text("Location: " + surveyLocList22[keySplit[0]])
+
+  // Tooltip5.text("Id: " + keySplit[0] + " Location: " + locText)
+
+  Tooltip5.text("Location: " + locText)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
     .attr("x", _tx + xFactor)
@@ -448,7 +450,7 @@ function showBatTooltip(_d) {
     .attr("width", 190)
     .attr("height", doubleHeight)
     .call(wrap, 190);
-*/
+
   Tooltip6.text("Count: " + _d.count)
     .style("opacity", 1)
     .style("font-size", "13px")
