@@ -174,9 +174,9 @@ function makeText() {
     .text(
       "*All Numbers are Average Bat calls per night. Data collected during period of March to September recorded using Anabat Recorder placed at different locations around the site."
     )
-    .attr("x", 30)
-    .attr("y", 80)
-    .call(wrap, 250);
+    .attr("x", width - 220)
+    .attr("y", 640)
+    .call(wrap, 200);
 
   //big text
   for (i = 0; i < locationLabelList.length; i++) {

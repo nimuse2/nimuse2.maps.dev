@@ -63,7 +63,7 @@ makeCircleDisplay();
 makeText();
 makeDynamicKey(svg);
 // makeKeyDynamic();
-makeLegend(svg, width, height);
+// makeLegend(svg, width, height);
 makeTooltip(interactive);
 
 //UI INTERACT//////////////////////

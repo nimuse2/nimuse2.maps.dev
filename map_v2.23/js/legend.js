@@ -7,9 +7,10 @@ function makeLegend(_svg, _width, _height) {
     .range([1, 10]); // Size in pixel
   // Add legend: circles
   var valuesToShow = [10, 40, 80];
-  var xCircle = _width - 180;
-  var xLabel = _width - 280;
-  var yCircle = _height - 50;
+  var xCircle = 60;
+  var xLabel = 60 + 200;
+  var yCircle = 500;
+  //
   _svg
     .selectAll("legend")
     .data(valuesToShow)
@@ -69,10 +70,11 @@ function makeLegend(_svg, _width, _height) {
     .enter()
     .append("text")
     .style("fill", "white")
-    .attr("x", xCircle - 200)
-    .attr("y", 610)
+    .attr("x", xCircle - 30)
+    .attr("y", yCircle - 80)
     .attr("font-family", "Arial")
-    .text("Legend - Main Map circles");
+    .style("font-size", "15px")
+    .text("Main Map circle size");
 }
 function updateDynamic(_d) {
   // data1 = data2;
@@ -97,7 +99,7 @@ function updateDynamic(_d) {
     svg.select("#keyLable_" + i).text(zeroCheckDynamic + "*");
   }
   svg.select("#legendTitle").text(
-    "Survey cumulative averges - " + year
+    "Cumulative averages - " + year
     // " (Click to link to BCT info.)"
   );
 }
@@ -107,7 +109,7 @@ function makeDynamicKey(_svg) {
 
   //
   var startX = 30;
-  var startY = 600;
+  var startY = 550;
   var horX = 60; //unit spacing
   // var vertY = height - 200;
 
@@ -119,7 +121,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Survey cumulative averges - " + year);
+    .text("Cumulative averages - " + year);
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -171,7 +173,7 @@ function makeDynamicKey(_svg) {
       .attr("y", startY + 50 + 30)
       .attr("text-anchor", "start")
       .attr("font-family", "Arial")
-      .style("font-size", "11px")
+      .style("font-size", "10px")
       .style("fill", "white")
       .attr("class", "keyLable")
       // .text(species_assets[i].name)
@@ -180,7 +182,7 @@ function makeDynamicKey(_svg) {
     _svg
       .append("text")
       .attr("x", startX + horX * i)
-      .attr("y", startY + 50 + 30 + 30)
+      .attr("y", startY + 50 + 30 + 50)
       .attr("text-anchor", "start")
       .attr("font-family", "Arial")
       .style("font-size", "13px")

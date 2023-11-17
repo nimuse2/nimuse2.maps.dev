@@ -204,7 +204,7 @@ var magicY = 0;
 var magicR = 0;
 
 var lineTop = 140;
-var lineBtm = 600;
+var lineBtm = 520;
 
 function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   //test values

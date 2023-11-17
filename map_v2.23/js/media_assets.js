@@ -130,7 +130,7 @@ species_assets = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/daubentons_11.02.13.pdf",
   },
   {
-    name: "Myotis (Whiskered bats and Brandt’s bats)",
+    name: "Myotis Whiskered bats and Brandt's",
     // col: "rgb(189, 235, 52)",
     col: set3col[5],
     sPath: "sound/2022-08-24 00-35-10.mp3",
