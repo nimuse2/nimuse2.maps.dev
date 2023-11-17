@@ -163,6 +163,21 @@ function makeText() {
   //   .attr("x", 30)
   //   .attr("y", 200)
   //   .call(wrap, 190);
+
+  //Title text
+  svg
+    .append("text")
+    // .style("opacity", 0.8)
+    .attr("font-family", "Arial")
+    .attr("font-size", "11px")
+    .style("fill", "rgba(255,255,255,0.9)")
+    .text(
+      "*All Numbers are Average Bat calls per night. Data collected during period of March to September recorded using Anabat Recorder placed at different locations around the site."
+    )
+    .attr("x", 30)
+    .attr("y", 80)
+    .call(wrap, 250);
+
   //big text
   for (i = 0; i < locationLabelList.length; i++) {
     svg

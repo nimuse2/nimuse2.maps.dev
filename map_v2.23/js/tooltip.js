@@ -458,7 +458,7 @@ function showBatTooltip(_d) {
   } else {
     zeroCheckTip = _d.count;
   }
-  Tooltip6.text("Count: " + zeroCheckTip)
+  Tooltip6.text("Average Bats per night: " + zeroCheckTip + "*")
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)

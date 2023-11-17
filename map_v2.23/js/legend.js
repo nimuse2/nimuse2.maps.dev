@@ -57,7 +57,7 @@ function makeLegend(_svg, _width, _height) {
       return yCircle - size(d);
     })
     .text(function (d) {
-      return Math.floor(d * 0.7) + " bats";
+      return Math.floor(d * 0.7) + "* bats";
     })
     .style("font-size", "11px")
     .style("fill", "white")
@@ -94,7 +94,7 @@ function updateDynamic(_d) {
       .duration(800)
       .attr("r", radiusScale(_d[i].r / 2));
 
-    svg.select("#keyLable_" + i).text(zeroCheckDynamic);
+    svg.select("#keyLable_" + i).text(zeroCheckDynamic + "*");
   }
   svg.select("#legendTitle").text(
     "Survey cumulative averges - " + year
@@ -189,7 +189,7 @@ function makeDynamicKey(_svg) {
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
       // .text("Totals: " + species_assets[i].totals)
-      .text("" + zeroCheck)
+      .text("" + zeroCheck + "*")
       .call(wrap, 70);
   }
 
