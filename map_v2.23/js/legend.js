@@ -77,7 +77,15 @@ function makeLegend(_svg, _width, _height) {
 function updateDynamic(_d) {
   // data1 = data2;
   // console.log("updateDynamic");
+  var zeroCheckDynamic = "";
+
   for (i = 0; i < species_assets.length; i++) {
+    if (_d[i].r == 0) {
+      zeroCheckDynamic = "0<1";
+    } else {
+      zeroCheckDynamic = _d[i].r;
+    }
+
     svg
       .select("#keyCircle_" + i)
       // .data(data2)
@@ -86,11 +94,12 @@ function updateDynamic(_d) {
       .duration(800)
       .attr("r", radiusScale(_d[i].r / 2));
 
-    svg.select("#keyLable_" + i).text(_d[i].r);
+    svg.select("#keyLable_" + i).text(zeroCheckDynamic);
   }
-  svg
-    .select("#legendTitle")
-    .text("Survey Totals " + year + " (Click to link to BCT info.)");
+  svg.select("#legendTitle").text(
+    "Survey cumulative averges - " + year
+    // " (Click to link to BCT info.)"
+  );
 }
 
 function makeDynamicKey(_svg) {
@@ -110,7 +119,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Survey Totals " + year + " (Click to link to BCT info.)");
+    .text("Survey cumulative averges - " + year);
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -150,6 +159,12 @@ function makeDynamicKey(_svg) {
     keyCircleArr.push(startX + 20 + horX * i); //utils
     // horX = horX + species_assets[i].totals / totalsFactor;
     // keyCircleArr.push(startX + species_assets[i].totals);
+    var zeroCheck = "";
+    if (totalCount22[i].r == 0) {
+      zeroCheck = "0<1";
+    } else {
+      zeroCheck = totalCount22[i].r;
+    }
     _svg
       .append("text")
       .attr("x", startX + horX * i)
@@ -174,7 +189,7 @@ function makeDynamicKey(_svg) {
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
       // .text("Totals: " + species_assets[i].totals)
-      .text("" + totalCount22[i].r)
+      .text("" + zeroCheck)
       .call(wrap, 70);
   }
 

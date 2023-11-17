@@ -398,7 +398,8 @@ function showBatTooltip(_d) {
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading + imgHeight);
+    .attr("y", _ty + leading + imgHeight)
+    .call(wrap, 200);
   Tooltip3.text("Description: " + species_assets[keyRef].desc)
     .style("opacity", 1)
     .style("font-size", txtBoxFontSize)
@@ -451,7 +452,13 @@ function showBatTooltip(_d) {
     .attr("height", doubleHeight)
     .call(wrap, 190);
 
-  Tooltip6.text("Count: " + _d.count)
+  var zeroCheckTip = "";
+  if (_d.count == 0) {
+    zeroCheckTip = "0<1";
+  } else {
+    zeroCheckTip = _d.count;
+  }
+  Tooltip6.text("Count: " + zeroCheckTip)
     .style("opacity", 1)
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)

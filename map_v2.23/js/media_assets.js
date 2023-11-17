@@ -124,13 +124,13 @@ species_assets = [
     col: set3col[4],
     sPath: "sound/2022-08-23 21-14-24.mp3",
     img: "/barb.png",
-    desc: "Daunbenton's bats (myotis daubentonii) is a medium bat (wingspan up to 27.5cm) which is heavily associated with water, where it can be found hunting and picking prey directly off the surface of ponds and streams. Daubentons are found throughout the UK and are commonly found along water courses and water bodies. They are sensitive to increases in pollution of habitat change around water bodies. They are com",
+    desc: "Daunbenton's bats (myotis daubentonii) is a medium bat (wingspan up to 27.5cm) which is heavily associated with water, where it can be found hunting and picking prey directly off the surface of ponds and streams. Daubentons are found throughout the UK and are commonly found along water courses and water bodies. They are sensitive to increases in pollution of habitat change around water bodies. They are commonly found in Devon and enjoy feeding on the reservoirs and streams found at Wash Farm.",
     totals: 27,
     external_link:
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/daubentons_11.02.13.pdf",
   },
   {
-    name: "Myotis",
+    name: "Myotis (Whiskered bats and Brandt’s bats)",
     // col: "rgb(189, 235, 52)",
     col: set3col[5],
     sPath: "sound/2022-08-24 00-35-10.mp3",
