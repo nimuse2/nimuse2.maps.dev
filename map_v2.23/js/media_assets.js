@@ -141,7 +141,7 @@ species_assets = [
       "https://cdn.bats.org.uk/uploads/pdf/About%20Bats/brandts_11.02.13.pdf",
   },
   {
-    name: "Nyctalus Species",
+    name: "Noctule, Serotine or Leislers",
     // col: "rgb(3, 94, 252)",
     col: set3col[6],
     sPath: "sound/2022-08-19 23-51-04.mp3",

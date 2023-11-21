@@ -96,10 +96,10 @@ function updateDynamic(_d) {
       .duration(800)
       .attr("r", radiusScale(_d[i].r / 2));
 
-    svg.select("#keyLable_" + i).text(zeroCheckDynamic + "*");
+    svg.select("#keyLable_" + i).text(_d[i].r);
   }
   svg.select("#legendTitle").text(
-    "Cumulative averages - " + year
+    "Totals - " + year
     // " (Click to link to BCT info.)"
   );
 }
@@ -121,7 +121,7 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Cumulative averages - " + year);
+    .text("Totals - " + year);
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -190,8 +190,9 @@ function makeDynamicKey(_svg) {
       .attr("class", "keyLable")
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
-      // .text("Totals: " + species_assets[i].totals)
-      .text("" + zeroCheck + "*")
+      // .text("" + species_assets[i].totals) //year??
+      .text("" + totalCount22[i].r)
+      // .text("" + zeroCheck + "*")
       .call(wrap, 70);
   }
 
