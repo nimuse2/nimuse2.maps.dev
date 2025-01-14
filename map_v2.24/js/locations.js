@@ -96,6 +96,7 @@ var locationNameList = [
 
 //BAT RESULT LOCATIONS
 //2024
+
 //NEEDS UPDATING WITH CORRECT DATA
 ////////////
 
