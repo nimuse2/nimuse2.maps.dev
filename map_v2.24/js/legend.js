@@ -78,7 +78,7 @@ function makeLegend(_svg, _width, _height) {
 }
 function updateDynamic(_d) {
   // data1 = data2;
-  console.log("updateDynamic");
+  console.log("updateDynamic", _d);
   var zeroCheckDynamic = "";
 
   for (i = 0; i < species_assets.length; i++) {
@@ -161,6 +161,9 @@ function makeDynamicKey(_svg) {
     keyCircleArr.push(startX + 20 + horX * i); //utils
     // horX = horX + species_assets[i].totals / totalsFactor;
     // keyCircleArr.push(startX + species_assets[i].totals);
+    // iNITIAL SEEDING
+    // console.log(">>> ", totalCount22);
+
     var zeroCheck = "";
     if (totalCount22[i].r == 0) {
       zeroCheck = "0<1";
@@ -192,6 +195,7 @@ function makeDynamicKey(_svg) {
       // .text(species_assets[i].name)
       // .text("" + species_assets[i].totals) //year??
       .text("" + totalCount22[i].r)
+      // .text("wt??")
       // .text("" + zeroCheck + "*")
       .call(wrap, 70);
   }

@@ -101,31 +101,31 @@ var locationNameList = [
 ////////////
 
 var locationList2024 = [
-  projectionGeo([-3.732378, 50.474813]), //0
-  projectionGeo([-3.728305, 50.477902]), //1
-  projectionGeo([-3.731607, 50.47724]), //2-barkington
-  projectionGeo([-3.724971, 50.472444]), //3 - tuckers bottom
-  projectionGeo([-3.739406, 50.480884]), //4 - dipway
-  projectionGeo([-3.740093, 50.474408]), //5 - yarbury reservoir
-  projectionGeo([-3.741058, 50.479825]), //6 - glorias ford
-  projectionGeo([-3.734062, 50.481188]), //7 - green lane
-  projectionGeo([-3.737562, 50.483451]), //8 - broad Stannings footpath
-  projectionGeo([-3.735895, 50.473338]), //9 - top hedge big field
-  projectionGeo([-3.715851, 50.471544]), //10 - short hedges
+  projectionGeo([-3.738533, 50.473075]), //0 - asparagus car park
+  projectionGeo([-3.740048, 50.479623]), //1 - barton town
+  projectionGeo([-3.734, 50.47468]), //2- bumpston Meadow - and big meadow?
+  projectionGeo([-3.734618, 50.472397]), //3 - field kitchen
+  projectionGeo([-3.7379, 50.47213]), //4 - guys field
+  projectionGeo([-3.731493, 50.476848]), //5 - john smith
+  projectionGeo([-3.75026, 50.48014]), //6 - polytunnel combined ******
+  projectionGeo([-3.71986, 50.47237]), //7 - tuckers fields
+  projectionGeo([-3.735705, 50.473618]), //8 - two reservoir
+  projectionGeo([-3.73793, 50.48066]), //9 - glorias wood
+  projectionGeo([-3.715851, 50.471544]), //10 - blank
 ];
 
 var surveyLocList24 = [
-  "Elderflower", //0
-  "Watersports", //1
-  "Barkington", //2
-  "Tuckers bottom stream", //ben avery garden//3
-  "New hedge dipway", //4
-  "Yarbury reservoir", //5
-  "Glorias ford", //6
-  "Green lane", //7
-  "Stannings footpath", //8
-  "Top hedge Big field", //9
-  "Short hedges", //10
+  "Asparagus car park", //0
+  "Barton Town", //1
+  "big and bumpston fields?", //2
+  "Field Kitchen", //ben avery garden//3
+  "Guys Field", //4
+  "John Smith", //5
+  "Polytunnels combined?", //6
+  "Tuckers Fields", //7
+  "Two Reservoir", //8
+  "Glorias Wood", //9
+  "blank", //10
 ];
 //2023
 var locationList2023 = [
