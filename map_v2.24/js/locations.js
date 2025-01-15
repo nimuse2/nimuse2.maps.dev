@@ -107,11 +107,11 @@ var locationList2024 = [
   projectionGeo([-3.734618, 50.472397]), //3 - field kitchen
   projectionGeo([-3.7379, 50.47213]), //4 - guys field
   projectionGeo([-3.731493, 50.476848]), //5 - john smith
-  projectionGeo([-3.75026, 50.48014]), //6 - polytunnel combined ******
+  projectionGeo([-3.754722, 50.476631]), //6 - polytunnel combined ******
   projectionGeo([-3.71986, 50.47237]), //7 - tuckers fields
   projectionGeo([-3.735705, 50.473618]), //8 - two reservoir
   projectionGeo([-3.73793, 50.48066]), //9 - glorias wood
-  projectionGeo([-3.715851, 50.471544]), //10 - blank
+  [500, -100], //10 - blank
 ];
 
 var surveyLocList24 = [

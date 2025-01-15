@@ -42,16 +42,16 @@ var totalCount23 = [
 //NEEDS CORRECT DATA
 /**********************NEW TOTALS*********************** */
 var totalCount24 = [
-  { r: 2, x: 200, y: 100 }, //ghb
-  { r: 29, x: 300, y: 100 }, //lhb
-  { r: 46, x: 400, y: 100 }, //common pip
-  { r: 39, x: 500, y: 100 }, //soprano pip
-  { r: 580, x: 600, y: 100 }, //barb - daub
-  { r: 207, x: 700, y: 100 }, //myotis - other
-  { r: 15, x: 800, y: 100 }, //lieslers
-  { r: 100, x: 900, y: 100 }, //serotine
-  { r: 60, x: 1000, y: 100 }, //natt
-  { r: 123, x: 1100, y: 100 }, //long eared
+  { r: 112, x: 200, y: 100 }, //ghb
+  { r: 3, x: 300, y: 100 }, //lhb
+  { r: 788, x: 400, y: 100 }, //common pip
+  { r: 892, x: 500, y: 100 }, //soprano pip
+  { r: 60, x: 600, y: 100 }, //barb - daub
+  { r: 119, x: 700, y: 100 }, //myotis - other
+  { r: 130, x: 800, y: 100 }, //lieslers
+  { r: 130, x: 900, y: 100 }, //serotine
+  { r: 4, x: 1000, y: 100 }, //natt
+  { r: 3, x: 1100, y: 100 }, //long eared
 ];
 
 habitat_assets = [

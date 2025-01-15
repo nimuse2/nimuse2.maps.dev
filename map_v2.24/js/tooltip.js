@@ -439,6 +439,8 @@ function showBatTooltip(_d) {
     locText = surveyLocList22[keySplit[0]];
   } else if (year == "2023") {
     locText = surveyLocList23[keySplit[0]];
+  } else if (year == "2024") {
+    locText = surveyLocList24[keySplit[0]];
   }
 
   // Tooltip5.text("Id: " + keySplit[0] + " Location: " + locText)
