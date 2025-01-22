@@ -36,7 +36,7 @@ function makeData(_geoData, _resultsList) {
 function updateData(_nxtresultsList, _year) {
   //update DATA object with new values
   console.log("updateData()", _year);
-  console.log(">> ", data);
+  // console.log(">> ", data);
 
   for (i = 0; i < data.length; i++) {
     // _geoData[]
@@ -64,6 +64,7 @@ function updateData(_nxtresultsList, _year) {
     }
 
     data[i].radius = radiusScale(data[i].count);
+    // onsole.log(">>>>>", data[i].radius);
   }
 
   // for (i = 0; i < data.length; i++) {

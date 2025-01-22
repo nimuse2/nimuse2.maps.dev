@@ -89,7 +89,7 @@ var locationNameList = [
   "River Dart",
   " ",
   "Caddaford - polytunnels",
-  "Baddaform Farm",
+  "Baddaford Farm",
   "Riverford Field Kitchen",
   "A384",
 ];

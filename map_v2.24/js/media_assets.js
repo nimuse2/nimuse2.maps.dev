@@ -13,45 +13,85 @@ var set3col = [
   "#ccebc5",
   "#ffed6f",
 ];
-//dummy values - need to update
+/*
 var totalCount22 = [
   { r: 20, x: 200, y: 100 }, //greater horse
   { r: 0, x: 300, y: 100 }, //lesser
   { r: 31, x: 400, y: 100 }, //common pip
   { r: 20, x: 500, y: 100 }, //soprano pip
-  { r: 0, x: 600, y: 100 }, //barb -- daub
+  { r: 0, x: 600, y: 100 }, //-- daub
   { r: 27, x: 700, y: 100 }, //myotis
   { r: 20, x: 800, y: 100 }, //lieslers -- split in 2
   { r: 20, x: 900, y: 100 }, //serotine -- split in 2
   { r: 0, x: 1000, y: 100 }, //natt
-  { r: 11, x: 1100, y: 100 }, //long eared
+  { r: 11, x: 1100, y: 100 }, //barb
 ];
+//12  locations
 var totalCount23 = [
   { r: 52, x: 200, y: 100 }, //ghb
   { r: 2, x: 300, y: 100 }, //lhb
   { r: 446, x: 400, y: 100 }, //common pip
   { r: 239, x: 500, y: 100 }, //soprano pip
-  { r: 180, x: 600, y: 100 }, //barb - daub
+  { r: 180, x: 600, y: 100 }, //- daub
   { r: 207, x: 700, y: 100 }, //myotis - other
   { r: 15, x: 800, y: 100 }, //lieslers
-  { r: 15, x: 900, y: 100 }, //serotine
+  { r: 0, x: 900, y: 100 }, //long eared?
   { r: 6, x: 1000, y: 100 }, //natt
-  { r: 3, x: 1100, y: 100 }, //long eared
+  { r: 3, x: 1100, y: 100 }, //barb
 ];
-
-//NEEDS CORRECT DATA
-/**********************NEW TOTALS*********************** */
+//10 locations
 var totalCount24 = [
   { r: 149, x: 200, y: 100 }, //ghb rfer
   { r: 11, x: 300, y: 100 }, //lhb Rhip
-  { r: 1483, x: 400, y: 100 }, //common pip
-  { r: 1232, x: 500, y: 100 }, //soprano pip
-  { r: 67, x: 600, y: 100 }, //barb - daub Mdaub
-  { r: 143, x: 700, y: 100 }, //myotis - other MbraMmy
+  { r: 1710, x: 400, y: 100 }, //common pip
+  { r: 1462, x: 500, y: 100 }, //soprano pip
+  { r: 67, x: 600, y: 100 }, // daub Mdaub
+  { r: 150, x: 700, y: 100 }, //myotis - other MbraMmy
   { r: 145, x: 800, y: 100 }, //lieslers NSL
-  { r: 145, x: 900, y: 100 }, //serotine
-  { r: 4, x: 1000, y: 100 }, //natt
-  { r: 6, x: 1100, y: 100 }, //long eared
+  { r: 25, x: 900, y: 100 }, //long eared?
+  { r: 7, x: 1000, y: 100 }, //natt
+  { r: 20, x: 1100, y: 100 }, //lbarb
+];
+*/
+//try average
+//11 locastions
+var totalCount22 = [
+  { r: (20 / 11).toFixed(2), x: 200, y: 100 }, //greater horse
+  { r: 0, x: 300, y: 100 }, //lesser
+  { r: (31 / 11).toFixed(2), x: 400, y: 100 }, //common pip
+  { r: (20 / 11).toFixed(2), x: 500, y: 100 }, //soprano pip
+  { r: 0, x: 600, y: 100 }, //-- daub
+  { r: (27 / 11).toFixed(2), x: 700, y: 100 }, //myotis
+  { r: (20 / 11).toFixed(2), x: 800, y: 100 }, //lieslers -- split in 2
+  { r: (20 / 11).toFixed(2), x: 900, y: 100 }, //serotine -- split in 2
+  { r: 0, x: 1000, y: 100 }, //natt
+  { r: (11 / 11).toFixed(2), x: 1100, y: 100 }, //barb
+];
+//12  locations
+var totalCount23 = [
+  { r: (52 / 12).toFixed(2), x: 200, y: 100 }, //ghb
+  { r: (2 / 12).toFixed(2), x: 300, y: 100 }, //lhb
+  { r: (446 / 12).toFixed(2), x: 400, y: 100 }, //common pip
+  { r: (239 / 12).toFixed(2), x: 500, y: 100 }, //soprano pip
+  { r: (180 / 12).toFixed(2), x: 600, y: 100 }, //- daub
+  { r: (207 / 12).toFixed(2), x: 700, y: 100 }, //myotis - other
+  { r: (15 / 12).toFixed(2), x: 800, y: 100 }, //lieslers
+  { r: 0, x: 900, y: 100 }, //long eared?
+  { r: (6 / 12).toFixed(2), x: 1000, y: 100 }, //natt
+  { r: (3 / 12).toFixed(2), x: 1100, y: 100 }, //barb
+];
+//10 locations
+var totalCount24 = [
+  { r: (149 / 10).toFixed(2), x: 200, y: 100 }, //ghb rfer
+  { r: (11 / 10).toFixed(2), x: 300, y: 100 }, //lhb Rhip
+  { r: (1710 / 10).toFixed(2), x: 400, y: 100 }, //common pip
+  { r: (1462 / 10).toFixed(2), x: 500, y: 100 }, //soprano pip
+  { r: (67 / 10).toFixed(2), x: 600, y: 100 }, // daub Mdaub
+  { r: (150 / 10).toFixed(2), x: 700, y: 100 }, //myotis - other MbraMmy
+  { r: (145 / 10).toFixed(2), x: 800, y: 100 }, //lieslers NSL
+  { r: (25 / 10).toFixed(2), x: 900, y: 100 }, //long eared?
+  { r: (7 / 10).toFixed(2), x: 1000, y: 100 }, //natt
+  { r: (20 / 10).toFixed(2), x: 1100, y: 100 }, //lbarb
 ];
 
 habitat_assets = [
