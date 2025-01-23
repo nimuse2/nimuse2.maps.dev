@@ -53,8 +53,37 @@ var totalCount24 = [
   { r: 20, x: 1100, y: 100 }, //lbarb
 ];
 */
-//try average
+//percentages
+var av22 = [20, 0, 31, 20, 0, 27, 20, 20, 0, 11];
+var av23 = [52, 2, 446, 239, 180, 207, 15, 0, 6, 3];
+var av24 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];
+
+// var av22count = av22.length;
+// var totalaverages22 = 0;
+// var perc2022 = [];
+
+//%
+
+var perc2022 = buildPercentageArray(av22);
+var perc2023 = buildPercentageArray(av23);
+var perc2024 = buildPercentageArray(av24);
+
+// console.log(">>>>>>>> ", perc2023);
+
 //11 locastions
+var totalCount22 = [
+  { r: perc2022[0], x: 200, y: 100 }, //greater horse
+  { r: perc2022[1], x: 300, y: 100 }, //lesser
+  { r: perc2022[2], x: 400, y: 100 }, //common pip
+  { r: perc2022[3], x: 500, y: 100 }, //soprano pip
+  { r: perc2022[4], x: 600, y: 100 }, //-- daub
+  { r: perc2022[5], x: 700, y: 100 }, //myotis
+  { r: perc2022[6], x: 800, y: 100 }, //lieslers -- split in 2
+  { r: perc2022[7], x: 900, y: 100 }, //serotine -- split in 2
+  { r: perc2022[8], x: 1000, y: 100 }, //natt
+  { r: perc2022[9], x: 1100, y: 100 }, //barb
+];
+/*
 var totalCount22 = [
   { r: (20 / 11).toFixed(2), x: 200, y: 100 }, //greater horse
   { r: 0, x: 300, y: 100 }, //lesser
@@ -67,7 +96,21 @@ var totalCount22 = [
   { r: 0, x: 1000, y: 100 }, //natt
   { r: (11 / 11).toFixed(2), x: 1100, y: 100 }, //barb
 ];
+*/
 //12  locations
+var totalCount23 = [
+  { r: perc2023[0], x: 200, y: 100 }, //ghb
+  { r: perc2023[1], x: 300, y: 100 }, //lhb
+  { r: perc2023[2], x: 400, y: 100 }, //common pip
+  { r: perc2023[3], x: 500, y: 100 }, //soprano pip
+  { r: perc2023[4], x: 600, y: 100 }, //- daub
+  { r: perc2023[5], x: 700, y: 100 }, //myotis - other
+  { r: perc2023[6], x: 800, y: 100 }, //lieslers
+  { r: perc2023[7], x: 900, y: 100 }, //long eared?
+  { r: perc2023[8], x: 1000, y: 100 }, //natt
+  { r: perc2023[9], x: 1100, y: 100 }, //barb
+];
+/*
 var totalCount23 = [
   { r: (52 / 12).toFixed(2), x: 200, y: 100 }, //ghb
   { r: (2 / 12).toFixed(2), x: 300, y: 100 }, //lhb
@@ -80,7 +123,21 @@ var totalCount23 = [
   { r: (6 / 12).toFixed(2), x: 1000, y: 100 }, //natt
   { r: (3 / 12).toFixed(2), x: 1100, y: 100 }, //barb
 ];
+*/
 //10 locations
+var totalCount24 = [
+  { r: perc2024[0], x: 200, y: 100 }, //ghb rfer
+  { r: perc2024[1], x: 300, y: 100 }, //lhb Rhip
+  { r: perc2024[2], x: 400, y: 100 }, //common pip
+  { r: perc2024[3], x: 500, y: 100 }, //soprano pip
+  { r: perc2024[4], x: 600, y: 100 }, // daub Mdaub
+  { r: perc2024[5], x: 700, y: 100 }, //myotis - other MbraMmy
+  { r: perc2024[6], x: 800, y: 100 }, //lieslers NSL
+  { r: perc2024[7], x: 900, y: 100 }, //long eared?
+  { r: perc2024[8], x: 1000, y: 100 }, //natt
+  { r: perc2024[9], x: 1100, y: 100 }, //lbarb
+];
+/*
 var totalCount24 = [
   { r: (149 / 10).toFixed(2), x: 200, y: 100 }, //ghb rfer
   { r: (11 / 10).toFixed(2), x: 300, y: 100 }, //lhb Rhip
@@ -93,6 +150,7 @@ var totalCount24 = [
   { r: (7 / 10).toFixed(2), x: 1000, y: 100 }, //natt
   { r: (20 / 10).toFixed(2), x: 1100, y: 100 }, //lbarb
 ];
+*/
 
 habitat_assets = [
   {

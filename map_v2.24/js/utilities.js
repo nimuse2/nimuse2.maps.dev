@@ -1,6 +1,23 @@
 //variables and functions used by whole program - GLOBALS!
 var leading = 30;
 var year = "2022";
+//PERCENTAGE ARRAY///////////////////////////////
+function buildPercentageArray(_arr) {
+  //returns percentagearry
+  var tArr = 0;
+  var rArr = [];
+  for (i = 0; i < _arr.length; i++) {
+    tArr = tArr + _arr[i];
+  }
+  //%
+  for (i = 0; i < _arr.length; i++) {
+    // console.log(">", totalaverages22, " >> ", av22[i]);
+    //20/100 * 100
+    rArr.push(((_arr[i] / tArr) * 100).toFixed(1));
+  }
+  return rArr;
+  //rArr is total
+}
 //RANDOM///////////
 function makeRandom(_n) {
   var _r = Math.floor(Math.random() * _n);

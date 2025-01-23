@@ -97,10 +97,11 @@ function updateDynamic(_d) {
       .duration(800)
       .attr("r", radiusScale(_d[i].r / 2));
 
-    svg.select("#keyLable_" + i).text(_d[i].r);
+    svg.select("#keyLable_" + i).text(_d[i].r + " %");
   }
   svg.select("#legendTitle").text(
-    "Totals (averages ? per night accross site ?) - " + year
+    "Total Percentage of Species across Site over between May - August - " +
+      year
     // " (Click to link to BCT info.)"
   );
 }
@@ -122,7 +123,10 @@ function makeDynamicKey(_svg) {
     .attr("font-family", "Arial")
     .style("font-size", "15px")
     .style("fill", "white")
-    .text("Totals (averages ? per night accross site ?) - " + year);
+    .text(
+      "Total Percentage of Species across Site over between May - August - " +
+        year
+    );
   // .text("Totals [ needs work!! ]");
 
   var totalsFactor = 4;
@@ -195,7 +199,7 @@ function makeDynamicKey(_svg) {
       .attr("id", "keyLable_" + i)
       // .text(species_assets[i].name)
       // .text("" + species_assets[i].totals) //year??
-      .text("" + totalCount22[i].r)
+      .text("" + totalCount22[i].r + " %")
       // .text("TEST") //??
       // .text("wt??")
       // .text("" + zeroCheck + "*")
