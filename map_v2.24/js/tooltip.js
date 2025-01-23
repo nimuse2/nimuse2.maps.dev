@@ -175,29 +175,6 @@ function makeTooltip(_svg) {
     .style("opacity", 0)
     .attr("stroke", "white")
     .style("stroke-dasharray", "2,2");
-
-  // ToolTipTitle = _svg
-  //   .append("text")
-  //   .style("opacity", 1)
-  //   .attr("x", width - 250)
-  //   .attr("y", 20)
-  //   .style("fill", "white")
-  //   .attr("font-family", "Arial")
-  //   .style("font-size", "15px")
-  //   .text("Info. (hover on circles!)");
-
-  /*
-  TooltipBox = _svg
-    .append("rect")
-    .style("opacity", 1)
-    .attr("x", width - 260)
-    .attr("y", 60)
-    .attr("width", 240)
-    .attr("height", height - 160)
-    .attr("stroke", "white")
-    .attr("fill", "none")
-    .style("stroke-dasharray", "2,2");
-    */
 }
 var magicX = 0; //global x for line start
 var magicY = 0;
@@ -208,36 +185,13 @@ var lineBtm = 520;
 
 function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
   //test values
-  /*
-  console.log(
-    "_dx: ",
-    _dx,
-    "_x: ",
-    _x,
-    "_y: ",
-    _y,
-    "_zfk: ",
-    _zfk,
-    "_zfx: ",
-    _zfx,
-    "_zfy: ",
-    _zfy
-  );
-  */
 
   var mouseLineX = _x;
-  // var mouseLineY = _y;
-  // console.log(">-> mouseLineX: ", mouseLineX);
 
-  // console.log(">-> _zfx: ", _zfx);
-  // var xFactor = 10;
   _tx = width - 200; //overwrite
   _ty = height - 200;
 
   keyLineX = width - 200;
-
-  // console.log(">-> keyLineX: ", keyLineX);
-  // console.log(">-> _zfx: ", _zfx);
 
   if (mouseLineX > keyLineX) {
     mouseOffset = magicX - magicR + _zfx;
@@ -245,15 +199,7 @@ function updateToolTip(_dx, _x, _y, _zfk, _zfx, _zfy) {
     mouseOffset = magicX + magicR + _zfx; //x
   }
 
-  // console.log(">-> _zfy: ", _zfy);
-  // console.log(">-> magicY: ", magicY);
   circleMiddle = magicY + _zfy;
-  // console.log(">-> circleMiddle: ", circleMiddle);
-  // var lineTop = 100;
-  // var lineBtm = 550;
-  // console.log(">>>circle -x : ", magicX);
-  // console.log(">>>circle -y : ", magicY);
-  // console.log(">>>circle -r : ", magicR);
 
   // TooltipLineTop.attr("x1", 184) //) //on circle
   TooltipLineTop.attr("x1", magicX) //) //on circle
@@ -345,15 +291,7 @@ function showBatTooltip(_d) {
   _ty = tooltipTxttop + 30;
   var radiusFactor = 10;
   //image
-  /*
-  Tooltip.text("id: " + blob.id)
-    .style("opacity", 1)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty);
-    */
-  // console.error("--> TOOLTIP BOTTOM -->");
-  // console.log("showBat--> d --> ", _d);
-  // console.log("--> d--> ", _d.color);
+
   var keySplit = _d.key.split("_");
   // console.log(">>key>> ", keySplit[0]);
   var keyRef = keySplit[1];
@@ -370,24 +308,6 @@ function showBatTooltip(_d) {
 
   //
   d3.select("#keyCircle_" + keyRef).attr("opacity", "1");
-
-  // var imageHabitatPath = "img/habitat_good.png";
-
-  // HabitatImg.style("opacity", 1)
-  //   .attr("xlink:href", species_assets[keyRef].habitatimg)
-  //   .attr("x", 30)
-  //   .attr("y", _ty + leading - 30);
-  // HabitatTip_heading.text("Habitat: ")
-  //   .style("opacity", 1)
-  //   .style("font-size", "13px")
-  //   .attr("x", 30)
-  //   .attr("y", _ty + leading + imgHeight);
-  // HabitatTip_desc.text("Habitat: " + species_assets[keyRef].habitat)
-  //   .style("opacity", 1)
-  //   .style("font-size", txtBoxFontSize)
-  //   .attr("x", 30)
-  //   .attr("y", _ty + leading + imgHeight + 30)
-  //   .call(wrap, 190);
 
   BatImg.style("opacity", 1)
     .attr("xlink:href", "img/" + species_assets[keyRef].img)
@@ -408,23 +328,6 @@ function showBatTooltip(_d) {
     .attr("height", descBox)
     .call(wrap, 200);
   //count, habitat image, date??
-
-  // Tooltip4.text("More info [link]")
-  //   .style("opacity", 1)
-  //   .style("font-size", txtBoxFontSize)
-  //   .attr("x", _tx + xFactor)
-  //   .attr("y", _ty + descBox + imgHeight);
-  // .append("div")
-  // .html("<a href='newPage.html'>new page</a>");
-  // Tooltip5.text("Species: " + species_assets[_d.color].name)
-  // Tooltip5.text("Location: " + blob.location)
-  //   .style("opacity", 1)
-  //   .style("font-size", txtBoxFontSize)
-  //   .attr("x", _tx + xFactor)
-  //   .attr("y", _ty + leading * 4 + descBox + imgHeight) //blob.category
-  //   .attr("width", 190)
-  //   .attr("height", doubleHeight)
-  //   .call(wrap, 190);
 
   // wrap the text in <= 30
   // var unRadius = (_d.radius / radiusFactor) * actualData[_d.category].days;
@@ -465,14 +368,6 @@ function showBatTooltip(_d) {
     .style("font-size", "13px")
     .attr("x", _tx + xFactor)
     .attr("y", _ty + descBox + imgHeight + 20);
-
-  /*
-  Tooltip7.text("Click to play sound")
-    .style("opacity", 1)
-    .style("font-size", txtBoxFontSize)
-    .attr("x", _tx + xFactor)
-    .attr("y", _ty + leading * 7 + descBox + imgHeight + doubleHeight);
-    */
 
   TooltipLineTop.style("opacity", 1);
   TooltipLineDown.style("opacity", 1);

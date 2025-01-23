@@ -10,14 +10,6 @@ function makeData(_geoData, _resultsList) {
   var _data = [];
   for (i = 0; i < _resultsList.length; i++) {
     var splitKey = keySplit(_resultsList[i].key);
-    /*
-    console.log("splitKey[0]: ", splitKey[0], "i: ", i);
-    console.log(">>>> ", _geoData[10][1]);
-    var item = {};
-    */
-
-    // console.log("MakeData(): geoData: ", _geoData[Number(splitKey[0])][1]);
-    // console.log("makeData(): results:", _resultsList);
 
     var item = {
       key: _resultsList[i].key,
@@ -35,13 +27,8 @@ function makeData(_geoData, _resultsList) {
 
 function updateData(_nxtresultsList, _year) {
   //update DATA object with new values
-  console.log("updateData()", _year);
-  // console.log(">> ", data);
 
   for (i = 0; i < data.length; i++) {
-    // _geoData[]
-    // console.log("data: ", data[i].count);
-    // console.log("results::", _nxtresultsList[i].count);
     data[i].count = _nxtresultsList[i].count;
 
     if (_year == "2023") {
@@ -66,11 +53,4 @@ function updateData(_nxtresultsList, _year) {
     data[i].radius = radiusScale(data[i].count);
     // onsole.log(">>>>>", data[i].radius);
   }
-
-  // for (i = 0; i < data.length; i++) {
-  //   var keySplit = data[i].key.split("_");
-  //   console.log("keySplit", keySplit[0]);
-  //   data[i].lat = locationList2023[keySplit[0]][0];
-  //   data[i].long = locationList2023[keySplit[0]][1];
-  // }
 }

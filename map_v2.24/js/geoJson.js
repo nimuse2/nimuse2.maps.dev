@@ -17,12 +17,8 @@ function updateHabitat(geojson, _type) {
     })
     .attr("class", "infocircle")
     .on("mouseover", function (d) {
-      // console.log("HABITAT: ", d3.event.x);
       var coordinates = d3.mouse(this);
       showHabitatTooltip(d, coordinates[0], coordinates[1]);
-      // showHabitatTooltip(d, d3.event.x, d3.event.y);
-      // showTooltip(d);
-      // showTooltip(d);
     })
     .on("mouseleave", function (d, i) {
       hideTooltip();

@@ -77,11 +77,6 @@ function makeLegend(_svg, _width, _height) {
     .text("Main Map circle size");
 }
 function updateDynamic(_d) {
-  // data1 = data2;
-  console.log("updateDynamic", _d);
-  console.log("species_assets: ", species_assets.length);
-  var zeroCheckDynamic = "";
-
   for (i = 0; i < species_assets.length; i++) {
     if (_d[i].r == 0) {
       zeroCheckDynamic = "0<1";
@@ -99,11 +94,12 @@ function updateDynamic(_d) {
 
     svg.select("#keyLable_" + i).text(_d[i].r + " %");
   }
-  svg.select("#legendTitle").text(
-    "Total Percentage of Species across Site over between May - August - " +
-      year
-    // " (Click to link to BCT info.)"
-  );
+  svg
+    .select("#legendTitle")
+    .text(
+      "Total Percentage of Species across Site over between May - August - " +
+        year
+    );
 }
 
 function makeDynamicKey(_svg) {
@@ -132,8 +128,6 @@ function makeDynamicKey(_svg) {
   var totalsFactor = 4;
 
   for (i = 0; i < species_assets.length; i++) {
-    // console.log(">>>>>>>>>>>>> ", species_assets[i].totals);
-
     _svg
       .append("a")
       .attr("xlink:href", "" + species_assets[i].external_link)
@@ -157,17 +151,8 @@ function makeDynamicKey(_svg) {
         d3.select(this).attr("opacity", "0.7");
       })
       .attr("stroke", "white");
-    // .attr("xlink:href", "http://example.com");
-    // var rotateX = startX + 20 + 50 * i;
-    // var rotateY = horY;
-    // console.log(">>>>> raduii >>>> ", species_assets[i].totals / totalsFactor);
-    // horX = horX + species_assets[i].totals / totalsFactor;
 
     keyCircleArr.push(startX + 20 + horX * i); //utils
-    // horX = horX + species_assets[i].totals / totalsFactor;
-    // keyCircleArr.push(startX + species_assets[i].totals);
-    // iNITIAL SEEDING
-    // console.log(">>> ", totalCount22);
 
     var zeroCheck = "";
     if (totalCount22[i].r == 0) {
@@ -205,6 +190,4 @@ function makeDynamicKey(_svg) {
       // .text("" + zeroCheck + "*")
       .call(wrap, 70);
   }
-
-  // _svg.selectAll(".keyLabel").attr("transform", "translate(0,0)rotate(45)");
 }

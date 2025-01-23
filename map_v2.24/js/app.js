@@ -5,9 +5,6 @@ FINISHED DATA OBJECT TO PUT INTO DISPLAY
 */
 //MAIN DATA OBJECT////
 var data = makeData(locationList, resultsList2022); //
-// var make2023data = makeData(locationList2023, resultsList2022); //
-
-// console.log("DATA: ", data);
 //MAKE MAIN OBJECTS
 var simulation = {};
 var bubbles = {};
@@ -21,10 +18,6 @@ var svg = d3
   .select("#map")
   .append("svg")
   .attr("viewBox", `0 0 1380 720`);
-// .attr("width", width)
-// .attr("height", height);
-// r width = 1380,
-// height = 720;
 
 var background = svg.append("g");
 var footprint = svg.append("g");
@@ -53,9 +46,6 @@ d3.json("geoJson/hedge_control_3.json").then(function (json) {
 d3.json("geoJson/habitat.json").then(function (json) {
   updateHabitat(json, "habitat");
 });
-// d3.json("wash_extended.json").then(function (json) {
-//   update(json, "main_map");
-// });
 
 // //BUILD MAIN CIRCLES
 makeCircleDisplay();
