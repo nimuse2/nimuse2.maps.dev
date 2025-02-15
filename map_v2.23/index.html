@@ -25,7 +25,13 @@
   <link href="css/css/solid.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/base.css" />
-
+  <script>
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock("landscape").catch((err) => {
+        console.error("Orientation lock failed", err);
+      });
+    }
+  </script>
   <!-- Load d3.js -->
   <script src="js/d3.v5.16.js"></script>
   <!-- <script src="js/d3-scale-chromatic.v1.min.js"></script> -->
