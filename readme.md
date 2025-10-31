@@ -2,6 +2,7 @@
 
 ## Bats-Wash Farm - Survey data Visualisation
 
+[v2.25](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.25/)  
 [v2.24](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.24/)  
 [v2.23](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.23/)  
 [v2.22](https://nimuse2.github.io/nimuse2.maps.dev/map_v2.22/)  
