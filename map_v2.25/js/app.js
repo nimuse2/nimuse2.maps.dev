@@ -57,6 +57,12 @@ makeDynamicKey(svg);
 makeTooltip(interactive);
 
 //UI INTERACT//////////////////////
+d3.select("#change2025").on("click", function () {
+  year = "2025";
+  updateCircleDisplay(resultsList2025, "2025");
+  updateDynamic(totalCount25);
+  // makeCircleDisplay(testData);
+});
 d3.select("#change2024").on("click", function () {
   year = "2024";
   updateCircleDisplay(resultsList2024, "2024");

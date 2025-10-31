@@ -57,6 +57,7 @@ var totalCount24 = [
 var av22 = [20, 0, 31, 20, 0, 27, 20, 20, 0, 11];
 var av23 = [52, 2, 446, 239, 180, 207, 15, 0, 6, 3];
 var av24 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];
+var av25 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];//update 2025 numbers
 
 // var av22count = av22.length;
 // var totalaverages22 = 0;
@@ -67,6 +68,7 @@ var av24 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];
 var perc2022 = buildPercentageArray(av22);
 var perc2023 = buildPercentageArray(av23);
 var perc2024 = buildPercentageArray(av24);
+var perc2025 = buildPercentageArray(av25);
 
 // console.log(">>>>>>>> ", perc2023);
 
@@ -126,6 +128,19 @@ var totalCount23 = [
 */
 //10 locations
 var totalCount24 = [
+  { r: perc2024[0], x: 200, y: 100 }, //ghb rfer
+  { r: perc2024[1], x: 300, y: 100 }, //lhb Rhip
+  { r: perc2024[2], x: 400, y: 100 }, //common pip
+  { r: perc2024[3], x: 500, y: 100 }, //soprano pip
+  { r: perc2024[4], x: 600, y: 100 }, // daub Mdaub
+  { r: perc2024[5], x: 700, y: 100 }, //myotis - other MbraMmy
+  { r: perc2024[6], x: 800, y: 100 }, //lieslers NSL
+  { r: perc2024[7], x: 900, y: 100 }, //long eared?
+  { r: perc2024[8], x: 1000, y: 100 }, //natt
+  { r: perc2024[9], x: 1100, y: 100 }, //lbarb
+];
+
+var totalCount25 = [
   { r: perc2024[0], x: 200, y: 100 }, //ghb rfer
   { r: perc2024[1], x: 300, y: 100 }, //lhb Rhip
   { r: perc2024[2], x: 400, y: 100 }, //common pip

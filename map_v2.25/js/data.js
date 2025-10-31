@@ -43,7 +43,13 @@ function updateData(_nxtresultsList, _year) {
       // console.log("keySplit", keySplit[0]);
       data[i].lat = locationList2024[keySplit[0]][1];
       data[i].long = locationList2024[keySplit[0]][0];
-    } else {
+    }else if (_year == "2024") {
+      //IF 2023//////////////////////////////////////
+      var keySplit = data[i].key.split("_");
+      // console.log("keySplit", keySplit[0]);
+      data[i].lat = locationList2025[keySplit[0]][1];
+      data[i].long = locationList2025[keySplit[0]][0];
+    }else {
       var keySplit = data[i].key.split("_");
       // console.log("keySplit", keySplit[0]);
       data[i].lat = locationList[keySplit[0]][1];

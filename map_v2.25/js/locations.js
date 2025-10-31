@@ -95,10 +95,36 @@ var locationNameList = [
 ];
 
 //BAT RESULT LOCATIONS
-//2024
+//2025
 
-//NEEDS UPDATING WITH CORRECT DATA
-////////////
+var locationList2025 = [
+  projectionGeo([-3.748133,50.487978]), //0 - 
+  projectionGeo([-3.72603,50.479138]), //1 -
+  projectionGeo([-3.736428,50.478085]), //2- 
+  projectionGeo([-3.73798,50.478185]), //3 - 
+  projectionGeo([-3.716993,50.473715]), //4 -
+  projectionGeo([-3.732448,50.47457]), //5 - 
+  projectionGeo([-3.757563, 50.490647]), //6 - 
+  projectionGeo([-3.788462, 50.484153]), //7 - tuckers fields
+  projectionGeo([-3.735705, 50.473618]), //8 - two reservoir
+  projectionGeo([-3.73793, 50.48066]), //9 - glorias wood
+  [500, -100], //10 - blank
+];
+
+var surveyLocList25 = [
+  "Baddaford", //0
+  "Woodland", //1
+  "Field North Wash", //2
+  "Copse nr. Wash", //ben avery garden//3
+  "Field nr. Wash", //4
+  "Old Mill Leat", //5
+  "Vital Seeds", //6
+  "Wash Reservoir", //7
+  "blank", //8
+  "blank", //9
+  "blank", //10
+];
+//2024
 
 var locationList2024 = [
   projectionGeo([-3.738533, 50.473075]), //0 - asparagus car park
