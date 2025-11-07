@@ -15,13 +15,13 @@ var resultsList2025 = [
     key: "0_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 3,
+    count: 1.5,
   },
   {
     key: "0_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 4, ///?
+    count: 2, ///?
   },
   {
     key: "0_4",
@@ -39,7 +39,7 @@ var resultsList2025 = [
     key: "0_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 54,
+    count: 27,
   },
   {
     key: "0_7",
@@ -63,43 +63,43 @@ var resultsList2025 = [
     key: "1_0", //barton town
     anabat: "Rfer",
     name: "GHB",
-    count: 22,
+    count: 7.3,
   },
   {
     key: "1_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 8,
+    count: 2.6,
   },
   {
     key: "1_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 626,
+    count: 156.6,
   },
   {
     key: "1_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 110,
+    count: 27.5,
   },
   {
     key: "1_4",
     anabat: "Mdau",
     name: "Myotis Daubentons",
-    count: 44,
+    count: 14.6,
   },
   {
     key: "1_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 96,
+    count: 24,
   },
   {
     key: "1_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 42,
+    count: 14,
   },
   {
     key: "1_7",
@@ -135,7 +135,7 @@ var resultsList2025 = [
     key: "2_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 26,
+    count: 8.6,
   },
   {
     key: "2_3",
@@ -153,19 +153,19 @@ var resultsList2025 = [
     key: "2_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 0,
+    count: 4,
   },
   {
     key: "2_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 70,
+    count: 11.6,
   },
   {
     key: "2_7",
     anabat: "Plaur",
     name: "Long eared",
-    count: 4,
+    count: 2,
   },
   {
     key: "2_8",
@@ -183,43 +183,43 @@ var resultsList2025 = [
     key: "3_0", //FIELD KITCHEN******************************////
     anabat: "Rfer",
     name: "GHB",
-    count: 84,
+    count: 10.5,
   },
   {
     key: "3_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 40,
+    count: 6.6,
   },
   {
     key: "3_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 3204,
+    count: 400.5,
   },
   {
     key: "3_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 1022,
+    count: 127.5,
   },
   {
     key: "3_4",
     anabat: "Mdau",
     name: "Myotis Daubentons",
-    count: 20,
+    count: 3.3,
   },
   {
     key: "3_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 106, //?
+    count: 15.14, //?
   },
   {
     key: "3_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 586,
+    count: 73.25,
   },
   {
     key: "3_7",
@@ -237,31 +237,31 @@ var resultsList2025 = [
     key: "3_9",
     anabat: "Bbarb",
     name: "barbestrelle",
-    count: 121,
+    count: 3,
   },
   {
     key: "4_0", //**************///
     anabat: "Rfer",
     name: "GHB",
-    count: 22,
+    count: 3.14,
   },
   {
     key: "4_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 14,
+    count: 7,
   },
   {
     key: "4_2",
     anabat: "Ppip",
     name: "Common Pipestrelle",
-    count: 206,
+    count: 20.6,
   },
   {
     key: "4_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 52,
+    count: 7.42,
   },
   {
     key: "4_4",
@@ -273,19 +273,19 @@ var resultsList2025 = [
     key: "4_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 14, // whiskered or Brant
+    count: 3.5, // whiskered or Brant
   },
   {
     key: "4_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 226,
+    count: 25.11,
   },
   {
     key: "4_7",
     anabat: "Plaur",
     name: "Long-eared",
-    count: 30,
+    count: 4.28,
   },
   {
     key: "4_8",
@@ -297,31 +297,31 @@ var resultsList2025 = [
     key: "4_9",
     anabat: "Bbarb",
     name: "barb",
-    count: 6,
+    count: 3,
   },
   {
     key: "5_0", //JOHN SMITH*********************////
     anabat: "Rfer",
     name: "GHB",
-    count: 6,
+    count: 2,
   },
   {
     key: "5_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 10,
+    count: 2.5,
   },
   {
     key: "5_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 1024,
+    count: 170.67,
   },
   {
     key: "5_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 428,
+    count: 71.33,
   },
   {
     key: "5_4",
@@ -333,19 +333,19 @@ var resultsList2025 = [
     key: "5_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 6,
+    count: 2,
   },
   {
     key: "5_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 82,
+    count: 13.67,
   },
   {
     key: "5_7",
     anabat: "Plaur",
     name: "Long - eared",
-    count: 8,
+    count: 2.67,
   },
   {
     key: "5_8",
@@ -363,7 +363,7 @@ var resultsList2025 = [
     key: "6_0", //POLYTUNNELS - NOT FINISHED//***************************** */
     anabat: "Rfer",
     name: "GHB",
-    count: 4,
+    count: 2,
   },
   {
     key: "6_1",
@@ -375,13 +375,13 @@ var resultsList2025 = [
     key: "6_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 88,
+    count: 29.3,
   },
   {
     key: "6_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 96,
+    count: 32,
   },
   {
     key: "6_4",
@@ -399,7 +399,7 @@ var resultsList2025 = [
     key: "6_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 10,
+    count: 3.3,
   },
   {
     key: "6_7",
@@ -423,25 +423,25 @@ var resultsList2025 = [
     key: "7_0", //TUCKERS FIELDS//************NOT FINISHED************* */
     anabat: "Rfer",
     name: "GHB",
-    count: 94,
+    count: 31.3,
   },
   {
     key: "7_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 50,
+    count: 25,
   },
   {
     key: "7_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 510,
+    count: 170,
   },
   {
     key: "7_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 612,
+    count: 204,
   },
   {
     key: "7_4",
@@ -453,13 +453,13 @@ var resultsList2025 = [
     key: "7_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 30,
+    count: 10,
   },
   {
     key: "7_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 18,
+    count: 6,
   },
   {
     key: "7_7",
@@ -471,7 +471,7 @@ var resultsList2025 = [
     key: "7_8",
     anabat: " ",
     name: "Bechstein's",
-    count: 2,
+    count: 0,
   },
   {
     key: "7_9",
@@ -483,7 +483,7 @@ var resultsList2025 = [
     key: "8_0", //TWO RESERVOIRS//////************************* */
     anabat: "Rfer",
     name: "GHB",
-    count: 59,
+    count: 0,
   },
   {
     key: "8_1",
@@ -495,13 +495,13 @@ var resultsList2025 = [
     key: "8_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 143,
+    count: 0,
   },
   {
     key: "8_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 150,
+    count: 0,
   },
   {
     key: "8_4",
@@ -513,13 +513,13 @@ var resultsList2025 = [
     key: "8_5",
     anabat: "MbraMmys",
     name: "Myotis Other",
-    count: 1,
+    count: 0,
   },
   {
     key: "8_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 38,
+    count: 0,
   },
   {
     key: "8_7",
@@ -537,31 +537,31 @@ var resultsList2025 = [
     key: "8_9",
     anabat: "Bbarb",
     name: "bBarb",
-    count: 2,
+    count: 0,
   },
   {
     key: "9_0", //GLORIAS WOOD
     anabat: "Rfer",
     name: "GHB",
-    count: 13,
+    count: 0,
   },
   {
     key: "9_1",
     anabat: "Rhip",
     name: "LHB",
-    count: 1,
+    count: 0,
   },
   {
     key: "9_2",
     name: "Common Pipestrelle",
     anabat: "Ppip",
-    count: 20,
+    count: 0,
   },
   {
     key: "9_3",
     anabat: "Ppyg",
     name: "Soprano Pipestrelle",
-    count: 3,
+    count: 0,
   },
   {
     key: "9_4",
@@ -579,7 +579,7 @@ var resultsList2025 = [
     key: "9_6",
     anabat: "NSL",
     name: "Nyctalus",
-    count: 7,
+    count: 0,
   },
   {
     key: "9_7",
