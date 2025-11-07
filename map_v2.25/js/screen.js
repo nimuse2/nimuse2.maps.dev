@@ -125,7 +125,7 @@ function makeText() {
     .attr("font-size", "14px")
     .style("fill", "rgba(255,255,255,0.9)")
     .text(
-      "Methodology Note: Due to the amount of variables now in the 3 year Analysis the accuracy of the individual recordings needs further testing"
+      "Methodology Note: Due to the amount of data now in the 4 year dataset the accuracy of the individual recordings needs further testing, maybe using ML?"
     )
     .attr("x", 50)
     .attr("y", 100)
