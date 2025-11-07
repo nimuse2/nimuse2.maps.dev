@@ -57,7 +57,10 @@ var totalCount24 = [
 var av22 = [20, 0, 31, 20, 0, 27, 20, 20, 0, 11];
 var av23 = [52, 2, 446, 239, 180, 207, 15, 0, 6, 3];
 var av24 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];
-var av25 = [149, 11, 1710, 1462, 67, 150, 145, 25, 7, 20];//update 2025 numbers
+var av25 = [58,48,958,474,24,61,174,9,0,10];//update 2025 numbers
+//added averages
+
+
 
 // var av22count = av22.length;
 // var totalaverages22 = 0;
