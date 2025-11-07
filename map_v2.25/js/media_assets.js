@@ -144,16 +144,16 @@ var totalCount24 = [
 ];
 
 var totalCount25 = [
-  { r: perc2024[0], x: 200, y: 100 }, //ghb rfer
-  { r: perc2024[1], x: 300, y: 100 }, //lhb Rhip
-  { r: perc2024[2], x: 400, y: 100 }, //common pip
-  { r: perc2024[3], x: 500, y: 100 }, //soprano pip
-  { r: perc2024[4], x: 600, y: 100 }, // daub Mdaub
-  { r: perc2024[5], x: 700, y: 100 }, //myotis - other MbraMmy
-  { r: perc2024[6], x: 800, y: 100 }, //lieslers NSL
-  { r: perc2024[7], x: 900, y: 100 }, //long eared?
-  { r: perc2024[8], x: 1000, y: 100 }, //natt
-  { r: perc2024[9], x: 1100, y: 100 }, //lbarb
+  { r: perc2025[0], x: 200, y: 100 }, //ghb rfer
+  { r: perc2025[1], x: 300, y: 100 }, //lhb Rhip
+  { r: perc2025[2], x: 400, y: 100 }, //common pip
+  { r: perc2025[3], x: 500, y: 100 }, //soprano pip
+  { r: perc2025[4], x: 600, y: 100 }, // daub Mdaub
+  { r: perc2025[5], x: 700, y: 100 }, //myotis - other MbraMmy
+  { r: perc2025[6], x: 800, y: 100 }, //lieslers NSL
+  { r: perc2025[7], x: 900, y: 100 }, //long eared?
+  { r: perc2025[8], x: 1000, y: 100 }, //natt
+  { r: perc2025[9], x: 1100, y: 100 }, //lbarb
 ];
 /*
 var totalCount24 = [
