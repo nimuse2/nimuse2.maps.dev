@@ -118,6 +118,7 @@ function makeText() {
   //info text
 
   //title text
+  /*
   svg
     .append("text")
     // .style("opacity", 0.8)
@@ -130,7 +131,7 @@ function makeText() {
     .attr("x", 50)
     .attr("y", 100)
     .call(wrap, 200);
-
+*/
   //note text
   svg
     .append("text")
