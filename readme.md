@@ -26,7 +26,7 @@
 - ~~check data correct inc. different years~~
 - actual sounds from actual locations - correct species?
 - copy for habitat, species, intro?
-- other
+- other git test
 
 ### Bugs
 
